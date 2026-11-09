@@ -2785,3 +2785,12 @@ no track within 15 m	w promieniu 15 m brak torów
 the tracks are not joined, or run the other way (see View > AI lanes)	tory nie są połączone lub biegną w drugą stronę (zobacz Widok > Pasy AI)
 no track beside	brak torów przy
 Drives on	Jeździ po
+Import diagnostics	Diagnostyka importu
+Retry missing layers	Ponów pobieranie brakujących warstw
+Automatic roads and buildings	Automatyczne drogi i budynki
+Procedural fallback	Zastępstwo proceduralne
+Preview automatic import	Podgląd automatycznego importu
+Unresolved	Nierozwiązane
+Load OSM JSON	Wczytaj OSM JSON
+Asset catalogue	Katalog zasobów
+Estimated remaining time	Szacowany pozostały czas

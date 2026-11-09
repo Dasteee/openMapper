@@ -11,7 +11,7 @@ commands in `src/`. A language's table is `locales/<code>.tsv`: the English, a t
 import glob, os, re, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
-LANGS = "be ca cs de es fr hi hu id it ja kk ko ms nl pl pt-pt pt sv th tl tr uk vi zh-tw zh".split()
+LANGS = "be ca cs de es fr hi hu id it ja kk ko ms nl pl pt-pt pt sr sv th tl tr uk vi zh-tw zh".split()
 STR = r'"((?:[^"\\]|\\.)*)"'
 CALL = re.compile(r"\btr\(\s*" + STR + r"\s*,\s*" + STR + r"\s*\)", re.S)
 CMD = re.compile(r"\bcmd!\(\s*[\w:]+\s*,\s*" + STR + r"\s*,\s*" + STR, re.S)

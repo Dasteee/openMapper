@@ -3,25 +3,32 @@
 //! nearest road (or along the outline's longest side where no road is near).
 
 use glam::DVec2;
+use std::collections::{BTreeMap, HashSet};
 
 use crate::roads;
 
 pub fn query(bbox: [f64; 4]) -> String {
-    format!("[out:json][timeout:90];way[\"building\"]({:.6},{:.6},{:.6},{:.6});out geom;", bbox[0], bbox[1], bbox[2], bbox[3])
+    let b = format!("{:.6},{:.6},{:.6},{:.6}", bbox[0], bbox[1], bbox[2], bbox[3]);
+    format!("[out:json][timeout:90];(way[\"building\"]({b});way[\"building:part\"]({b});rel[\"building\"][\"type\"=\"multipolygon\"]({b}););out geom;")
 }
 
 /// A building of OpenStreetMap: its outline (latitude, longitude; closed) and how high it
 /// is (m) and whether OSM says so (else guessed from what kind of building it is).
 #[derive(Clone, Debug)]
 pub struct Building {
+    pub id: String,
+    pub tags: BTreeMap<String, String>,
     pub outline: Vec<(f64, f64)>,
+    pub holes: Vec<Vec<(f64, f64)>>,
+    pub min_height: f64,
+    pub issue: Option<String>,
     pub height: f64,
     pub known: bool,
 }
 
 /// How high a building is: its `height`, or its storeys, or what its kind usually is.
 fn height_of(tag: &dyn Fn(&str) -> String) -> (f64, bool) {
-    let num = |k: &str| tag(k).trim().trim_end_matches('m').trim().replace(',', ".").parse::<f64>().ok().filter(|v| *v > 0.0);
+    let num = |k: &str| measure(&tag(k)).filter(|v| *v > 0.0);
     if let Some(h) = num("height") {
         return (h, true);
     }
@@ -40,21 +47,83 @@ fn height_of(tag: &dyn Fn(&str) -> String) -> (f64, bool) {
 
 pub fn parse(body: &str) -> Result<Vec<Building>, String> {
     let v: serde_json::Value = serde_json::from_str(body).map_err(|e| e.to_string())?;
-    Ok(v.get("elements")
-        .and_then(|e| e.as_array())
-        .into_iter()
-        .flatten()
-        .filter(|e| e.get("type").and_then(|t| t.as_str()) == Some("way"))
-        .filter_map(|e| {
-            let outline: Vec<(f64, f64)> = e.get("geometry").and_then(|g| g.as_array()).into_iter().flatten().filter_map(|p| Some((p.get("lat")?.as_f64()?, p.get("lon")?.as_f64()?))).collect();
-            if outline.len() < 4 || outline.first() != outline.last() {
-                return None;
-            }
-            let tag = |k: &str| e.get("tags").and_then(|t| t.get(k)).and_then(|v| v.as_str()).unwrap_or("").to_string();
-            let (height, known) = height_of(&tag);
-            Some(Building { outline, height, known })
-        })
-        .collect())
+    parse_value(&v, &|| Ok(()))
+}
+
+pub(crate) fn parse_value(v: &serde_json::Value, check: &impl Fn() -> Result<(), String>) -> Result<Vec<Building>, String> {
+    check()?;
+    let elements = v.get("elements").and_then(|v| v.as_array()).map(Vec::as_slice).unwrap_or_default();
+    let points = |v: &serde_json::Value| -> Vec<(f64, f64)> {
+        v.get("geometry").and_then(|v| v.as_array()).into_iter().flatten().filter_map(|p| Some((p.get("lat")?.as_f64()?, p.get("lon")?.as_f64()?))).collect()
+    };
+    let make = |e: &serde_json::Value, id: String, outline, holes, issue| {
+        let tags: BTreeMap<String, String> = e.get("tags").and_then(|v| v.as_object()).into_iter().flatten().filter_map(|(k,v)| v.as_str().map(|s| (k.clone(), s.to_string()))).collect();
+        let tag = |key: &str| tags.get(key).cloned().unwrap_or_default();
+        let (height, known) = height_of(&tag);
+        let min_height = measure(&tag("min_height")).or_else(|| measure(&tag("building:min_level")).map(|n| n * 3.0)).unwrap_or(0.0);
+        Building { id, tags, outline, holes, min_height, height, known, issue }
+    };
+    let mut out = Vec::new();
+    let mut members = HashSet::new();
+    for relation in elements.iter().filter(|e| e["type"] == "relation" && (!e["tags"]["building"].is_null() || !e["tags"]["building:part"].is_null())) {
+        check()?;
+        let mut outer = Vec::new(); let mut inner = Vec::new();
+        for member in relation.get("members").and_then(|v| v.as_array()).into_iter().flatten() {
+            if member["type"] != "way" { continue; }
+            if let Some(id) = member["ref"].as_i64() { members.insert(id); }
+            if member["role"] == "inner" { inner.push(points(member)); } else { outer.push(points(member)); }
+        }
+        let (outer, complete_outer) = rings(outer);
+        let (inner, complete_inner) = rings(inner);
+        let had_outer = !outer.is_empty();
+        let complete = complete_outer && complete_inner && had_outer && inner.iter().all(|h|h.first().is_some_and(|p|outer.iter().any(|o|inside_geo(*p,o))));
+        for (i, ring) in outer.into_iter().enumerate() {
+            let holes = inner.iter().filter(|hole| hole.first().is_some_and(|p| inside_geo(*p, &ring))).cloned().collect();
+            out.push(make(relation, format!("relation/{}/{}", relation["id"], i), ring, holes, (!complete).then(|| "Incomplete multipolygon".into())));
+        }
+        if !had_outer {
+            out.push(make(relation, format!("relation/{}", relation["id"]), vec![], vec![], Some("Incomplete multipolygon".into())));
+        }
+    }
+    for way in elements.iter().filter(|e| e["type"] == "way") {
+        check()?;
+        if members.contains(&way["id"].as_i64().unwrap_or(0)) || (way["tags"]["building"].is_null() && way["tags"]["building:part"].is_null()) { continue; }
+        let ring = points(way);
+        let issue = (ring.len() < 4 || ring.first() != ring.last()).then(|| "Open or incomplete building outline".into());
+        out.push(make(way, format!("way/{}", way["id"]), ring, vec![], issue));
+    }
+    // A parent footprint is an envelope when actual building parts cover it.
+    let parts: Vec<_> = out.iter().filter(|b| b.tags.get("building:part").is_some_and(|s| s != "no")).map(|b| b.outline.clone()).collect();
+    out.retain(|b| b.tags.contains_key("building:part") || !parts.iter().any(|p| p.first().is_some_and(|p| inside_geo(*p, &b.outline))));
+    Ok(out)
+}
+
+pub fn measure(text: &str) -> Option<f64> {
+    let text = text.trim().replace(',', ".");
+    let (s, scale) = if let Some(s) = text.strip_suffix("ft").or_else(|| text.strip_suffix('\'')) { (s, 0.3048) } else { (text.trim_end_matches('m'), 1.0) };
+    s.trim().parse::<f64>().ok().map(|n| n * scale).filter(|n| n.is_finite() && *n >= 0.0)
+}
+
+fn inside_geo(p: (f64, f64), ring: &[(f64,f64)]) -> bool {
+    let mut inside = false;
+    for edge in ring.windows(2) { let (a,b) = (edge[0],edge[1]); if (a.1 > p.1) != (b.1 > p.1) && p.0 < (b.0-a.0)*(p.1-a.1)/(b.1-a.1)+a.0 { inside = !inside; } }
+    inside
+}
+
+fn rings(mut fragments: Vec<Vec<(f64,f64)>>) -> (Vec<Vec<(f64,f64)>>, bool) {
+    let mut result = Vec::new(); let mut complete = true;
+    fragments.retain(|p| p.len() >= 2);
+    while let Some(mut ring) = fragments.pop() {
+        while ring.first() != ring.last() {
+            let next = fragments.iter().position(|p| p.first() == ring.last() || p.last() == ring.last());
+            let Some(i) = next else { complete = false; break; };
+            let mut part = fragments.remove(i);
+            if part.last() == ring.last() { part.reverse(); }
+            ring.extend(part.into_iter().skip(1));
+        }
+        if ring.len() >= 4 && ring.first() == ring.last() { result.push(ring); }
+    }
+    (result, complete)
 }
 
 /// An outline seen standing with heading `h` (front towards `dir(h)`): its middle, its
@@ -94,6 +163,12 @@ pub fn misfit(size: (f64, f64, f64), want: (f64, f64, f64), known: bool) -> Opti
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn multipolygons_keep_courtyards_and_do_not_duplicate_member_ways() {
+        let body=r#"{"elements":[{"type":"relation","id":9,"tags":{"type":"multipolygon","building":"apartments","height":"30 ft","min_height":"3"},"members":[{"type":"way","ref":1,"role":"outer","geometry":[{"lat":0,"lon":0},{"lat":0,"lon":20},{"lat":20,"lon":20}]},{"type":"way","ref":2,"role":"outer","geometry":[{"lat":0,"lon":0},{"lat":20,"lon":0},{"lat":20,"lon":20}]},{"type":"way","ref":3,"role":"inner","geometry":[{"lat":5,"lon":5},{"lat":5,"lon":10},{"lat":10,"lon":10},{"lat":10,"lon":5},{"lat":5,"lon":5}]}]},{"type":"way","id":3,"tags":{"building":"yes"},"geometry":[{"lat":5,"lon":5},{"lat":5,"lon":10},{"lat":10,"lon":10},{"lat":10,"lon":5},{"lat":5,"lon":5}]}]}"#;
+        let buildings=parse(body).unwrap();assert_eq!(buildings.len(),1);assert_eq!(buildings[0].holes.len(),1);assert!(buildings[0].issue.is_none());assert!((buildings[0].height-9.144).abs()<1e-6);assert_eq!(buildings[0].min_height,3.0);
+    }
 
     #[test]
     fn an_outline_is_measured_across_its_front() {

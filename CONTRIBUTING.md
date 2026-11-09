@@ -33,7 +33,7 @@ Linux needs `libgtk-3-dev`, `libxkbcommon-dev` and `libwayland-dev`. The logo an
 
 ## Translations
 
-The interface speaks the twenty-eight languages of openOMSI (View > Language). English and Russian
+The interface speaks the twenty-eight languages of openOMSI plus Serbian Latin (View > Language). English and Russian
 are written where a text is used: `tr("Save", "Сохранить")`. Every other language is a table found
 by the English text, `locales/<code>.tsv`: the English, a tab, the translation (`\n`, `\t` and `\\`
 stand for a newline, a tab and a backslash). A text without an entry is shown in English.

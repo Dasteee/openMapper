@@ -2785,3 +2785,12 @@ no track within 15 m	do 15 m nejsou koleje
 the tracks are not joined, or run the other way (see View > AI lanes)	koleje nejsou spojeny nebo vedou opačně (viz Zobrazení > Pruhy AI)
 no track beside	žádné koleje vedle
 Drives on	Jezdí po
+Import diagnostics	Diagnostika importu
+Retry missing layers	Znovu načíst chybějící vrstvy
+Automatic roads and buildings	Automatické silnice a budovy
+Procedural fallback	Procedurální náhrada
+Preview automatic import	Náhled automatického importu
+Unresolved	Nevyřešeno
+Load OSM JSON	Načíst OSM JSON
+Asset catalogue	Katalog prostředků
+Estimated remaining time	Odhadovaný zbývající čas

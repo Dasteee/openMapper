@@ -2785,3 +2785,12 @@ no track within 15 m	ไม่มีรางภายใน 15 ม.
 the tracks are not joined, or run the other way (see View > AI lanes)	รางไม่ได้เชื่อมกันหรือวิ่งไปอีกทาง (ดู มุมมอง > เลน AI)
 no track beside	ไม่มีรางข้าง
 Drives on	วิ่งบน
+Import diagnostics	การวินิจฉัยการนำเข้า
+Retry missing layers	ลองดาวน์โหลดชั้นข้อมูลที่ขาดหายอีกครั้ง
+Automatic roads and buildings	ถนนและอาคารอัตโนมัติ
+Procedural fallback	สร้างด้วยขั้นตอนวิธีทดแทน
+Preview automatic import	ดูตัวอย่างการนำเข้าอัตโนมัติ
+Unresolved	ยังไม่แก้ไข
+Load OSM JSON	โหลด OSM JSON
+Asset catalogue	แค็ตตาล็อกทรัพยากร
+Estimated remaining time	เวลาที่เหลือโดยประมาณ

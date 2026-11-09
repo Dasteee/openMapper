@@ -2785,3 +2785,12 @@ no track within 15 m	no hay vía a menos de 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	las vías no están unidas o van en sentido contrario (ver Ver > Carriles de IA)
 no track beside	sin vía junto a
 Drives on	Circula por
+Import diagnostics	Diagnóstico de importación
+Retry missing layers	Reintentar las capas que faltan
+Automatic roads and buildings	Carreteras y edificios automáticos
+Procedural fallback	Alternativa procedural
+Preview automatic import	Vista previa de la importación automática
+Unresolved	Sin resolver
+Load OSM JSON	Cargar OSM JSON
+Asset catalogue	Catálogo de recursos
+Estimated remaining time	Tiempo restante estimado

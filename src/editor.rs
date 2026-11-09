@@ -4328,7 +4328,7 @@ impl Editor {
         // (the types' widths and kinds first, and the map's own roads': junctions are made
         // only with roads whose kind is known)
         let t0 = Instant::now();
-        let mut files: Vec<String> = types.iter().map(|t| t.1.clone()).chain(oneway.map(str::to_string)).collect();
+        let mut files: Vec<String> = types.iter().map(|t| t.1.clone()).chain(oneway.map(str::to_string)).chain(list.iter().filter_map(|r| r.asset.clone())).collect();
         if let Some(doc) = self.doc.as_ref() {
             let mut seen = std::collections::HashSet::new();
             files.extend(doc.tiles.values().flat_map(|t| t.tile.splines.iter().filter(|s| !s.deleted).map(|s| s.file.clone())).filter(|f| seen.insert(f.to_lowercase())));
@@ -4377,10 +4377,10 @@ impl Editor {
         let (mut built, mut junctions, mut switches, mut joined_plates) = (0, 0, 0, 0);
         let mut ends_made: Vec<Option<(TileKey, i64, bool)>> = Vec::new();
         for r in list {
-            let Some(rel) = types.iter().find(|t| t.0 == r.class).map(|t| t.1.clone()) else { continue };
+            let Some(rel) = r.asset.clone().or_else(|| types.iter().find(|t| t.0 == r.class).map(|t| t.1.clone())) else { continue };
             let track = r.class.is_track();
             let rel = match oneway {
-                Some(o) if r.oneway && !track => o.to_string(),
+                Some(o) if r.asset.is_none() && r.oneway && !track => o.to_string(),
                 _ => rel,
             };
             let Some(model) = assets.spline(&rel) else { continue };

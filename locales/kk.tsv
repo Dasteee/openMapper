@@ -2785,3 +2785,12 @@ no track within 15 m	15 м ішінде рельс жоқ
 the tracks are not joined, or run the other way (see View > AI lanes)	рельстер жалғанбаған немесе кері жаққа кетеді (Көрініс > ЖИ жолақтары қараңыз)
 no track beside	жанында рельс жоқ:
 Drives on	Жүретін жолы
+Import diagnostics	Импорт диагностикасы
+Retry missing layers	Жетіспейтін қабаттарды қайта жүктеу
+Automatic roads and buildings	Автоматты жолдар мен ғимараттар
+Procedural fallback	Процедуралық балама
+Preview automatic import	Автоматты импортты алдын ала қарау
+Unresolved	Шешілмеген
+Load OSM JSON	OSM JSON жүктеу
+Asset catalogue	Ресурстар каталогы
+Estimated remaining time	Болжалды қалған уақыт

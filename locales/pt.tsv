@@ -2785,3 +2785,12 @@ no track within 15 m	nenhum trilho a 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	os trilhos não estão unidos ou seguem no outro sentido (veja Exibir > Faixas de IA)
 no track beside	sem trilho junto a
 Drives on	Circula por
+Import diagnostics	Diagnóstico da importação
+Retry missing layers	Tentar novamente as camadas ausentes
+Automatic roads and buildings	Estradas e edifícios automáticos
+Procedural fallback	Alternativa procedural
+Preview automatic import	Pré-visualizar importação automática
+Unresolved	Não resolvido
+Load OSM JSON	Carregar OSM JSON
+Asset catalogue	Catálogo de recursos
+Estimated remaining time	Tempo restante estimado

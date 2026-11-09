@@ -2783,3 +2783,12 @@ no track within 15 m	kein Gleis im Umkreis von 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	die Gleise sind nicht verbunden oder verlaufen in die andere Richtung (siehe Ansicht > KI-Spuren)
 no track beside	kein Gleis neben
 Drives on	Fährt auf
+Import diagnostics	Importdiagnose
+Retry missing layers	Fehlende Ebenen erneut laden
+Automatic roads and buildings	Automatische Straßen und Gebäude
+Procedural fallback	Prozeduraler Ersatz
+Preview automatic import	Automatischen Import vorschauen
+Unresolved	Ungeklärt
+Load OSM JSON	OSM JSON laden
+Asset catalogue	Ressourcenkatalog
+Estimated remaining time	Geschätzte verbleibende Zeit

@@ -2785,3 +2785,12 @@ no track within 15 m	inget spår inom 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	spåren är inte sammanfogade, eller går åt andra hållet (se Visa > AI-körfält)
 no track beside	inget spår vid
 Drives on	Kör på
+Import diagnostics	Importdiagnostik
+Retry missing layers	Försök hämta saknade lager igen
+Automatic roads and buildings	Automatiska vägar och byggnader
+Procedural fallback	Procedurgenererat alternativ
+Preview automatic import	Förhandsvisa automatisk import
+Unresolved	Olöst
+Load OSM JSON	Läs in OSM JSON
+Asset catalogue	Resurskatalog
+Estimated remaining time	Beräknad återstående tid

@@ -2785,3 +2785,12 @@ no track within 15 m	walang riles sa loob ng 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	hindi nakakabit ang mga riles, o kabilang direksyon ang takbo (tingnan ang View > Mga AI lane)
 no track beside	walang riles sa tabi ng
 Drives on	Tumatakbo sa
+Import diagnostics	Mga diagnostic ng pag-import
+Retry missing layers	Subukang muli ang mga nawawalang layer
+Automatic roads and buildings	Mga awtomatikong kalsada at gusali
+Procedural fallback	Prosidyural na pamalit
+Preview automatic import	Silipin ang awtomatikong pag-import
+Unresolved	Hindi pa nalulutas
+Load OSM JSON	I-load ang OSM JSON
+Asset catalogue	Katalogo ng mga asset
+Estimated remaining time	Tinatayang natitirang oras

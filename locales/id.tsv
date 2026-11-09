@@ -2785,3 +2785,12 @@ no track within 15 m	tidak ada rel dalam 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	rel tidak tersambung, atau berlawanan arah (lihat Tampilan > Lajur AI)
 no track beside	tidak ada rel di samping
 Drives on	Berjalan di
+Import diagnostics	Diagnostik impor
+Retry missing layers	Coba lagi lapisan yang belum dimuat
+Automatic roads and buildings	Jalan dan bangunan otomatis
+Procedural fallback	Pengganti prosedural
+Preview automatic import	Pratinjau impor otomatis
+Unresolved	Belum terselesaikan
+Load OSM JSON	Muat OSM JSON
+Asset catalogue	Katalog aset
+Estimated remaining time	Perkiraan waktu tersisa

@@ -23,9 +23,16 @@ pub fn query(bbox: [f64; 4]) -> String {
 
 pub fn parse(body: &str) -> Result<Water, String> {
     let v: serde_json::Value = serde_json::from_str(body).map_err(|e| e.to_string())?;
+    parse_value(&v, &|| Ok(()))
+}
+
+pub(crate) fn parse_value(v: &serde_json::Value, check: &impl Fn() -> Result<(), String>) -> Result<Water, String> {
+    check()?;
     let mut w = Water::default();
     let pts = |g: Option<&serde_json::Value>| -> Vec<(f64, f64)> { g.and_then(|g| g.as_array()).into_iter().flatten().filter_map(|p| Some((p.get("lat")?.as_f64()?, p.get("lon")?.as_f64()?))).collect() };
     for e in v.get("elements").and_then(|e| e.as_array()).into_iter().flatten() {
+        check()?;
+        if e["tags"]["natural"] != "water" && e["tags"]["waterway"] != "riverbank" { continue; }
         match e.get("type").and_then(|t| t.as_str()) {
             Some("way") => {
                 let p = pts(e.get("geometry"));
@@ -36,6 +43,7 @@ pub fn parse(body: &str) -> Result<Water, String> {
             Some("relation") => {
                 let (mut outer, mut inner) = (Vec::new(), Vec::new());
                 for m in e.get("members").and_then(|m| m.as_array()).into_iter().flatten() {
+                    check()?;
                     let p = pts(m.get("geometry"));
                     if p.len() < 2 {
                         continue;

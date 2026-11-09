@@ -2785,3 +2785,12 @@ no track within 15 m	15 m içinde ray yok
 the tracks are not joined, or run the other way (see View > AI lanes)	raylar bağlı değil ya da ters yöne gidiyor (Görünüm > YZ şeritleri)
 no track beside	yanında ray yok:
 Drives on	Gittiği yol
+Import diagnostics	İçe aktarma tanılaması
+Retry missing layers	Eksik katmanları yeniden dene
+Automatic roads and buildings	Otomatik yollar ve binalar
+Procedural fallback	Prosedürel alternatif
+Preview automatic import	Otomatik içe aktarmayı önizle
+Unresolved	Çözümlenmemiş
+Load OSM JSON	OSM JSON yükle
+Asset catalogue	Varlık kataloğu
+Estimated remaining time	Tahmini kalan süre

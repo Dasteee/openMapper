@@ -29,14 +29,20 @@ pub fn query(bbox: [f64; 4]) -> String {
 /// that names no platforms).
 pub fn parse(body: &str) -> Result<Vec<Route>, String> {
     let v: serde_json::Value = serde_json::from_str(body).map_err(|e| e.to_string())?;
-    let els = v.get("elements").and_then(|e| e.as_array()).cloned().unwrap_or_default();
+    parse_value(&v, &|| Ok(()))
+}
+
+pub(crate) fn parse_value(v: &serde_json::Value, check: &impl Fn() -> Result<(), String>) -> Result<Vec<Route>, String> {
+    check()?;
+    let els = v.get("elements").and_then(|e| e.as_array()).map(Vec::as_slice).unwrap_or_default();
     let nodes: HashMap<i64, (f64, f64)> = els
         .iter()
         .filter(|e| e.get("type").and_then(|t| t.as_str()) == Some("node"))
         .filter_map(|e| Some((e.get("id")?.as_i64()?, (e.get("lat")?.as_f64()?, e.get("lon")?.as_f64()?))))
         .collect();
     let mut out = Vec::new();
-    for r in els.iter().filter(|e| e.get("type").and_then(|t| t.as_str()) == Some("relation")) {
+    for r in els.iter().filter(|e| e.get("type").and_then(|t| t.as_str()) == Some("relation") && e["tags"]["route"] == "bus") {
+        check()?;
         let tag = |k: &str| r.get("tags").and_then(|t| t.get(k)).and_then(|v| v.as_str()).unwrap_or("").trim().to_string();
         let members: Vec<(i64, String)> = r
             .get("members")

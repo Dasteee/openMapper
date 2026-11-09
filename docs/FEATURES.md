@@ -332,7 +332,7 @@ The complete list. A short overview is in the [README](../README.md).
   * Imported models come in as these objects, a part for each node.
 * **PBR** in the viewport: normal, roughness, metalness and AO maps are found by
   openOMSI's rules (`omsi-texture`) and drawn with the same derivative-based tangent frame.
-* Undo / redo for every action (Edit > Edit history… lists the steps: a click goes back or forward to one), twenty-eight languages, those of openOMSI (View > Language), interface size 80–150 % (View menu).
+* Undo / redo for every action (Edit > Edit history… lists the steps: a click goes back or forward to one), twenty-nine languages, including Serbian Latin and those of openOMSI (View > Language), interface size 80–150 % (View menu).
 * **Multiplayer** (File > Multiplayer…): one map edited by several people at once. One of them
   hosts the map open in their openMapper, the others join with an address: on the same network
   (`192.168.0.10:27560`, port 27560 by default) or from anywhere through a free Cloudflare quick

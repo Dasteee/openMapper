@@ -3,7 +3,10 @@
 //! bus stops, its bus lines and its trees and woods.
 
 use std::collections::HashMap;
-use std::sync::mpsc::{channel, Receiver};
+use std::sync::mpsc::TryRecvError;
+use std::sync::atomic::Ordering;
+
+use crate::geo::osm_job::{self, Data, Layer, Msg};
 
 use egui::{Color32, RichText};
 use glam::DVec2;
@@ -19,7 +22,18 @@ use crate::ui::TEXT_DIM;
 
 pub struct OsmUi {
     pub open: bool,
-    rx: Option<Receiver<Result<Downloaded, String>>>,
+    automatic: bool,
+    procedural: bool,
+    plan_job: Option<crate::osm_auto::Job>,
+    plan: Option<crate::osm_auto::Plan>,
+    plan_key: String,
+    plan_progress: Option<(crate::osm_auto::Progress,std::time::Instant)>,
+    plan_overrides: HashMap<String, String>,
+    job: Option<osm_job::Job>,
+    selection: Option<String>,
+    loaded: [bool; 5],
+    failures: Vec<(Layer, String)>,
+    diagnostics: Vec<crate::geo::osm_source::Progress>,
     ways: Option<Vec<osm::Way>>,
     stops: Vec<osm::Stop>,
     lines: Vec<crate::osm_lines::Route>,
@@ -40,18 +54,18 @@ pub struct OsmUi {
     /// Stops put down too, with this stop object.
     with_stops: bool,
     stop_type: Option<String>,
-    /// The roads made of them for the map as it is (its tiles' count when made).
-    roads: Option<(usize, Vec<osm::Road>)>,
+    /// Roads for the current selection and georeference stamp.
+    roads: Option<(u64, Vec<osm::Road>)>,
     status: Option<(String, bool)>,
+    build_warnings: Vec<String>,
     types: HashMap<Class, String>,
     /// The type one-way roads are built with (none: their class's).
     oneway_type: Option<String>,
     include: HashMap<Class, bool>,
     /// Asked for: build these (the app has the assets).
     pub build: Option<Build>,
-    /// What the download makes for the map as it is (the tiles' count and the download's
-    /// number when made): worked out once, not each frame.
-    derived: Option<((usize, u64), std::rc::Rc<Derived>)>,
+    /// Derived data keyed by selection and completed-layer revision.
+    derived: Option<((u64, u64), std::rc::Rc<Derived>)>,
     downloads: u64,
 }
 
@@ -75,6 +89,8 @@ struct Derived {
 
 /// Roads with their types, then stops (where, name) with their object.
 pub struct Build {
+    pub automatic: Option<crate::osm_auto::Plan>,
+    pub planned_buildings: Vec<crate::osm_auto::buildings::Placement>,
     pub roads: Vec<osm::Road>,
     pub types: Vec<(Class, String)>,
     pub oneway_type: Option<String>,
@@ -97,7 +113,18 @@ impl Default for OsmUi {
     fn default() -> Self {
         OsmUi {
             open: false,
-            rx: None,
+            automatic: true,
+            procedural: true,
+            plan_job: None,
+            plan: None,
+            plan_key: String::new(),
+            plan_progress: None,
+            plan_overrides: HashMap::new(),
+            job: None,
+            selection: None,
+            loaded: [false; 5],
+            failures: Vec::new(),
+            diagnostics: Vec::new(),
             ways: None,
             stops: Vec::new(),
             lines: Vec::new(),
@@ -115,6 +142,7 @@ impl Default for OsmUi {
             stop_type: None,
             roads: None,
             status: None,
+            build_warnings: Vec::new(),
             types: HashMap::new(),
             oneway_type: None,
             include: [(Class::Main, true), (Class::Street, true), (Class::Service, false), (Class::Tram, false), (Class::Rail, false)].into_iter().collect(),
@@ -124,10 +152,6 @@ impl Default for OsmUi {
         }
     }
 }
-
-/// What a download brought: the roads and stops, the bus routes, the trees, and what of
-/// it could not be had (the servers busy).
-type Downloaded = (Vec<osm::Way>, Vec<osm::Stop>, Vec<crate::osm_lines::Route>, crate::osm_green::Green, Vec<crate::osm_buildings::Building>, crate::osm_water::Water, Vec<String>);
 
 /// The models of these catalogue folders that may be buildings.
 fn pool_of(lib: &Library, dirs: &[String]) -> Vec<String> {
@@ -155,44 +179,170 @@ fn bbox(ed: &Editor, g: &Georef) -> Option<[f64; 4]> {
 }
 
 impl OsmUi {
-    pub fn window(&mut self, ctx: &egui::Context, ed: &mut Editor, lib: &Library, georef: Option<Georef>) {
-        if let Some(rx) = &self.rx {
-            match rx.try_recv() {
-                Ok(Ok((w, st, li, gr, bu, wa, missed))) => {
-                    self.green = gr;
-                    self.water = wa;
-                    self.buildings = bu;
-                    let mut text = format!("{} {} · {} {} · {} {}", w.len(), tr("ways", "путей"), st.len(), tr("stops", "остановок"), li.len(), tr("bus routes downloaded", "маршрутов загружено"));
-                    if !missed.is_empty() {
-                        text += &format!(" ({} {})", tr("not had:", "не загружено:"), missed.join(", "));
+    pub fn build_finished(&mut self, text: String, warnings: Vec<String>) {
+        self.status = Some((text, !warnings.is_empty()));
+        self.build_warnings = warnings;
+    }
+
+    pub fn build_failed(&mut self, plan: Option<crate::osm_auto::Plan>, error: &str) {
+        self.plan = plan;
+        self.status = Some((error.into(), true));
+    }
+
+    fn automatic_key(&self, doc:&crate::doc::Document, lib:&Library)->String{
+        let settings=format!("{:?}/{:?}/{:?}/{:?}/{}/{}/{}/{}/{}",self.selection,Class::ALL.map(|c|(c,self.include.get(&c).copied().unwrap_or(false),self.types.get(&c))),self.oneway_type,self.building_dirs,self.with_buildings,self.procedural,self.downloads,lib.assets.len(),crate::osm_auto::revision(doc));
+        format!("{:016x}",crate::geo::fetch::fnv(settings.as_bytes()))
+    }
+
+    fn automatic_panel(&mut self, ui:&mut egui::Ui, ed:&Editor, lib:&Library, geo:&Georef, roots:Option<&crate::install::Roots>) {
+        let Some(doc)=ed.doc.as_ref() else{return;};
+        let key=self.automatic_key(doc,lib);
+        if self.plan_key!=key {self.plan_job=None;self.plan=None;self.plan_key=key.clone();self.plan_progress=None;}
+        loop {
+            let Some(job)=&self.plan_job else{break;};
+            match job.rx.try_recv(){
+                Ok(crate::osm_auto::Msg::Progress(progress))=>self.plan_progress=Some((progress,std::time::Instant::now())),
+                Ok(crate::osm_auto::Msg::Done(result))=>{
+                    match result {
+                        Ok(mut plan)=>{
+                            self.status=None;
+                            self.build_warnings.clear();
+                            for road in &mut plan.roads {if let Some(label)=self.plan_overrides.get(&road.key()){if let Some(i)=road.candidates.iter().position(|a|a.key()==*label){road.selected=i;}}}
+                            self.plan=Some(plan);
+                        }
+                        Err(e)=>self.status=Some((e,true)),
                     }
-                    self.status = Some((text, !missed.is_empty()));
-                    self.ways = Some(w);
-                    self.stops = st;
-                    self.lines = li;
-                    self.downloads += 1;
-                    self.roads = None;
-                    self.rx = None;
+                    self.plan_job=None;
                 }
-                Ok(Err(e)) => {
-                    self.status = Some((e, true));
-                    self.rx = None;
-                }
-                Err(_) => ctx.request_repaint_after(std::time::Duration::from_millis(200)),
+                Err(TryRecvError::Empty)=>{ui.ctx().request_repaint_after(std::time::Duration::from_millis(100));break;}
+                Err(TryRecvError::Disconnected)=>{self.plan_job=None;self.status=Some((tr("Stopped by an internal error (see the log)","Остановлено внутренней ошибкой (см. журнал)").into(),true));}
             }
         }
+        let enabled=[true,self.with_lines,self.with_trees,self.with_buildings,self.with_water];
+        let ready=self.job.is_none()&&enabled.iter().enumerate().all(|(i,on)|!on||self.loaded[i]);
+        ui.horizontal(|ui|{
+            if ui.add_enabled(ready&&!lib.scanning&&self.plan_job.is_none()&&roots.is_some(),egui::Button::new(tr("Preview automatic import","Просмотреть автоматический импорт"))).clicked(){
+                let roots=roots.unwrap().clone();
+                let (existing_roads,existing_objects)=if self.with_buildings&&!self.buildings.is_empty(){crate::osm_auto::existing(doc,lib)}else{(Vec::new(),Vec::new())};
+                let roads=self.roads.as_ref().map(|(_,roads)|roads.iter().filter(|r|self.include.get(&r.class).copied().unwrap_or(false)).cloned().map(|mut r|{if r.oneway&&!r.class.is_track(){r.asset=self.oneway_type.clone();}r}).collect()).unwrap_or_default();
+                let buildings=if self.with_buildings{self.buildings.iter().map(|b|crate::osm_auto::buildings::Footprint{
+                    id:b.id.clone(),tags:b.tags.clone(),outer:b.outline.iter().map(|p|geo.world(p.0,p.1)).collect(),holes:b.holes.iter().map(|h|h.iter().map(|p|geo.world(p.0,p.1)).collect()).collect(),height:b.height,min_height:b.min_height,known:b.known,usage:crate::osm_auto::index::usage(b.tags.get("building").or_else(||b.tags.get("building:part")).map(String::as_str).unwrap_or("")),issue:b.issue.clone(),
+                }).collect()}else{Vec::new()};
+                let spec=crate::osm_auto::Spec{key:key.clone(),revision:crate::osm_auto::revision(doc),roots,assets:lib.assets.clone(),roads,buildings,overrides:self.types.clone(),segment_overrides:self.plan_overrides.clone(),building_dirs:self.building_dirs.clone(),procedural:self.procedural,existing_roads,existing_objects,tiles:doc.tiles.keys().copied().collect()};
+                match crate::osm_auto::start(spec){Ok(job)=>{self.plan=None;self.plan_job=Some(job);},Err(e)=>self.status=Some((e,true))}
+            }
+            if !self.plan_overrides.is_empty() && ui.button(tr("Reset", "Сбросить")).clicked(){self.plan_overrides.clear();self.plan=None;self.plan_job=None;}
+            if self.plan_job.is_some(){ui.spinner();if ui.button(tr("Cancel","Отмена")).clicked(){self.plan_job=None;self.plan_progress=None;}}
+        });
+        if let Some((progress,received))=&self.plan_progress {if self.plan_job.is_some(){
+            let mut progress=progress.clone();progress.elapsed+=received.elapsed();
+            let percentage=if progress.total==0{0.0}else{100.0*progress.processed as f64/progress.total as f64};
+            ui.label(RichText::new(format!("{} {}/{} ({percentage:.0}%) · {}",progress.phase.label(),progress.processed,progress.total,progress.detail)).small());
+            if let Some(seconds)=progress.remaining_seconds(){ui.label(RichText::new(format!("{} ≈ {}:{:02}",tr("Estimated remaining time","Примерное оставшееся время"),seconds/60,seconds%60)).small());}
+        }}
+        if let Some(plan)=&mut self.plan {
+            ui.label(RichText::new(format!("{} {} · {} {} · {} {}",tr("Roads","Дороги"),plan.roads.len(),tr("Buildings","Здания"),plan.buildings.len(),tr("Unresolved","Не решено"),plan.skipped_roads+plan.skipped_buildings)).small());
+            ui.collapsing(tr("Preview","Просмотр"),|ui|{
+                ui.label(RichText::new(format!("{} · {} / {} · cache {} · rejected {}",tr("Import diagnostics","Диагностика импорта"),plan.catalogue.0,plan.catalogue.1,plan.catalogue.2,plan.catalogue.3)).small());
+                egui::ScrollArea::vertical().id_salt("osm asset choices").max_height(300.0).show(ui,|ui|{
+                    for (i,road) in plan.roads.iter_mut().enumerate(){
+                        let before=road.selected;
+                        ui.label(format!("OSM {:?}: {}",road.road.source.ids,road.reason));
+                        egui::ComboBox::from_id_salt(("osm match",i)).selected_text(road.candidates[road.selected].label()).show_ui(ui,|ui|{
+                            for (j,option) in road.candidates.iter().enumerate(){ui.selectable_value(&mut road.selected,j,option.label());}
+                        });
+                        if road.selected!=before {self.plan_overrides.insert(road.key(),road.candidates[road.selected].key());}
+                    }
+                    for building in &plan.buildings {ui.label(format!("{} · {} · {}",building.source.id,building.asset.clone().unwrap_or_else(||tr("Procedural fallback","Процедурное дополнение").into()),building.reason));}
+                    for warning in &plan.warnings {ui.label(RichText::new(warning).color(Color32::from_rgb(230,170,100)));}
+                });
+            });
+        }
+    }
+
+    fn poll(&mut self, ctx: &egui::Context) {
+        loop {
+            let Some(job) = &self.job else { break };
+            match job.rx.try_recv() {
+                Ok(Msg::Progress(p)) => {
+                    self.status = Some((format!("{} {}", tr("Downloading…", "Загрузка…"), p.dataset), false));
+                    self.diagnostics.push(p);
+                    if self.diagnostics.len() > 150 { self.diagnostics.remove(0); }
+                }
+                Ok(Msg::Layer(layer, Ok(data))) => {
+                    match data {
+                        Data::Roads(ways, stops) => { self.ways = Some(ways); self.stops = stops; self.roads = None; }
+                        Data::Lines(lines) => self.lines = lines,
+                        Data::Trees(green) => self.green = green,
+                        Data::Buildings(buildings) => self.buildings = buildings,
+                        Data::Water(water) => self.water = water,
+                    }
+                    self.loaded[layer.index()] = true;
+                    self.downloads += 1;
+                }
+                Ok(Msg::Layer(layer, Err(error))) => self.failures.push((layer, error)),
+                Ok(Msg::Done(result)) => {
+                    if let Err(error) = result {
+                        self.status = Some((error, true));
+                    } else {
+                        let mut text = format!("{} {} · {} {} · {} {}", self.ways.as_ref().map_or(0, Vec::len), tr("ways", "путей"), self.stops.len(), tr("stops", "остановок"), self.lines.len(), tr("bus routes downloaded", "маршрутов загружено"));
+                        if !self.failures.is_empty() {
+                            text += &format!(" ({} {})", tr("not had:", "не загружено:"), self.failures.iter().map(|(l, _)| l.name()).collect::<Vec<_>>().join(", "));
+                        }
+                        self.status = Some((text, !self.failures.is_empty()));
+                    }
+                    self.job = None;
+                }
+                Err(TryRecvError::Empty) => { ctx.request_repaint_after(std::time::Duration::from_millis(100)); break; }
+                Err(TryRecvError::Disconnected) => {
+                    log::warn!("OSM import worker disconnected");
+                    self.status = Some((tr("Stopped by an internal error (see the log)", "Остановлено внутренней ошибкой (см. журнал)").into(), true));
+                    self.job = None;
+                }
+            }
+        }
+    }
+
+    pub fn window(&mut self, ctx: &egui::Context, ed: &mut Editor, lib: &Library, georef: Option<Georef>, roots: Option<&crate::install::Roots>) {
+        // Tile identity and georeference, rather than tile count, invalidate results.
+        let selection = ed.doc.as_ref().zip(georef.as_ref()).map(|(doc, g)| format!("{:?}/{:?}/{}/{:?}", doc.dir, doc.tiles.keys().collect::<Vec<_>>(), g.stamp(), tile_size()));
+        if self.selection != selection {
+            if self.selection.is_some() {
+                self.plan_job = None;
+                self.plan = None;
+                self.plan_key.clear();
+                self.job = None; // Drop signals cancellation; its receiver discards late data.
+                self.ways = None;
+                self.stops.clear();
+                self.lines.clear();
+                self.green = Default::default();
+                self.buildings.clear();
+                self.water = Default::default();
+                self.loaded = [false; 5];
+                self.failures.clear();
+                self.diagnostics.clear();
+                self.roads = None;
+                self.derived = None;
+                self.status = None;
+                self.build_warnings.clear();
+                self.build = None;
+            }
+            self.selection = selection;
+        }
+        self.poll(ctx);
         if !self.open {
             return;
         }
         let tiles = ed.doc.as_ref().map(|d| d.tiles.len()).unwrap_or(0);
+        let stamp = crate::geo::fetch::fnv(self.selection.as_deref().unwrap_or("").as_bytes());
         if let (Some(w), Some(g), Some(doc)) = (&self.ways, &georef, &ed.doc) {
-            if self.roads.as_ref().map(|r| r.0 != tiles).unwrap_or(true) {
-                let made = osm::roads(w, |la, lo| g.world(la, lo), |p| doc.tiles.contains_key(&tile_of(p)));
-                self.roads = Some((tiles, made));
+            if self.roads.as_ref().map(|r| r.0 != stamp).unwrap_or(true) {
+                let made = osm::roads_on_tiles(w, |la, lo| g.world(la, lo), &doc.tiles.keys().copied().collect::<Vec<_>>());
+                self.roads = Some((stamp, made));
             }
         }
         if let (Some(g), Some(doc)) = (&georef, &ed.doc) {
-            let key = (tiles, self.downloads);
+            let key = (stamp, self.downloads);
             if self.derived.as_ref().map(|d| d.0 != key).unwrap_or(true) {
                 self.derived = Some((key, std::rc::Rc::new(self.derive(g, doc, ed))));
             }
@@ -207,46 +357,72 @@ impl OsmUi {
                 return;
             };
             ui.label(RichText::new(tr("Load the terrain heights first (Satellite and terrain): the roads follow the ground as it is when they are built.", "Сначала загрузите высоты рельефа («Спутник и рельеф»): дороги ложатся на землю такой, какая она при постройке.")).small().color(TEXT_DIM));
-            let busy = self.rx.is_some();
+            let busy = self.job.is_some();
+            // These choices must be available before the first download.
+            ui.add_enabled_ui(!busy, |ui| {
+                ui.horizontal_wrapped(|ui| {
+                    crate::ui::check(ui, &mut self.with_lines, tr("Bus lines", "Автобусные линии"));
+                    crate::ui::check(ui, &mut self.with_trees, tr("Trees and woods", "Деревья и леса"));
+                    crate::ui::check(ui, &mut self.with_buildings, tr("Buildings", "Здания"));
+                    crate::ui::check(ui, &mut self.with_water, tr("Water", "Вода"));
+                });
+            });
             ui.horizontal(|ui| {
-                let r = ui.add_enabled(!busy && tiles > 0, egui::Button::new(icons::labelled(Icon::Import, tr("Download for the map's tiles", "Загрузить для тайлов карты"))));
+                let r = ui.add_enabled(!busy && tiles > 0, egui::Button::new(icons::labelled(Icon::Import, if self.failures.is_empty() { tr("Download for the map's tiles", "Загрузить для тайлов карты") } else { tr("Retry missing layers", "Повторить загрузку недостающих слоёв") })));
                 if r.clicked() {
                     if let Some(b) = bbox(ed, &g) {
-                        let (tx, rx) = channel();
-                        let (q, ql, qg, qb, qw) = (osm::query(b), crate::osm_lines::query(b), crate::osm_green::query(b), crate::osm_buildings::query(b), crate::osm_water::query(b));
-                        std::thread::spawn(move || {
-                            // (the routes and the trees are questions of their own: without them
-                            // the roads still come)
-                            let mut missed = Vec::new();
-                            let lines = crate::geo::fetch::overpass(&ql).and_then(|body| crate::osm_lines::parse(&body)).unwrap_or_else(|_| {
-                                missed.push(tr("bus routes", "маршруты").to_string());
-                                Vec::new()
-                            });
-                            let green = crate::geo::fetch::overpass(&qg).and_then(|body| crate::osm_green::parse(&body)).unwrap_or_else(|_| {
-                                missed.push(tr("trees", "деревья").to_string());
-                                Default::default()
-                            });
-                            let buildings = crate::geo::fetch::overpass(&qb).and_then(|body| crate::osm_buildings::parse(&body)).unwrap_or_else(|_| {
-                                missed.push(tr("buildings", "здания").to_string());
-                                Vec::new()
-                            });
-                            let water = crate::geo::fetch::overpass(&qw).and_then(|body| crate::osm_water::parse(&body)).unwrap_or_else(|_| {
-                                missed.push(tr("water", "вода").to_string());
-                                Default::default()
-                            });
-                            let _ = tx.send(crate::geo::fetch::overpass(&q).and_then(|body| Ok((osm::parse(&body)?, osm::parse_stops(&body)?, lines, green, buildings, water, missed))));
-                        });
-                        self.rx = Some(rx);
+                        let enabled = [true, self.with_lines, self.with_trees, self.with_buildings, self.with_water];
+                        let selected = std::array::from_fn(|i| enabled[i] && !self.loaded[i]);
+                        self.failures.retain(|(layer, _)| !selected[layer.index()]);
+                        self.diagnostics.clear();
+                        log::info!("OSM import selection={} bbox={b:?} enabled={enabled:?} requested={selected:?}", self.selection.as_deref().unwrap_or(""));
+                        match osm_job::start(b, selected) {
+                            Ok(job) => self.job = Some(job),
+                            Err(e) => { self.status = Some((e, true)); return; }
+                        }
                         self.status = Some((tr("Downloading…", "Загрузка…").into(), false));
+                    }
+                }
+                if ui.add_enabled(!busy,egui::Button::new(tr("Load OSM JSON","Загрузить OSM JSON"))).clicked(){
+                    if let Some(path)=rfd::FileDialog::new().add_filter("OSM JSON",&["json"]).pick_file(){
+                        match osm_job::local(path){
+                            Ok(job)=>{self.job=Some(job);self.loaded=[false;5];self.roads=None;self.derived=None;self.ways=None;self.failures.clear();self.downloads+=1;},
+                            Err(e)=>self.status=Some((e,true)),
+                        }
                     }
                 }
                 if busy {
                     ui.spinner();
+                    if let Some(job) = &self.job { ui.label(format!("{:.1} s", job.started.elapsed().as_secs_f64())); }
+                    if ui.button(tr("Cancel", "Отмена")).clicked() {
+                        if let Some(job) = &self.job { job.cancel.store(true, Ordering::Relaxed); }
+                        // Keep completed layers; no late layer can reach the UI.
+                        self.job = None;
+                        self.status = Some((tr("Cancelled", "Отменено").into(), false));
+                    }
                 }
             });
             if let Some((t, err)) = &self.status {
                 ui.label(RichText::new(t).small().color(if *err { Color32::from_rgb(230, 120, 100) } else { TEXT_DIM }));
             }
+            if !self.diagnostics.is_empty() || !self.failures.is_empty() || !self.build_warnings.is_empty() {
+                ui.collapsing(tr("Import diagnostics", "Диагностика импорта"), |ui| {
+                    for p in &self.diagnostics {
+                        ui.label(RichText::new(format!("{} · {} · {} · #{} · {:?} · queue {} ms · {} ms · {} B · {}", p.dataset, p.phase, p.endpoint, p.attempt, p.status, p.queue_ms, p.elapsed_ms, p.bytes, p.detail)).small());
+                    }
+                    for (_, error) in &self.failures { ui.label(RichText::new(error).small().color(Color32::from_rgb(230, 120, 100))); }
+                    if !self.build_warnings.is_empty() {
+                        egui::ScrollArea::vertical().id_salt("osm build warnings").max_height(180.0).show(ui, |ui| {
+                            for warning in &self.build_warnings { ui.label(RichText::new(warning).small().color(Color32::from_rgb(230, 170, 100))); }
+                        });
+                    }
+                });
+            }
+            ui.horizontal_wrapped(|ui| {
+                crate::ui::check(ui, &mut self.automatic, tr("Automatic roads and buildings", "Автоматические дороги и здания"));
+                if self.automatic { crate::ui::check(ui, &mut self.procedural, tr("Procedural fallback", "Процедурное дополнение")); }
+            });
+            if self.automatic { self.automatic_panel(ui, ed, lib, &g, roots); }
             let Some((_, roads)) = &self.roads else { return };
             ui.add_space(6.0);
             egui::Grid::new("osm classes").num_columns(3).spacing([8.0, 6.0]).show(ui, |ui| {
@@ -259,8 +435,9 @@ impl OsmUi {
                         ui.label(RichText::new(format!("{} · {:.1} km", of.len(), km.max(0.0))).small().color(TEXT_DIM));
                     });
                     let now = self.types.get(&c).cloned();
-                    let name = now.as_ref().map(|t| lib.find(t).map(|a| a.name.clone()).unwrap_or_else(|| t.clone())).unwrap_or_else(|| tr("no type chosen", "тип не выбран").into());
+                    let name = now.as_ref().map(|t| lib.find(t).map(|a| a.name.clone()).unwrap_or_else(|| t.clone())).unwrap_or_else(|| if self.automatic { tr("Automatic", "Автоматически").into() } else { tr("no type chosen", "тип не выбран").into() });
                     ui.label(RichText::new(name).color(if now.is_some() { Color32::WHITE } else { TEXT_DIM }));
+                    ui.vertical(|ui| {
                     let pick = ed.road_type.clone();
                     let r = ui.add_enabled(pick.is_some(), egui::Button::new(tr("Use the chosen", "Взять выбранный")).small());
                     let r = r.on_hover_text(tr("The road type chosen in the Roads tool's catalogue", "Тип дороги, выбранный в каталоге инструмента «Дороги»"));
@@ -269,6 +446,8 @@ impl OsmUi {
                             self.types.insert(c, p);
                         }
                     }
+                    if self.automatic && now.is_some() && ui.small_button(tr("Automatic", "Автоматически")).clicked() { self.types.remove(&c); }
+                    });
                     ui.end_row();
                 }
                 // one-way roads: the carriageways of a dual road, one-way streets
@@ -306,7 +485,7 @@ impl OsmUi {
             // the bus routes through the map's stops: lines and trips
             let lines_in = &derived.lines;
             ui.horizontal(|ui| {
-                crate::ui::check(ui, &mut self.with_lines, tr("Bus lines", "Автобусные линии")).on_hover_text(tr("Each bus route through two or more of the map's stops a trip of its line, the way found along the roads; a tour from 06:00 to 22:00 for each new line", "Каждый маршрут через две или больше остановок карты: рейс своей линии, путь по дорогам находится сам; для каждой новой линии выход с 06:00 до 22:00"));
+                ui.label(tr("Bus lines", "Автобусные линии")).on_hover_text(tr("Each bus route through two or more of the map's stops a trip of its line, the way found along the roads; a tour from 06:00 to 22:00 for each new line", "Каждый маршрут через две или больше остановок карты: рейс своей линии, путь по дорогам находится сам; для каждой новой линии выход с 06:00 до 22:00"));
                 let mut numbers: Vec<&str> = lines_in.iter().map(|l| l.0.as_str()).collect();
                 numbers.sort();
                 numbers.dedup();
@@ -317,7 +496,7 @@ impl OsmUi {
             let (trees, rows, woods, ha) = (&derived.trees, &derived.rows, &derived.woods, derived.ha);
             let mix: Vec<String> = if !ed.plant_mix.is_empty() { ed.plant_mix.clone() } else { ed.object_type.iter().filter(|t| lib.find(t).map(|a| a.category == crate::library::Category::Trees).unwrap_or(false)).cloned().collect() };
             ui.horizontal(|ui| {
-                crate::ui::check(ui, &mut self.with_trees, tr("Trees and woods", "Деревья и леса")).on_hover_text(tr("Single trees, rows of them and woods, planted with the plant mix (Objects tool > Plant brush) or the tree chosen; none on a road", "Отдельные деревья, ряды и леса, засаженные смесью растений (инструмент «Объекты» > Кисть растений) или выбранным деревом; не на дорогах"));
+                ui.label(tr("Trees and woods", "Деревья и леса")).on_hover_text(tr("Single trees, rows of them and woods, planted with the plant mix (Objects tool > Plant brush) or the tree chosen; none on a road", "Отдельные деревья, ряды и леса, засаженные смесью растений (инструмент «Объекты» > Кисть растений) или выбранным деревом; не на дорогах"));
                 ui.label(RichText::new(format!("{} · {} · {:.1} ha", trees.len(), rows.len(), ha)).small().color(TEXT_DIM));
             });
             if self.with_trees {
@@ -333,7 +512,7 @@ impl OsmUi {
             let outlines = &derived.buildings;
             let pool = pool_of(lib, &self.building_dirs);
             ui.horizontal(|ui| {
-                crate::ui::check(ui, &mut self.with_buildings, tr("Buildings", "Здания")).on_hover_text(tr("Each outline filled with the model of the folder chosen whose ground plan comes nearest, its front to the nearest road; an outline no model fits is left out", "Каждый контур заполняется моделью выбранной папки с самым похожим планом, фасадом к ближайшей дороге; контуры, которым ничто не подходит, пропускаются"));
+                ui.label(tr("Buildings", "Здания")).on_hover_text(tr("Each outline filled with the model of the folder chosen whose ground plan comes nearest, its front to the nearest road; an outline no model fits is left out", "Каждый контур заполняется моделью выбранной папки с самым похожим планом, фасадом к ближайшей дороге; контуры, которым ничто не подходит, пропускаются"));
                 ui.label(RichText::new(format!("{}", outlines.len())).small().color(TEXT_DIM));
                 let name = if self.building_dirs.is_empty() { tr("no folder", "папка не выбрана").to_string() } else { format!("{} ({})", self.building_dirs.join(", "), pool.len()) };
                 ui.label(RichText::new(name).color(if self.building_dirs.is_empty() { TEXT_DIM } else { Color32::WHITE }));
@@ -350,7 +529,7 @@ impl OsmUi {
             // lakes and rivers
             let areas_in = derived.water_in;
             ui.horizontal(|ui| {
-                crate::ui::check(ui, &mut self.with_water, tr("Water", "Вода")).on_hover_text(tr("Lakes and rivers: the ground inside them lowered below the banks, and the tiles they lie on given water a little under the banks' height (OMSI's water is one level for a tile: low ground elsewhere on it is flooded too)", "Озёра и реки: земля внутри опускается ниже берегов, тайлам ставится вода чуть ниже берегов (вода OMSI одна на тайл: низкие места на нём тоже затопит)"));
+                ui.label(tr("Water", "Вода")).on_hover_text(tr("Lakes and rivers: the ground inside them lowered below the banks, and the tiles they lie on given water a little under the banks' height (OMSI's water is one level for a tile: low ground elsewhere on it is flooded too)", "Озёра и реки: земля внутри опускается ниже берегов, тайлам ставится вода чуть ниже берегов (вода OMSI одна на тайл: низкие места на нём тоже затопит)"));
                 ui.label(RichText::new(format!("{areas_in}")).small().color(TEXT_DIM));
                 if self.with_water {
                     ui.label(tr("deep", "глубина"));
@@ -360,32 +539,33 @@ impl OsmUi {
             ui.add_space(4.0);
             let wanted: Vec<(Class, String)> = Class::ALL.iter().filter(|c| self.include.get(c).copied().unwrap_or(false)).filter_map(|c| self.types.get(c).map(|t| (*c, t.clone()))).collect();
             // what is still to choose, each said by name
-            let mut wants: Vec<String> = Class::ALL.iter().filter(|c| self.include.get(c).copied().unwrap_or(false) && !self.types.contains_key(c)).map(|c| format!("{}: {}", c.label(), tr("a road type (Roads tool), then \"Use the chosen\"", "тип дороги (инструмент «Дороги»), затем «Взять выбранный»"))).collect();
+            let mut wants: Vec<String> = Class::ALL.iter().filter(|c| !self.automatic && self.include.get(c).copied().unwrap_or(false) && !self.types.contains_key(c)).map(|c| format!("{}: {}", c.label(), tr("a road type (Roads tool), then \"Use the chosen\"", "тип дороги (инструмент «Дороги»), затем «Взять выбранный»"))).collect();
             if self.with_stops && !stops_in.is_empty() && self.stop_type.is_none() {
                 wants.push(format!("{}: {}", tr("Bus stops", "Остановки"), tr("a stop (Game logic > Bus stops), then \"Use the chosen\"", "остановку («Игровая логика > Остановки»), затем «Взять выбранный»")));
             }
             if self.with_trees && mix.is_empty() {
                 wants.push(format!("{}: {}", tr("Trees and woods", "Деревья и леса"), tr("a tree in the Objects catalogue (or a plant mix)", "дерево в каталоге объектов (или смесь растений)")));
             }
-            if self.with_buildings && !outlines.is_empty() && pool.is_empty() {
+            if !self.automatic && self.with_buildings && !outlines.is_empty() && pool.is_empty() {
                 wants.push(format!("{}: {}", tr("Buildings", "Здания"), tr("a building in the catalogue, then \"+ its folder\"", "здание в каталоге, затем «+ его папка»")));
             }
             let missing = !wants.is_empty();
-            let count = roads.iter().filter(|r| wanted.iter().any(|w| w.0 == r.class)).count();
+            let count = if self.automatic {self.plan.as_ref().map_or(0,|p|p.roads.len())}else{roads.iter().filter(|r| wanted.iter().any(|w| w.0 == r.class)).count()};
             if missing {
                 ui.label(RichText::new(tr("To build, choose (or untick):", "Чтобы построить, выберите (или снимите галочку):")).small().color(Color32::from_rgb(230, 170, 100)));
                 for w in &wants {
                     ui.label(RichText::new(format!("• {w}")).small().color(Color32::from_rgb(230, 170, 100)));
                 }
             }
-            ui.label(RichText::new(tr("A one-way street is built the way it runs in OpenStreetMap: give it a one-way road type", "Улица с односторонним движением строится в направлении OpenStreetMap: дайте ей односторонний тип дороги")).small().color(TEXT_DIM));
+            if !self.automatic {ui.label(RichText::new(tr("A one-way street is built the way it runs in OpenStreetMap: give it a one-way road type", "Улица с односторонним движением строится в направлении OpenStreetMap: дайте ей односторонний тип дороги")).small().color(TEXT_DIM));}
             let stops_n = if self.with_stops { stops_in.len() } else { 0 };
-            let r = ui.add_enabled(!missing && (count + stops_n > 0 || self.with_trees || self.with_buildings || self.with_water), egui::Button::new(icons::labelled(Icon::Road, &format!("{} ({count} · {stops_n})", tr("Build", "Построить")))));
+            let layers_ready = [true, self.with_lines, self.with_trees, self.with_buildings, self.with_water].iter().enumerate().all(|(i, enabled)| !enabled || self.loaded[i]);
+            let r = ui.add_enabled(!busy && layers_ready && !missing && (!self.automatic || (self.plan.is_some() && ed.doc.as_ref().is_some_and(|doc| self.automatic_key(doc,lib)==self.plan_key))) && (self.automatic || count + stops_n > 0 || self.with_trees || self.with_buildings || self.with_water), egui::Button::new(icons::labelled(Icon::Road, &format!("{} ({count} · {stops_n})", tr("Build", "Построить")))));
             if r.clicked() {
                 let list: Vec<osm::Road> = roads.iter().filter(|r| wanted.iter().any(|w| w.0 == r.class)).cloned().collect();
                 let mut rng = crate::osm_green::shaker();
                 let spots = if self.with_trees { crate::osm_green::spots(trees, rows, woods, &derived.holes, map_box(ed), self.tree_spacing, &mut rng) } else { Vec::new() };
-                self.build = Some(Build { roads: list, types: wanted, stops: if self.with_stops { stops_in.clone() } else { Vec::new() }, stop_type: self.stop_type.clone(), oneway_type: self.oneway_type.clone(), lines: if self.with_lines { lines_in.clone() } else { Vec::new() }, trees: spots, mix, buildings: if self.with_buildings { outlines.clone() } else { Vec::new() }, pool, water: self.with_water.then(|| (derived.water.clone(), derived.islands.clone(), self.water_depth)) });
+                self.build = Some(Build { automatic: if self.automatic { self.plan.take() } else { None }, planned_buildings: Vec::new(), roads: list, types: wanted, stops: if self.with_stops { stops_in.clone() } else { Vec::new() }, stop_type: self.stop_type.clone(), oneway_type: self.oneway_type.clone(), lines: if self.with_lines && self.loaded[Layer::Lines.index()] { lines_in.clone() } else { Vec::new() }, trees: spots, mix, buildings: if self.with_buildings && !self.automatic { outlines.clone() } else { Vec::new() }, pool, water: self.with_water.then(|| (derived.water.clone(), derived.islands.clone(), self.water_depth)) });
             }
             ui.add_space(4.0);
             ui.hyperlink_to(RichText::new("© OpenStreetMap contributors (ODbL)").small(), "https://www.openstreetmap.org/copyright");
@@ -425,14 +605,13 @@ impl OsmUi {
         let Some(b) = bbox(ed, &g) else { return };
         // (`open`: the window with what was downloaded, nothing built)
         if arg == "open" {
-            let body = crate::geo::fetch::overpass(&osm::query(b));
-            self.ways = body.as_ref().ok().and_then(|b| osm::parse(b).ok());
-            self.stops = body.as_ref().ok().and_then(|b| osm::parse_stops(b).ok()).unwrap_or_default();
-            self.lines = crate::geo::fetch::overpass(&crate::osm_lines::query(b)).and_then(|b| crate::osm_lines::parse(&b)).unwrap_or_default();
-            self.green = crate::geo::fetch::overpass(&crate::osm_green::query(b)).and_then(|b| crate::osm_green::parse(&b)).unwrap_or_default();
-            self.water = crate::geo::fetch::overpass(&crate::osm_water::query(b)).and_then(|b| crate::osm_water::parse(&b)).unwrap_or_default();
-            self.buildings = crate::geo::fetch::overpass(&crate::osm_buildings::query(b)).and_then(|b| crate::osm_buildings::parse(&b)).unwrap_or_default();
-            self.downloads += 1;
+            self.selection = ed.doc.as_ref().map(|doc| format!("{:?}/{:?}/{}/{:?}", doc.dir, doc.tiles.keys().collect::<Vec<_>>(), g.stamp(), tile_size()));
+            self.loaded = [false; 5];
+            self.failures.clear();
+            match osm_job::start(b, [true; 5]) {
+                Ok(job) => self.job = Some(job),
+                Err(e) => self.status = Some((e, true)),
+            }
             self.open = true;
             return;
         }
@@ -490,10 +669,44 @@ impl OsmUi {
                 });
                 let lines = crate::geo::fetch::overpass(&crate::osm_lines::query(b)).and_then(|body| crate::osm_lines::parse(&body)).unwrap_or_default();
                 let lines = lines.into_iter().map(|r| (r.number, r.name, r.stops.iter().map(|p| g.world(p.0, p.1)).collect())).collect();
-                self.build = Some(Build { roads: roads.into_iter().filter(|r| wanted.iter().any(|w| w.0 == r.class)).collect(), types: wanted, stops, stop_type: stop.clone(), oneway_type: oneway.clone(), lines, trees, mix: tree.iter().cloned().collect(), buildings, pool, water });
+                self.build = Some(Build { automatic: None, planned_buildings: Vec::new(), roads: roads.into_iter().filter(|r| wanted.iter().any(|w| w.0 == r.class)).collect(), types: wanted, stops, stop_type: stop.clone(), oneway_type: oneway.clone(), lines, trees, mix: tree.iter().cloned().collect(), buildings, pool, water });
                 self.ways = Some(w);
             }
             Err(e) => log::warn!("osm: {e}"),
         }
+    }
+}
+
+#[cfg(test)]
+mod acquisition_tests {
+    use super::*;
+    use std::sync::{Arc, atomic::AtomicBool, mpsc::channel};
+    use std::time::Instant;
+
+    #[test]
+    fn disconnected_worker_leaves_busy_state() {
+        let (tx, rx) = channel();
+        drop(tx);
+        let mut ui = OsmUi::default();
+        ui.job = Some(osm_job::Job { rx, cancel: Arc::new(AtomicBool::new(false)), started: Instant::now() });
+        ui.poll(&egui::Context::default());
+        assert!(ui.job.is_none());
+        assert!(ui.status.unwrap().1);
+    }
+
+    #[test]
+    fn failed_layer_preserves_roads_and_retry_only_needs_missing_layers() {
+        let (tx, rx) = channel();
+        let mut ui = OsmUi::default();
+        ui.job = Some(osm_job::Job { rx, cancel: Arc::new(AtomicBool::new(false)), started: Instant::now() });
+        tx.send(Msg::Layer(Layer::Roads, Ok(Data::Roads(vec![], vec![])))).unwrap();
+        tx.send(Msg::Layer(Layer::Lines, Err("HTTP 503".into()))).unwrap();
+        tx.send(Msg::Done(Ok(()))).unwrap();
+        ui.poll(&egui::Context::default());
+        assert!(ui.ways.is_some());
+        assert!(ui.loaded[Layer::Roads.index()]);
+        assert!(!ui.loaded[Layer::Lines.index()]);
+        assert_eq!(ui.failures.len(), 1);
+        assert!(ui.job.is_none());
     }
 }

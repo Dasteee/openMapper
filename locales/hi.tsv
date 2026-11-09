@@ -2785,3 +2785,12 @@ no track within 15 m	15 m के भीतर ट्रैक नहीं
 the tracks are not joined, or run the other way (see View > AI lanes)	ट्रैक जुड़े नहीं हैं, या उल्टी दिशा में हैं (व्यू > AI लेन देखें)
 no track beside	पास में ट्रैक नहीं:
 Drives on	किस पर चलती है
+Import diagnostics	आयात निदान
+Retry missing layers	छूटी हुई परतें फिर डाउनलोड करें
+Automatic roads and buildings	स्वचालित सड़कें और इमारतें
+Procedural fallback	प्रक्रियात्मक विकल्प
+Preview automatic import	स्वचालित आयात का पूर्वावलोकन
+Unresolved	अनसुलझा
+Load OSM JSON	OSM JSON लोड करें
+Asset catalogue	संसाधन सूची
+Estimated remaining time	अनुमानित शेष समय

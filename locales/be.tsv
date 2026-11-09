@@ -2785,3 +2785,12 @@ no track within 15 m	у 15 м няма рэек
 the tracks are not joined, or run the other way (see View > AI lanes)	рэйкі не злучаны або ідуць у іншы бок (Выгляд > Паласы ШІ)
 no track beside	няма рэек ля
 Drives on	Ездзіць па
+Import diagnostics	Дыягностыка імпарту
+Retry missing layers	Паўтарыць загрузку адсутных слаёў
+Automatic roads and buildings	Аўтаматычныя дарогі і будынкі
+Procedural fallback	Працэдурнае дапаўненне
+Preview automatic import	Прагледзець аўтаматычны імпарт
+Unresolved	Не вырашана
+Load OSM JSON	Загрузіць OSM JSON
+Asset catalogue	Каталог рэсурсаў
+Estimated remaining time	Прыблізны час да завяршэння

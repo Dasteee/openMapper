@@ -2781,3 +2781,12 @@ no track within 15 m	15 m 内没有轨道
 the tracks are not joined, or run the other way (see View > AI lanes)	轨道未连接，或方向相反（见 视图 > AI 车道）
 no track beside	旁边没有轨道：
 Drives on	行驶于
+Import diagnostics	导入诊断
+Retry missing layers	重试缺失的图层
+Automatic roads and buildings	自动选择道路和建筑
+Procedural fallback	程序生成备选
+Preview automatic import	预览自动导入
+Unresolved	未解决
+Load OSM JSON	加载 OSM JSON
+Asset catalogue	资源目录
+Estimated remaining time	预计剩余时间

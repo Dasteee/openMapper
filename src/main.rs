@@ -54,6 +54,7 @@ mod models;
 mod pbr_maker;
 mod onground;
 mod osm;
+mod osm_auto;
 mod osm_map;
 mod osm_buildings;
 mod osm_green;

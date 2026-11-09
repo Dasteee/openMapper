@@ -190,6 +190,8 @@ pub struct RoadSpec {
     /// Lanes the way the road is drawn, and against it (0: one-way).
     pub lanes_fwd: u8,
     pub lanes_back: u8,
+    /// One physical lane used in both directions (narrow OSM shared roads).
+    pub shared_lane: bool,
     pub lane_width: f32,
     /// A strip between the two ways (m, 0: none).
     pub median: f32,
@@ -221,7 +223,7 @@ pub struct RoadSpec {
 
 impl Default for RoadSpec {
     fn default() -> Self {
-        RoadSpec { name: String::new(), lanes_fwd: 1, lanes_back: 1, lane_width: 3.5, median: 0.0, median_raised: false, footway: 3.0, footway_right: None, kerb: 0.15, pocket: 0.0, roadway_tex: PathBuf::new(), footway_tex: PathBuf::new(), median_tex: PathBuf::new(), marked: false, markings: Vec::new(), hand: None }
+        RoadSpec { name: String::new(), lanes_fwd: 1, lanes_back: 1, shared_lane: false, lane_width: 3.5, median: 0.0, median_raised: false, footway: 3.0, footway_right: None, kerb: 0.15, pocket: 0.0, roadway_tex: PathBuf::new(), footway_tex: PathBuf::new(), median_tex: PathBuf::new(), marked: false, markings: Vec::new(), hand: None }
     }
 }
 
@@ -325,7 +327,7 @@ impl RoadSpec {
         if self.marked { 1.0 / self.mark_period() } else { 0.1 }
     }
 
-    fn roadway_tex_name(&self) -> String {
+    pub(crate) fn roadway_tex_name(&self) -> String {
         if self.marked {
             format!("{}_lines.bmp", self.file_stem())
         } else {
@@ -523,7 +525,7 @@ impl RoadSpec {
         }
         for i in 0..self.lanes_fwd {
             let x = if one_way { xl + (i as f32 + 0.5) * self.lane_width } else { offset + mid_gap + (i as f32 + 0.5) * self.lane_width };
-            let _ = write!(s, "[path]\n0\n{}\n{}\n{}\n0\n\n", num(x), num(road_h), num(self.lane_width * 0.9));
+            let _ = write!(s, "[path]\n0\n{}\n{}\n{}\n{}\n\n", num(x), num(road_h), num(self.lane_width * 0.9), if self.shared_lane { 2 } else { 0 });
         }
         if pw > 0.0 {
             // (traffic with the road's way: right of its middle)
@@ -539,6 +541,7 @@ impl RoadSpec {
     /// (`Splines\openMapper\<name>.sli`).
     pub fn write(&self, content: &Path) -> anyhow::Result<String> {
         anyhow::ensure!(self.lanes_fwd + self.lanes_back > 0, "a road needs a lane");
+        anyhow::ensure!(!self.shared_lane || (self.lanes_fwd == 1 && self.lanes_back == 0), "a shared road needs one bidirectional lane");
         anyhow::ensure!(self.roadway_tex.is_file(), "the roadway texture is missing");
         let dir = content.join("Splines").join("openMapper");
         let tex_dir = dir.join("texture");

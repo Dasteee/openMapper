@@ -2783,3 +2783,12 @@ no track within 15 m	aucune voie ferrée à moins de 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	les voies ne sont pas jointes, ou vont dans l'autre sens (voir Vue > Voies IA)
 no track beside	pas de voie ferrée près de
 Drives on	Circule sur
+Import diagnostics	Diagnostic de l’importation
+Retry missing layers	Réessayer les couches manquantes
+Automatic roads and buildings	Routes et bâtiments automatiques
+Procedural fallback	Solution procédurale
+Preview automatic import	Aperçu de l’importation automatique
+Unresolved	Non résolu
+Load OSM JSON	Charger OSM JSON
+Asset catalogue	Catalogue des ressources
+Estimated remaining time	Temps restant estimé

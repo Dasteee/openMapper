@@ -1,4 +1,4 @@
-//! The interface's languages, the same twenty-eight as openOMSI's. English and Russian are
+//! The interface's languages: openOMSI's twenty-eight and Serbian Latin. English and Russian are
 //! written side by side where a text is used: `tr("Save", "Сохранить")`. Every other language
 //! is a table found by the English text (`locales/<code>.tsv`: the English, a tab, the
 //! translation), so a new text needs no change at the call sites and a text without an entry
@@ -43,6 +43,7 @@ pub enum Lang {
     Tl,
     Zh,
     Hi,
+    Sr,
 }
 
 /// A language: its code (openOMSI's interface tables use the same), its name in itself, the
@@ -61,7 +62,7 @@ macro_rules! lang {
     };
 }
 
-/// Every language, in openOMSI's order.
+/// Every language, in menu order.
 pub const LANGUAGES: &[Language] = &[
     lang!(En, "en", "English", ["english"]),
     lang!(De, "de", "Deutsch", ["ger", "german", "deutsch"]),
@@ -72,6 +73,7 @@ pub const LANGUAGES: &[Language] = &[
     lang!(Kk, "kk", "Қазақша", ["kz", "kazakh", "қазақша"]),
     lang!(Pl, "pl", "Polski", ["polish", "polski"]),
     lang!(Cs, "cs", "Čeština", ["cz", "czech", "čeština", "ces"]),
+    lang!(Sr, "sr", "Srpski (latinica)", ["sr-latn", "sr-latn-rs", "sr-rs", "srp", "serbian", "srpski", "српски"]),
     lang!(Hu, "hu", "Magyar", ["hungarian", "magyar"]),
     lang!(Es, "es", "Español", ["spa", "spanish", "español"]),
     lang!(Ca, "ca", "Català", ["cat", "ca-es", "ca-ad", "catalan", "català", "catala"]),
@@ -95,7 +97,7 @@ pub const LANGUAGES: &[Language] = &[
 
 /// The translations of each language (the same order as `Lang`; English and Russian have
 /// none here: they are in the code).
-const SOURCES: [&str; 28] = [
+const SOURCES: [&str; 29] = [
     "",
     "",
     include_str!("../locales/de.tsv"),
@@ -124,6 +126,7 @@ const SOURCES: [&str; 28] = [
     include_str!("../locales/tl.tsv"),
     include_str!("../locales/zh.tsv"),
     include_str!("../locales/hi.tsv"),
+    include_str!("../locales/sr.tsv"),
 ];
 
 type Table = HashMap<&'static str, &'static str, std::hash::BuildHasherDefault<crate::library::Fx>>;
@@ -247,7 +250,7 @@ fn parse(src: &'static str) -> Table {
 }
 
 pub(crate) fn table(l: Lang) -> &'static Table {
-    static TABLES: [OnceLock<Table>; 28] = [const { OnceLock::new() }; 28];
+    static TABLES: [OnceLock<Table>; SOURCES.len()] = [const { OnceLock::new() }; SOURCES.len()];
     TABLES[l as usize].get_or_init(|| parse(SOURCES[l as usize]))
 }
 
@@ -274,6 +277,10 @@ mod tests {
         assert_eq!(by_name("zh_CN"), Some(Lang::Zh));
         assert_eq!(by_name("fil"), Some(Lang::Tl));
         assert_eq!(by_name("de-AT"), Some(Lang::De));
+        assert_eq!(by_name("sr_Latn_RS.UTF-8"), Some(Lang::Sr));
+        assert_eq!(by_name("sr-RS"), Some(Lang::Sr));
+        assert_eq!(by_name("Srpski"), Some(Lang::Sr));
+        assert_eq!(by_name("српски"), Some(Lang::Sr));
         assert_eq!(by_name("xx"), None);
         assert_eq!(by_name(""), None);
     }
@@ -285,7 +292,7 @@ mod tests {
             assert_eq!(by_name(l.code), Some(l.lang), "{}", l.code);
             let _ = i;
         }
-        assert_eq!(LANGUAGES.len(), 28);
+        assert_eq!(LANGUAGES.len(), SOURCES.len());
     }
 
     #[test]
@@ -296,6 +303,30 @@ mod tests {
             assert_eq!(t.get("Save").copied().filter(|s| !s.is_empty()), t.get("Save").copied(), "{}", l.code);
             assert_ne!(t.get("Save").copied(), Some("Save"), "{} has no word for Save", l.code);
         }
+    }
+
+    #[test]
+    fn serbian_latin_covers_the_importer_and_preserves_technical_text() {
+        let t = table(Lang::Sr);
+        for (en, sr) in [
+            ("Save", "Sačuvaj"),
+            ("Buildings", "Zgrade"),
+            ("Lanes", "Trake"),
+            ("Junctions", "Raskrsnice"),
+            ("Footway", "Trotoar"),
+            ("Automatic roads and buildings", "Automatski putevi i zgrade"),
+            ("Load OSM JSON", "Učitaj OSM JSON"),
+        ] {
+            assert_eq!(t.get(en).copied(), Some(sr), "{en}");
+        }
+        for (en, sr) in t {
+            assert!(!sr.trim().is_empty(), "{en}");
+            assert!(!sr.contains("ZXPH") && !sr.contains("ZKSPH"), "{en}: {sr}");
+            for token in ["Ctrl+", "Shift+", "Alt+", "global.cfg", "openMapper", "openOMSI", "OMSI 2", "OpenStreetMap"] {
+                assert!(!en.contains(token) || sr.contains(token), "{en}: lost {token} in {sr}");
+            }
+        }
+        assert!(!crate::sysfont::needed(Lang::Sr));
     }
 
     /// The Hong Kong table speaks of the roads as Hong Kong does: traffic lights are

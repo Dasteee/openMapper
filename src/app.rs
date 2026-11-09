@@ -3004,7 +3004,7 @@ impl App {
                 self.geo.window(&ctx, &mut self.ed, &mut self.prefs);
                 self.ui.views.follow(self.ed.doc.as_ref().map(|d| d.dir.as_path()));
                 self.ui.views.window(&ctx, &mut self.cam);
-                self.osm.window(&ctx, &mut self.ed, &self.lib, self.geo.georef());
+                self.osm.window(&ctx, &mut self.ed, &self.lib, self.geo.georef(), self.roots.as_ref());
                 self.trace.window(&ctx, &mut self.ed, &self.lib, self.geo.georef());
                 // (within 12 m of a side with no tile beyond, or 2 m of a road's dead end: the
                 // game samples a lane's last point on the very edge of its road)
@@ -3063,7 +3063,7 @@ impl App {
                     runs.push(Vec::new());
                 }
             }
-            let roads: Vec<crate::osm::Road> = runs.into_iter().filter(|r| r.len() >= 2).map(|r| crate::osm::Road { class: crate::osm::Class::Street, oneway: false, points: crate::osm::simplify(&r) }).collect();
+            let roads: Vec<crate::osm::Road> = runs.into_iter().filter(|r| r.len() >= 2).map(|r| crate::osm::Road { class: crate::osm::Class::Street, oneway: false, points: crate::osm::simplify(&r), source: Default::default(), asset: None }).collect();
             if roads.is_empty() {
                 self.ed.error(tr("The track does not run over the map's tiles", "Трек не проходит по тайлам карты"));
             } else {
@@ -3073,8 +3073,21 @@ impl App {
                 self.ed.toast(format!("{} {n} · {} {j}", tr("Roads built:", "Дорог построено:"), tr("junctions:", "перекрёстков:")));
             }
         }
-        if let (Some(b), Some(assets)) = (self.osm.build.take(), self.assets.as_mut()) {
+        if let (Some(mut b), Some(assets)) = (self.osm.build.take(), self.assets.as_mut()) {
+            let mut preparation_warnings = Vec::new();
+            let prepared = match (b.automatic.as_ref(), self.roots.as_ref(), self.ed.doc.as_ref()) {
+                (Some(plan), Some(roots), Some(doc)) => crate::osm_auto::prepare(plan, roots, doc).map(|prepared| {
+                    b.roads = prepared.roads;
+                    b.planned_buildings = prepared.buildings;
+                    preparation_warnings = prepared.warnings;
+                    prepared.files
+                }),
+                (None, _, _) => Ok(Default::default()),
+                _ => Err("No document or content roots for the import plan".into()),
+            };
+            if let Ok(files) = prepared {
             let mark = self.ed.history.mark();
+            if !files.is_empty() { self.ed.history.push_snapshot(tr("From OpenStreetMap", "Из OpenStreetMap"), crate::history::Snapshot { files, ..Default::default() }); }
             let (roads, junctions) = self.ed.build_osm(assets, &b.roads, &b.types, b.oneway_type.as_deref());
             if let (Some((areas, islands, depth)), Some(doc)) = (&b.water, self.ed.doc.as_mut()) {
                 crate::osm_water::apply(doc, &mut self.ed.history, areas, islands, *depth);
@@ -3088,6 +3101,10 @@ impl App {
                     self.ed.history.push_snapshot(tr("Lines from OpenStreetMap", "Линии из OpenStreetMap"), before);
                 }
                 text += &format!(" · {} {} · {} {}/{}", tr("lines:", "линий:"), added.lines, tr("trips found their way:", "рейсов с путём:"), added.routed, added.trips);
+            }
+            if !b.planned_buildings.is_empty() {
+                let n = self.ed.place_osm_planned_buildings(&b.planned_buildings);
+                text += &format!(" · {} {n}/{}", tr("buildings:", "зданий:"), b.planned_buildings.len());
             }
             if !b.buildings.is_empty() {
                 let n = self.ed.place_osm_buildings(assets, &b.buildings, &b.pool);
@@ -3113,8 +3130,11 @@ impl App {
             }
             // (all of it one step: undone at once)
             self.ed.history.merge_since(mark, tr("From OpenStreetMap", "Из OpenStreetMap"));
+            if !preparation_warnings.is_empty() { text += &format!(" · {} {}", tr("Unresolved", "Не решено"), preparation_warnings.len()); }
             log::info!("osm: {text}");
+            self.osm.build_finished(text.clone(), preparation_warnings);
             self.ed.toast(text);
+            } else if let Err(error) = prepared { log::error!("OSM automatic import failed before map changes: {error}"); self.osm.build_failed(b.automatic.take(), &error); self.ed.error(&error); }
         }
         g.egui_state.handle_platform_output(&g.window, full.platform_output.clone());
         self.load_swatches(&g.egui_ctx, wanted_swatches);

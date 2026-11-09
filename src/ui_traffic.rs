@@ -146,7 +146,7 @@ impl TrafficUi {
         if density || traffic || timetable {
             ed.history.push_snapshot(
                 tr("Edit traffic", "Правка трафика"),
-                crate::history::Snapshot { global: density.then_some(global_before), traffic: traffic.then_some(before.2), timetable: timetable.then_some(before.3), descriptions: None, groups: None },
+                crate::history::Snapshot { global: density.then_some(global_before), traffic: traffic.then_some(before.2), timetable: timetable.then_some(before.3), descriptions: None, groups: None, files: Default::default() },
             );
         }
     }

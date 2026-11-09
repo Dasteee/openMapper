@@ -2785,3 +2785,12 @@ no track within 15 m	nessun binario entro 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	i binari non sono collegati, o vanno nell'altro verso (vedi Vista > Corsie IA)
 no track beside	nessun binario accanto a
 Drives on	Corre su
+Import diagnostics	Diagnostica dell’importazione
+Retry missing layers	Riprova i livelli mancanti
+Automatic roads and buildings	Strade ed edifici automatici
+Procedural fallback	Alternativa procedurale
+Preview automatic import	Anteprima dell’importazione automatica
+Unresolved	Non risolto
+Load OSM JSON	Carica OSM JSON
+Asset catalogue	Catalogo delle risorse
+Estimated remaining time	Tempo rimanente stimato

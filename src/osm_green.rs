@@ -22,11 +22,17 @@ pub fn query(bbox: [f64; 4]) -> String {
 
 pub fn parse(body: &str) -> Result<Green, String> {
     let v: serde_json::Value = serde_json::from_str(body).map_err(|e| e.to_string())?;
+    parse_value(&v, &|| Ok(()))
+}
+
+pub(crate) fn parse_value(v: &serde_json::Value, check: &impl Fn() -> Result<(), String>) -> Result<Green, String> {
+    check()?;
     let mut g = Green::default();
     for e in v.get("elements").and_then(|e| e.as_array()).into_iter().flatten() {
+        check()?;
         let tag = |k: &str| e.get("tags").and_then(|t| t.get(k)).and_then(|v| v.as_str()).unwrap_or("");
         match e.get("type").and_then(|t| t.as_str()) {
-            Some("node") => {
+            Some("node") if tag("natural") == "tree" => {
                 if let (Some(la), Some(lo)) = (e.get("lat").and_then(|x| x.as_f64()), e.get("lon").and_then(|x| x.as_f64())) {
                     g.trees.push((la, lo));
                 }
@@ -38,15 +44,16 @@ pub fn parse(body: &str) -> Result<Green, String> {
                 }
                 if tag("natural") == "tree_row" {
                     g.rows.push(pts);
-                } else if pts.len() >= 4 && pts.first() == pts.last() {
+                } else if (tag("landuse") == "forest" || tag("natural") == "wood") && pts.len() >= 4 && pts.first() == pts.last() {
                     g.woods.push(pts);
                 }
             }
-            Some("relation") => {
+            Some("relation") if tag("landuse") == "forest" || tag("natural") == "wood" => {
                 // a multipolygon: its outer and inner ways joined into rings
                 let mut outer = Vec::new();
                 let mut inner = Vec::new();
                 for m in e.get("members").and_then(|m| m.as_array()).into_iter().flatten() {
+                    check()?;
                     let pts: Vec<(f64, f64)> = m.get("geometry").and_then(|g| g.as_array()).into_iter().flatten().filter_map(|p| Some((p.get("lat")?.as_f64()?, p.get("lon")?.as_f64()?))).collect();
                     if pts.len() < 2 {
                         continue;
@@ -173,7 +180,7 @@ mod tests {
         assert_eq!(row, 10);
         let wood = s.len() - row;
         assert!((90..=100).contains(&wood), "{wood}");
-        let body = r#"{"elements":[{"type":"node","lat":1.0,"lon":2.0},{"type":"way","tags":{"landuse":"forest"},"geometry":[{"lat":0,"lon":0},{"lat":0,"lon":1},{"lat":1,"lon":1},{"lat":0,"lon":0}]}]}"#;
+        let body = r#"{"elements":[{"type":"node","lat":1.0,"lon":2.0,"tags":{"natural":"tree"}},{"type":"way","tags":{"landuse":"forest"},"geometry":[{"lat":0,"lon":0},{"lat":0,"lon":1},{"lat":1,"lon":1},{"lat":0,"lon":0}]}]}"#;
         let g = parse(body).unwrap();
         assert_eq!((g.trees.len(), g.woods.len()), (1, 1));
         // a clearing, and the map's box

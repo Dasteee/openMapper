@@ -2785,3 +2785,12 @@ no track within 15 m	tiada landasan dalam 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	landasan tidak bercantum, atau menuju arah lain (lihat Lihat > Lorong AI)
 no track beside	tiada landasan di sebelah
 Drives on	Bergerak di
+Import diagnostics	Diagnostik import
+Retry missing layers	Cuba semula lapisan yang belum dimuatkan
+Automatic roads and buildings	Jalan dan bangunan automatik
+Procedural fallback	Pengganti prosedural
+Preview automatic import	Pratonton import automatik
+Unresolved	Belum diselesaikan
+Load OSM JSON	Muatkan OSM JSON
+Asset catalogue	Katalog aset
+Estimated remaining time	Anggaran baki masa

@@ -17,6 +17,8 @@ struct Step {
     traffic: Option<crate::traffic::Traffic>,
     descriptions: Option<crate::descriptions::Descriptions>,
     groups: Option<Vec<crate::mapgroups::MapGroup>>,
+    /// Generated import assets are swapped alongside map records for undo/redo.
+    files: BTreeMap<std::path::PathBuf, Option<Vec<u8>>>,
     /// When it was made (edits of one kind in quick succession are one step).
     at: std::time::Instant,
 }
@@ -24,6 +26,7 @@ struct Step {
 /// What a window's edit changed, as it was before (see `History::push_snapshot`).
 #[derive(Default)]
 pub struct Snapshot {
+    pub files: BTreeMap<std::path::PathBuf, Option<Vec<u8>>>,
     pub global: Option<(GlobalCfg, Vec<TileKey>)>,
     pub timetable: Option<crate::timetable::Timetable>,
     pub traffic: Option<crate::traffic::Traffic>,
@@ -83,7 +86,7 @@ impl History {
     /// Start an edit (ends one still open).
     pub fn begin(&mut self, label: &str) {
         self.commit();
-        self.open = Some(Step { label: label.to_string(), tiles: BTreeMap::new(), global: None, timetable: None, traffic: None, descriptions: None, groups: None, at: std::time::Instant::now() });
+        self.open = Some(Step { label: label.to_string(), tiles: BTreeMap::new(), global: None, timetable: None, traffic: None, descriptions: None, groups: None, files: BTreeMap::new(), at: std::time::Instant::now() });
     }
 
     pub fn is_open(&self) -> bool {
@@ -116,14 +119,14 @@ impl History {
     pub fn rollback(&mut self, doc: &mut Document) {
         if let Some(s) = self.open.take() {
             self.changed.add(&s);
-            let _ = apply(doc, s);
+            if let Err(step) = apply(doc, s) { self.open = Some(step); }
         }
     }
 
     /// Close the open edit (nothing kept: it is dropped).
     pub fn commit(&mut self) {
         if let Some(s) = self.open.take() {
-            if s.tiles.is_empty() && s.global.is_none() && s.timetable.is_none() && s.traffic.is_none() && s.descriptions.is_none() && s.groups.is_none() {
+            if s.tiles.is_empty() && s.global.is_none() && s.timetable.is_none() && s.traffic.is_none() && s.descriptions.is_none() && s.groups.is_none() && s.files.is_empty() {
                 return;
             }
             self.changed.add(&s);
@@ -154,11 +157,12 @@ impl History {
             return;
         }
         let steps: Vec<Step> = self.undo.split_off(self.undo.len() - n);
-        let mut merged = Step { label: label.to_string(), tiles: BTreeMap::new(), global: None, timetable: None, traffic: None, descriptions: None, groups: None, at: std::time::Instant::now() };
+        let mut merged = Step { label: label.to_string(), tiles: BTreeMap::new(), global: None, timetable: None, traffic: None, descriptions: None, groups: None, files: BTreeMap::new(), at: std::time::Instant::now() };
         for s in steps {
             for (k, t) in s.tiles {
                 merged.tiles.entry(k).or_insert(t);
             }
+            for (path, contents) in s.files { merged.files.entry(path).or_insert(contents); }
             merged.global = merged.global.or(s.global);
             merged.timetable = merged.timetable.or(s.timetable);
             merged.traffic = merged.traffic.or(s.traffic);
@@ -178,16 +182,16 @@ impl History {
         self.changed.descriptions |= before.descriptions.is_some();
         self.changed.groups |= before.groups.is_some();
         if let Some(last) = self.undo.last_mut() {
-            let same = last.label == label && last.tiles.is_empty() && last.global.is_some() == before.global.is_some() && last.timetable.is_some() == before.timetable.is_some() && last.traffic.is_some() == before.traffic.is_some() && last.descriptions.is_some() == before.descriptions.is_some() && last.groups.is_some() == before.groups.is_some();
+            let same = last.label == label && last.tiles.is_empty() && last.global.is_some() == before.global.is_some() && last.timetable.is_some() == before.timetable.is_some() && last.traffic.is_some() == before.traffic.is_some() && last.descriptions.is_some() == before.descriptions.is_some() && last.groups.is_some() == before.groups.is_some() && last.files.is_empty() && before.files.is_empty();
             if same && self.redo.is_empty() && last.at.elapsed() < MERGE {
                 last.at = std::time::Instant::now();
                 return;
             }
         }
-        if before.global.is_none() && before.timetable.is_none() && before.traffic.is_none() && before.descriptions.is_none() && before.groups.is_none() {
+        if before.global.is_none() && before.timetable.is_none() && before.traffic.is_none() && before.descriptions.is_none() && before.groups.is_none() && before.files.is_empty() {
             return;
         }
-        self.undo.push(Step { label: label.to_string(), tiles: BTreeMap::new(), global: before.global, timetable: before.timetable, traffic: before.traffic, descriptions: before.descriptions, groups: before.groups, at: std::time::Instant::now() });
+        self.undo.push(Step { label: label.to_string(), tiles: BTreeMap::new(), global: before.global, timetable: before.timetable, traffic: before.traffic, descriptions: before.descriptions, groups: before.groups, files: before.files, at: std::time::Instant::now() });
         self.kept += 1;
         if self.undo.len() > LIMIT {
             self.undo.remove(0);
@@ -221,8 +225,7 @@ impl History {
         self.commit();
         if let Some(s) = self.undo.pop() {
             self.changed.add(&s);
-            let back = apply(doc, s);
-            self.redo.push(back);
+            match apply(doc, s) { Ok(back) => self.redo.push(back), Err(step) => self.undo.push(step) }
         }
     }
 
@@ -230,8 +233,7 @@ impl History {
         self.commit();
         if let Some(s) = self.redo.pop() {
             self.changed.add(&s);
-            let back = apply(doc, s);
-            self.undo.push(back);
+            match apply(doc, s) { Ok(back) => self.undo.push(back), Err(step) => self.redo.push(step) }
         }
     }
 
@@ -267,8 +269,22 @@ impl History {
 }
 
 /// Put a step's state into the document; returns the state it replaced (the opposite step).
-fn apply(doc: &mut Document, s: Step) -> Step {
-    let mut back = Step { label: s.label.clone(), tiles: BTreeMap::new(), global: None, timetable: None, traffic: None, descriptions: None, groups: None, at: s.at };
+fn apply(doc: &mut Document, s: Step) -> Result<Step,Step> {
+    // Restore resources before their records. If disk I/O fails, leave the map intact.
+    let now_files: BTreeMap<_,_> = s.files.keys().map(|path| (path.clone(), std::fs::read(path).ok())).collect();
+    for (path, bytes) in &s.files {
+        let result = match bytes {
+            Some(bytes) => crate::doc::safe::write_atomic(path, bytes),
+            None => match std::fs::remove_file(path) { Err(e) if e.kind() == std::io::ErrorKind::NotFound => Ok(()), other => other },
+        };
+        if let Err(e) = result {
+            log::error!("Cannot restore generated asset {}: {e}", path.display());
+            for (path, bytes) in &now_files { match bytes { Some(bytes) => { let _ = crate::doc::safe::write_atomic(path, bytes); }, None => { let _ = std::fs::remove_file(path); } } }
+            return Err(s);
+        }
+    }
+    let mut back = Step { label: s.label.clone(), tiles: BTreeMap::new(), global: None, timetable: None, traffic: None, descriptions: None, groups: None, files: BTreeMap::new(), at: s.at };
+    back.files = now_files;
     for (k, t) in s.tiles {
         let now = match t {
             Some(mut t) => {
@@ -308,12 +324,26 @@ fn apply(doc: &mut Document, s: Step) -> Step {
         back.groups = Some(std::mem::replace(&mut doc.groups, g));
     }
     doc.global_dirty = true;
-    back
+    Ok(back)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn a_failed_asset_restore_preserves_the_map_and_undo_step() {
+        let mut doc=crate::selection::tests::flat_map(1);
+        let dir=std::env::temp_dir().join(format!("osm-undo-blocked-{}",std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let mut history=History::default();
+        history.push_snapshot("files",Snapshot{files:[(dir.clone(),None)].into_iter().collect(),..Default::default()});
+        history.begin("map");history.touch_tile(&doc,(0,0));doc.tiles.get_mut(&(0,0)).unwrap().terrain.heights[0]=12.0;history.commit();
+        history.merge_since(0,"import");history.undo(&mut doc);
+        assert_eq!(doc.tiles[&(0,0)].terrain.heights[0],12.0);
+        assert!(history.can_undo());assert!(!history.can_redo());
+        std::fs::remove_dir_all(dir).unwrap();
+    }
 
     /// IDCodes handed out stay used after an undo: a junction made again would else get the
     /// number of the one undone and write over its files (which a saved map may still name).

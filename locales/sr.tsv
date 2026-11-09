@@ -1,0 +1,2737 @@
+Could not open the map	Nije moguće otvoriti mapu
+Find the place in the window and build from it	Pronađite mesto u prozoru i gradite od njega
+Your map is ready. Start with a road!	Vaša mapa je spremna. Počnite sa putem!
+Export the map for sharing	Izvezite mapu za deljenje
+Exported:	Izvezeno:
+files	datoteke
+files the map names were not found: the readme lists them	datoteke koje mapa navodi nisu pronađene: spisak je u datoteci readme
+Could not export	Nije moguće izvesti
+A ring road with line 1 on it: save, then try it in openOMSI (F5).	Kružni put sa linijom 1 na njemu: sačuvajte, pa probajte u openOMSI (F5).
+The sample could not be made	Uzorak nije mogao biti napravljen
+In multiplayer the host saves the map. Leave the session to save this as a copy of your own.	U zajedničkom uređivanju domaćin čuva mapu. Napustite sesiju da biste ovo sačuvali kao svoju kopiju.
+Still saving	I dalje se čuva
+Could not save (the changes are still here, nothing is lost)	Nije moguće sačuvati (promene su još uvek ovde, ništa nije izgubljeno)
+Saving…	Čuvanje…
+Saved:	Sačuvano:
+Tip: place a start point (Game logic > Start points) so the bus has somewhere to appear	Savet: postavite početnu tačku (logika igre > Početne tačke) tako da se autobus negde pojavljuje
+The unsaved changes are back. Save to keep them.	Nesačuvane promene su vraćene. Sačuvajte da ih zadržite.
+Could not restore the changes	Nije moguće vratiti promene
+openOMSI was not found	openOMSI nije pronađen
+From the start point	Od početne tačke
+The map has no start point: place one with Game logic > Start points	Mapa nema početnu tačku: postavite jednu sa Logika igre > Početne tačke
+A test drive is running: close it first	Probna vožnja je u toku: prvo je zatvorite
+Starting openOMSI…	Pokretanje openOMSI…
+To drive the map in OMSI 2 itself it has to be copied into the OMSI 2 folder (Maps, and the objects, roads and textures made for it). Nothing that is there is replaced except earlier copies of this map. Copy it there?	Da bi se mapa upravljala u samom OMSI 2, ona mora da se kopira u fasciklu OMSI 2 (Mape, i objekti, putevi i teksture napravljene za nju). Ništa što je tamo nije zamenjeno osim ranijih kopija ove mape. Kopirati tamo?
+Starting OMSI 2: choose the map	Pokretanje OMSI 2: izaberite mapu
+The map is copied into the OMSI 2 folder; OMSI 2 itself runs on Windows only:	Mapa je kopirana u fasciklu OMSI 2; sam OMSI 2 radi samo na sistemu Windows:
+Could not copy the map into OMSI 2	Nije moguće kopirati mapu u OMSI 2
+Click on the map to place it	Kliknite na mapu da biste je postavili
+Open a map (its global.cfg)	Otvori mapu (njenu datoteku global.cfg)
+The map is back as it was before that save	Mapa je ponovo kao što je bila pre tog čuvanja
+Could not go back	Nije moguće vratiti prethodno stanje
+Export a plan of the map	Izvezite plan karte
+Plan saved:	Plan je sačuvan:
+Mods, models and pictures	Modovi, modeli i slike
+Import assets	Uvezi resurse
+…or choose a mod folder	...ili izaberite mod folder
+Click on the map to put it there	Kliknite na mapu da biste je stavili tamo
+Could not make the shape	Nije moguće napraviti oblik
+Choose the OMSI 2 folder	Izaberite fasciklu OMSI 2
+That is not an OMSI 2 folder (Omsi.exe, maps and Vehicles must be in it)	To nije fascikla OMSI 2 (mora da sadrži Omsi.exe, maps i Vehicles)
+This object has no textures to make PBR maps of	Ovaj objekat nema teksture za pravljenje PBR mapa
+Choose the OMSI installation first	Prvo izaberite instalaciju OMSI
+Saved as an object	Sačuvano kao objekat
+Saved as an object: it is in the catalogue under Objects, to place like any other	Sačuvan kao objekat: nalazi se u katalogu pod Objekti, da se postavi kao i svaki drugi
+Custom junction saved: the Roads tool's automatic junctions use it where roads meet as it was drawn	Prilagođena raskrsnica je sačuvana: automatske raskrsnice alata Putevi ga koriste tamo gde se putevi sastaju onako kako je nacrtano
+Could not copy the map	Nije moguće kopirati mapu
+Could not move the map	Nije moguće premestiti mapu
+Terrain flattened; splines laid on it:	Teren je poravnat; postavljeni splajnovi:
+This road type has no textures to make PBR maps of	Ovaj tip puta nema teksture za pravljenje PBR mapa
+Pictures	Slike
+tiles round the camera are loaded; more load as you go there	pločica oko kamere je učitano; ostale se učitavaju kako im se približavate
+Only the tiles round the camera are loaded; more load as you go there	Učitane su samo pločice oko kamere; ostale se učitavaju kako im se približavate
+All tiles are loaded	Sve pločice su učitane
+OMSI 2's editor: the middle button turns, the right button held and moved zooms, a right click goes there (Shift: menu); G moves the selection, N makes a new object, Enter confirms, the tile grid is on Shift+G	Editor OMSI 2: srednje dugme se okreće, desno dugme se drži i pomera zumira, desni klik ide tamo (Shift: meni); G pomera selekciju, N pravi novi objekat, Enter potvrđuje, mreža pločica je na Shift+G
+openMapper's own controls: the camera as chosen under Camera, the keys as in View → Controls	Kontrole programa openMapper: kamera prema izboru u meniju Kamera, tasteri prema Prikaz → Kontrole
+Blender's keys: G moves the selection, Shift+S scales it, X deletes, Tab edits the mesh, Shift+A adds an object, Shift+D duplicates, F3 searches. W A S D and Q E move the camera as they always do	Tasteri programa Blender: G pomera izbor, Shift+S menja veličinu, X briše, Tab uređuje mrežu, Shift+A dodaje objekat, Shift+D pravi duplikat, F3 pretražuje. W A S D i Q E pomeraju kameru kao i obično
+The keys as in View → Controls	Tasteri kao u Prikaz → Kontrole
+The graphics API changes the next time openMapper starts	Grafički API se menja sledeći put kada se openMapper pokrene
+Import the map's thumbnail	Uvezite sličicu mape
+The map's thumbnail is set: openOMSI shows it where maps are chosen.	Sličica mape je podešena: openOMSI pokazuje gde su mape izabrane.
+Could not use the picture	Nije moguće koristiti sliku
+Map camera	Kamera za mapu
+The map opens with this view from now on.	Mapa se od sada otvara sa ovim pogledom.
+Add ground texture	Dodajte teksturu zemlje
+Cut in two: each piece can now be changed on its own	Prepoloviti: svaki komad se sada može menjati sam za sebe
+View kept as	Prikaz zadržan kao
+No view kept as	Nijedan pogled nije sačuvan kao
+Files changed on disk: the catalogue and models are updated	Fajlovi su promenjeni na disku: katalog i modeli su ažurirani
+The track does not run over the map's tiles	Staza ne prelazi preko pločica mape
+Road along a GPS track	Put duž GPS traga
+Roads built:	Izgrađeni putevi:
+junctions:	raskrsnice:
+From OpenStreetMap	Iz OpenStreetMap
+stops:	stajališta:
+Lines from OpenStreetMap	Linije iz OpenStreetMap
+lines:	linija:
+trips found their way:	polazaka sa pronađenom putanjom:
+buildings:	zgrade:
+trees:	drveće:
+Start point	Početna tačka
+Start	Početak
+a start point	početna tačka
+Picture saved:	Slika je sačuvana:
+Could not save the picture	Nije moguće sačuvati sliku
+The graphics could not be started.	Grafika nije mogla da se pokrene.
+Flying speed	Brzina leta
+copy	kopija
+Only maps of the content folder can be moved	Mogu se premeštati samo mape fascikle sadržaja
+Only assets of the content folder can be deleted	Mogu se brisati samo resursi iz fascikle sa sadržajem
+Could not write the object	Nije moguće napisati objekat
+Select an object to edit its mesh	Izaberite objekat za uređivanje njegove mreže
+A copy of its own was made: the original type is unchanged	Napravljena je sopstvena kopija: originalni tip je nepromenjen
+Cannot edit this object	Nije moguće uređivati ovaj objekat
+Point at an edge to cut across its ring of faces	Stavite na ivicu da biste presekli njen prsten sa stranama
+Objects made:	Napravljeni objekti:
+Click the corners of the polygon; the first corner or Enter closes it	Kliknite na uglove poligona; prvi ugao ili Enter ga zatvara
+select the faces to separate	izaberite lica za razdvajanje
+Separated into an object of its own	Razdvojen u sopstveni objekat
+Add object	Dodaj objekat
+select what to export (objects, roads)	izaberite šta želite da izvezete (objekti, putevi)
+Export the selection	Izvezite izbor
+unknown format	nepoznat format
+Write the .x file in its binary form? No: as text, which OMSI 2 and openOMSI read.	Zapisati datoteku .x u binarnom obliku? Ne: kao tekst, koji čitaju OMSI 2 i openOMSI.
+the models are still loading: try again in a moment	modeli se i dalje učitavaju: pokušajte ponovo za trenutak
+this material has no texture	ovaj materijal nema teksturu
+cannot read	ne može da čita
+Export the texture	Izvezite teksturu
+Texture saved:	Tekstura je sačuvana:
+Choose a picture	Izaberite sliku
+give the material a texture first: its maps go beside it	prvo dajte materijalu teksturu: njegove mape idu pored njega
+Import materials (an .mtl, a model, or the pictures of one PBR material)	Uvezite materijale (.mtl, model ili slike jednog PBR materijala)
+Materials and pictures	Materijali i slike
+no materials found there	tamo nisu pronađeni materijali
+Materials added:	Dodati materijali:
+nothing to bake	nema šta da se peče
+the object has no lamps to bake the night light of	objekat nema lampe koje bi ispekle noćno svetlo
+Baked into	Pečeno u
+select a road or spline first	prvo izaberite put ili splajn
+the road's type is still loading: try again in a moment	Tip puta se još uvek učitava: pokušajte ponovo za trenutak
+these splines have no shape to see	ovi splajnovi nemaju oblik da se vidi
+Replace by an object	Zameniti objektom
+Made into an object: Tab edits its mesh	Pretvoren u objekat: Tab uređuje svoju mrežu
+select the roads or splines that make the outline first	izaberite puteve ili splajn koji prvi prave konturu
+the selected splines do not make one outline: they have to join end to end	izabrani splajnovi ne čine jedan obris: oni moraju da se spoje s kraja na kraj
+A polygon needs three corners	Poligonu su potrebna tri ugla
+cannot read the picture	ne može da pročita sliku
+The corners make no area	Uglovi ne čine površinu
+The polygon lies outside the map	Poligon se nalazi izvan mape
+Polygon made: Tab edits its mesh	Napravljen poligon: Tab uređuje svoju mrežu
+Signal head made: click where it stands (near a crossing with a light program it links to it)	Napravljena signalna glava: kliknite gde stoji (u blizini raskrsnice sa svetlosnim programom na koju se povezuje)
+Light made: click where it goes; its script is in Map > Scripts	Svetlo napravljeno: kliknite gde ide; njegova skripta je u Mapa > Skripte
+Choose a picture or a texture	Izaberite sliku ili teksturu
+Picture made: click where it goes (it can be moved, turned and scaled after)	Slika napravljena: kliknite gde ide (može se pomerati, okretati i skalirati posle)
+Light made: click where it shines	Svetlost napravljena: kliknite gde sija
+Choose a sound	Izaberite zvuk
+Sounds	Zvuci
+Sound source made: click where it plays	Napravljen izvor zvuka: kliknite gde se reprodukuje
+Street lamp made: click where it stands	Ulična lampa napravljena: kliknite gde stoji
+Paint by slope and height	Boja po nagibu i visini
+By slope and height	Po nagibu i visini
+The chosen layer painted over the whole map where the ground is so steep (and so high)	Izabrani sloj je oslikan preko cele mape gde je tlo tako strmo (i tako visoko)
+Slope	Nagib
+Height	Visina
+Fade	Postepeni prelaz
+Cover	Pokrivenost
+Paint the map	Obojite mapu
+Choose a layer above the base ground	Izaberite sloj iznad osnovne zemlje
+No ground on the map is like that	Nijedan teren na mapi nije takav
+Painted	Oslikana
+Missing objects	Nedostaju objekti
+Missing roads and splines	Nedostajući putevi i splinovi
+Missing textures	Nedostaju teksture
+Road ends not joined	Krajevi puta nisu spojeni
+Links to splines that are gone	Veze ka splajnovima koji su nestali
+Bus stops away from a road	Autobusne stanice udaljene su od puta
+Stops sharing a name	Stajališta sa istim nazivom
+Start points away from a road	Početne tačke udaljene od puta
+Start points without their object	Početne tačke bez njihovog objekta
+No start point	Nema početne tačke
+IDCodes used twice	ID kodovi korišćeni dva puta
+Next IDCode too low	Sledeći ID kod je prenizak
+Objects off their tile	Predmeti sa svojih pločica
+Tiles without a file	Pločice bez datoteke
+Tiles without ground	Pločice bez podloge
+Trips without a way	Polasci bez putanje
+Tours without departures	Obilasci bez polazaka
+Tours without a depot	Turnusi bez depoa
+Traffic groups not in the AI lists	Saobraćajne grupe nisu u AI listama
+Stops no trip calls at	Stajališta bez polazaka
+Signal routes naming what is gone	Putevi signala koji imenuju ono što je nestalo
+Chrono changes of what is gone	Hrono promene onoga što je nestalo
+Lamps lighting no ground at night	Lampe koje noću ne osvetljavaju tlo
+Tiles with very many objects	Pločice sa veoma mnogo predmeta
+Objects linked to one that is gone	Objekti povezani sa onim koji je nestao
+Signal heads linked to no crossing	Signalne glave povezane sa zabranom ukrštanja
+Depot files (destinations)	Depo fajlovi (odredišta)
+The map uses an object (.sco) that is not installed. The game leaves it out. Install the mod it comes from, or delete the object. A junction of openMapper's whose file is gone (the map was moved without it) is made again for its roads with "Fix".	Mapa koristi objekat (.sco) koji nije instaliran. Igra to izostavlja. Instalirajte mod iz kojeg dolazi ili izbrišite objekat. Spoj openMapper-a čiji je fajl nestao (mapa je pomerena bez njega) ponovo je napravljen za njegove puteve sa "Fik".
+The map uses a road or spline type (.sli) that is not installed: that road is missing in the game, and buses cannot drive there.	Mapa koristi put ili splajn tip (.sli) koji nije instaliran: taj put nedostaje u igri, a autobusi ne mogu da voze tamo.
+An object or road names a picture that cannot be found. It will look white or black in the game.	Objekat ili put imenuje sliku koja se ne može pronaći. U igri će izgledati belo ili crno.
+Two road ends lie on one another but are not joined. Traffic still finds its way (the game joins lanes by their ends), but rows of lamps and posts and the road's texture do not run on across, and the editor does not treat them as one road. "Join" links them.	Dva kraja puta leže jedan na drugom, ali nisu spojeni. Saobraćaj i dalje pronalazi svoj put (igra spaja trake svojim krajevima), ali redovi lampi i stubova i tekstura puta ne prolaze popreko, a urednik ih ne tretira kao jedan put. „Pridruži se“ ih povezuje.
+A spline says it goes on into another one that no longer exists. "Fix" forgets that link.	Splajn kaže da ide dalje u drugi koji više ne postoji. „Popravi“ zaboravlja tu vezu.
+A bus stop belongs to the lane it stands beside (within about 25 m). This one has none near, so buses cannot stop at it. Move it next to the road, or "Fix" puts it at the kerb of the nearest lane (within 80 m).	Autobusko stajalište pripada traci pored koje se nalazi (u krugu od oko 25 m). Ovaj nema u blizini, pa autobusi ne mogu da stanu kod njega. Pomerite ga pored puta, ili ga "Fik" postavlja na ivičnjak najbliže trake (unutar 80 m).
+Two stops far from each other have one name. The two across a road may share it (they are a pair), but elsewhere the game, the displays and the people who choose where to get off cannot tell them apart. "Fix" gives the later one a number after its name.	Dve stanice udaljene jedna od druge imaju jedno ime. Njih dvoje preko puta mogu to da dele (oni su par), ali na drugim mestima igra, ekrani i ljudi koji biraju gde će sići ​​ne mogu da ih razlikuju. „Fik“ daje kasnijoj broj nakon njenog imena.
+A start point is where the bus appears. This one is away from any lane: fine in a depot yard, otherwise the bus starts off the road.	Početna tačka je mesto gde se sabirnica pojavljuje. Ovaj je udaljen od bilo koje trake: dobro u dvorištu depoa, inače autobus kreće sa puta.
+A start point refers to an object that was deleted. "Fix" removes the start point.	Početna tačka se odnosi na objekat koji je obrisan. „Popravi“ uklanja početnu tačku.
+There is nowhere for the bus to appear. Place a start point (Game logic > Start points) on a road, or "Fix" puts one on a lane some 40 m before a bus stop.	Autobus nema gde da se pojavi. Postavite početnu tačku (Logika igre > Početne tačke) na putu, ili "Fik" postavlja jednu na traku nekih 40 m pre autobuske stanice.
+Two things on the map share one IDCode: links, timetables and start points may pick the wrong one.	Dve stvari na mapi dele jedan ID kod: veze, rasporedi i početne tačke mogu izabrati pogrešan.
+The counter for new IDCodes is below codes already used, so new objects would get codes twice. "Fix" raises it.	Brojač za nove IDCode je ispod kodova koji su već korišćeni, tako da bi novi objekti dobili kodove dva puta. "Fik" ga podiže.
+An object standing on the ground lies outside its own tile. The game does not show it. Move it a little or put it again.	Predmet koji stoji na tlu leži izvan sopstvene pločice. Igra to ne pokazuje. Pomerite ga malo ili ponovo stavite.
+global.cfg lists tiles whose file is not there. The game leaves them out; they stay listed, as start points and timetables count tiles by their place in the list.	global.cfg navodi pločice čiji fajl nije tamo. Igra ih izostavlja; oni ostaju navedeni, pošto početne tačke i rasporedi broje pločice po njihovom mestu na listi.
+A tile has no height file: its ground is flat. Saving writes one.	Pločica nema datoteku visine: njeno tlo je ravno. Čuvanje piše jedan.
+No way along the roads was found through this trip's stops, so buses cannot drive it. Open it in Map > Lines and timetable to see where it breaks.	Nije pronađen put duž puteva kroz stajališta ovog putovanja, tako da autobusi ne mogu da ga voze. Otvorite ga u Mapa > Linije i red vožnje da vidite gde se prekida.
+A tour (a bus's day on the line) has no trips, so no bus runs it.	Obilazak (dan autobusa na liniji) nema putovanja, tako da ga nijedan autobus ne vozi.
+A tour names no depot or group of the AI lists (or one that is not there): the game has no vehicle to send on it. Choose a depot for it in the Lines window, or "Fix" gives it the map's depot (one of OMSI 2's MAN buses added where the map has none).	Obilazak ne imenuje depo ili grupu AI lista (ili onu koja ne postoji): igra nema vozilo za slanje. Izaberite depo za njega u prozoru Linije, ili mu „Fik“ daje depo mape (jedan od MAN autobusa OMSI 2 dodat je tamo gde ga mapa nema).
+The unscheduled traffic names a group that the AI lists do not have: those cars never appear. Add the group in Map > Traffic and AI, or "Fix" copies it from OMSI 2's own maps where they have it.	Neplanirani saobraćaj imenuje grupu koju AI liste nemaju: ti automobili se nikada ne pojavljuju. Dodajte grupu u Mapa > Saobraćaj i AI, ili je „Popravi“ kopira sa sopstvenih mapa OMSI 2 gde je imaju.
+A stop of the timetable that no trip calls at. Nothing is wrong, it is only not used yet.	Stanica u redu vožnje na koju se ne poziva nijedno putovanje. Ništa nije u redu, samo se još ne koristi.
+A chrono scenario takes away, retypes or relabels something that is no longer on the map (it was deleted or its IDCode changed): that change does nothing. Open Map > Chrono scenarios, the scenario's properties, and take the change out.	Hrono scenario oduzima, ponovo kuca ili ponovo označava nešto što više nije na mapi (izbrisano je ili je promenjen njen ID kod): ta promena ništa ne čini. Otvorite Map > Chrono scenariji, svojstva scenarija i izvadite promenu.
+A tile holds far more objects than the stock maps' tiles (up to some 600): the game may stutter when it loads it or looks across it. Thin out a wood planted too densely (Plant brush, Clear) or plant it with more space between the trees.	Pločica sadrži mnogo više objekata nego pločice na matičnim kartama (do nekih 600): igra može da zamuckuje kada je učita ili pogleda preko nje. Proredite drvo koje je zasađeno previše gusto (četka za biljke, prozirno) ili ga posadite sa više prostora između stabala.
+Street lamps stand on a tile the game does not light from its lamps ([variable_terrainlightmap] is off): at night the ground under them stays dark (unless the tile's light map file was made by OMSI 2's editor). "Fix" turns it on, as on nearly every tile of the stock maps.	Ulične svetiljke stoje na pločici koju igra ne pali iz svojih lampi ([varijabilna_terrainlightmap] je isključena): noću tlo ispod njih ostaje tamno (osim ako datoteku svetlosne mape pločice nije napravio urednik OMSI 2). „Fik“ ga uključuje, kao i na skoro svakoj pločici na karti.
+An object takes its state ([varparent]) from an object no longer on the map: a signal head stays dark, a display blank. Link it to another in its properties (Linked objects), or "Fix" forgets the link.	Objekat preuzima svoje stanje ([varparent]) od objekta koji više nije na mapi: signalna glava ostaje tamna, ekran prazan. Povežite ga sa drugim u njegovim svojstvima (Povezani objekti) ili „Popravi“ zaboravi vezu.
+A traffic light's signal head takes its light from a crossing's program ([varparent]); this one is linked to none while others like it are, so it stays dark in the game. Select it and link it in its properties (Linked objects).	Signalna glava semafora uzima svoje svetlo iz programa raskrsnice ([varparent]); ovaj nije povezan ni sa jednim dok je drugi sličan njemu, tako da ostaje mračno u igri. Izaberite ga i povežite u njegovim svojstvima (Povezani objekti).
+A depot file (.hof) gives the buses their destinations, the stop names on their displays and the routes their IBIS knows. Without one the signs stay empty and the IBIS knows no line. "Fix" makes it from the map's lines, or adds what the lines need to the map's own (Map > Depot files to see and change it).	Depo datoteka (.hof) daje autobusima njihova odredišta, nazive stanica na njihovim ekranima i rute koje njihov IBIS poznaje. Bez jednog znakovi ostaju prazni i IBIS ne poznaje liniju. „Popravi“ to čini od linija mape ili dodaje ono što je potrebno linijama na svoju mapu (Mapa > Depot datoteke da biste to videli i promenili).
+A signal route names a signal or track pieces no longer on the map: the signal may never clear. Open Map > Signal routes and take the track again, or delete the route.	Ruta signala imenuje signal ili delove staze koji više nisu na mapi: signal se možda nikada neće očistiti. Otvorite Mapa > Signalne rute i ponovo uzmite stazu ili izbrišite rutu.
+font	font
+used	koristi
+in	u
+a ground texture of the map	prizemnu teksturu mape
+splines	splajnovi
+apart	odvojeno
+spline	splajn
+goes on into	nastavlja u
+no road near	nema puta u blizini
+from the road	sa puta
+same name as the stop	isto ime kao i stajalište
+start point	početna tačka
+object	objekat
+The map has no start point	Mapa nema početnu tačku
+things have it	stvari ga imaju
+highest in use:	najviše u upotrebi:
+tile	pločica
+no .terrain file: flat	nema datoteke .terrain: ravno
+objects	objekti
+lamps	lampe
+The map has no depot file	Mapa nema depo fajl
+the buses show no destination	autobusi ne pokazuju odredište
+named by the map's depot, but found nowhere	nazvan po depou mape, ali nigde nije pronađen
+knows none of the	ne zna ništa od
+lacks	nedostaje
+destinations of the lines	odredišta linija
+the lines need	linije trebaju
+destinations	odredišta
+stops	stajališta
+routes	rute
+tour	turnus
+no depot named	depo nije imenovan
+not in the AI lists:	nije na AI listama:
+the stop has no object:	stajalište nema objekat:
+no track beside	Nema koloseka pored
+no road beside	nema puta pored
+no way	nema putanje
+no way found	putanja nije pronađena
+Route	Ruta
+gone	uklonjeno
+changes of nothing	promene ničega
+time	vreme
+times	puta
+Fix from the map check	Ispravka iz provere mape
+Car groups from OMSI 2's maps	Grupe automobila sa mapa OMSI 2
+A depot for the tour	Depo za turnus
+A depot file from the lines	Depo fajl sa linija
+Depot file: what the lines need	Depo fajl: šta je potrebno linijama
+Map check	Provera mape
+Check again	Proverite ponovo
+Checking the map…	Proveravam mapu…
+errors	greške
+warnings	upozorenja
+notes	beleške
+Nothing found: the map looks fine.	Ništa nije pronađeno: mapa izgleda dobro.
+Fix all	Popravi sve
+Join	Pridružite se
+Fix	Popravi
+Click to fly there	Kliknite da letite tamo
+Fixed:	Popravljeno:
+it has parts openMapper does not write	ima delove koje openMapper ne piše
+The junction reaches past the map: add tiles there first	Raskrsnica seže pored mape: prvo dodajte pločice
+draw some pieces first	prvo nacrtajte neke delove
+mark the arms (where roads come in): at least two	označite krakove (gde dolaze putevi): najmanje dva
+the spline cannot be read	splajn se ne može pročitati
+the plate could not be made from these arms	ploča nije mogla biti napravljena od ovih krakova
+A host on the internet needs a password of at least	Domaćin na internetu treba lozinku od najmanje
+Type a password, or choose explicitly to host without one	Unesite lozinku ili eksplicitno izaberite da hostujete bez nje
+Could not listen on port	Nije moguće slušati na portu
+The way in for the tunnel could not be opened	Put u tunel nije mogao da se otvori
+Hosting this map: others can join it now	Hostovanje ove mape: drugi joj se sada mogu pridružiti
+Multiplayer ended: another map was opened	Zajedničko uređivanje je završen: otvorena je druga mapa
+Somebody changed this first: your edit was put back	Neko je prvo promenio ovo: vaša izmena je vraćena
+The host takes no more: the edit is too big, or the session holds as much as it may. Your edit was put back	Domaćin ne treba više: uređivanje je preveliko, ili sesija drži onoliko koliko može. Vaša izmena je vraćena
+That lies too far from the map for this session: your edit was put back	To je predaleko od mape za ovu sesiju: vaša izmena je vraćena
+tiles	pločice
+changed what you were editing: it is as they left it	promenio ono što ste uređivali: tako je kako su ostavili
+The timetable, the traffic and the descriptions are the host's in multiplayer: your change was put back	Raspored, saobraćaj i opisi su domaćini u zajedničkom uređivanju: vaša promena je vraćena
+Your conflicting edit was kept	Vaša konfliktna izmena je zadržana
+Could not keep your conflicting edit; multiplayer stopped	Nije moguće zadržati vaše konfliktne izmene; multiplaier zaustavljen
+Too much of the others' work came in while your edit was held open: multiplayer stopped. The map stays open; it can be saved as a copy.	Previše rada drugih je stiglo dok je vaša izmena bila otvorena: igra za više igrača je zaustavljena. Mapa ostaje otvorena; može se sačuvati kao kopija.
+The connection to the host was lost. The map stays open; it can be saved as a copy.	Veza sa hostom je izgubljena. Mapa ostaje otvorena; može se sačuvati kao kopija.
+No OMSI 2 installation: the map has nowhere to go	Nema instalacije OMSI 2: mapa nema gde da ide
+The host sent no map	Domaćin nije poslao mapu
+The host's map could not be read	Mapa domaćina nije mogla da se pročita
+No connection	Nema veze
+That address is not an openMapper host	Ta adresa nije openMapper host
+Wrong password	Pogrešna lozinka
+The session is full	Sesija je puna
+Type a name (up to 32 letters)	Unesite ime (do 32 slova)
+The host has another version of openMapper	Domaćin ima drugu verziju openMapper
+OMSI 2's editor	Editor programa OMSI 2
+Move forward	Pomeri napred
+Move back	Pomeri se nazad
+Move left	Pomeri se levo
+Move right	Pomeri se desno
+Turn the camera left	Okrenite kameru levo
+Turn the camera right	Okrenite kameru udesno
+Undo	Poništi
+Redo	Ponovi
+Save	Sačuvaj
+Copy	Kopiraj
+Cut	Iseci
+Paste at the cursor	Nalepi na kursor
+Duplicate	Dupliraj
+Select all	Izaberi sve
+Find in the map	Pronađi na mapi
+Search for a command	Potraži komandu
+Tool: Select	Alat: Izbor
+Tool: Roads	Alat: Putevi
+Tool: Objects	Alat: Objekti
+Tool: Game logic	Alat: Logika igre
+Tool: Terrain	Alat: Teren
+Tool: Paint	Alat: Boja
+Tool: Tiles	Alat: Pločice
+Place a new object at the cursor	Postavite novi objekat na kursor
+Turn the object (Shift: the other way)	Okrenite objekat (Shift: na drugu stranu)
+Ruler	Lenjir
+Knife	Nož
+Move handles	Ručke za pomeranje
+Rotate handles	Rotirajte ručke
+Scale handles	Ručice za promenu veličine
+Edit the mesh (vertices, edges, faces)	Uredite mrežu (temene, ivice, lica)
+Join the selected objects into one	Spojite izabrane objekte u jedan
+Build the planned road	Izgradite planirani put
+Confirm (finish what is being drawn)	Potvrdi (završi ono što se crta)
+Tile grid on / off	Mreža pločica uključena/isključena
+Group the selection	Grupirajte izbor
+Ungroup	Razgrupisati
+Look straight down, north up	Pogledaj pravo dole, sever gore
+2D plan view on / off (3D: tilt and turn again)	Uključivanje/isključivanje 2D plana (3D: nagnite i ponovo okrenite)
+Catalogue on / off	Katalog uključen/isključen
+Overview map on / off	Pregledna mapa uključena/isključena
+Lines window	Prozor linija
+Traffic window	Prozor za saobraćaj
+Satellite and terrain window	Satelitski i terenski prozor
+Smaller brush	Manja četka
+Larger brush	Veća četka
+Delete the selection	Obriši izbor
+Go to the selection	Idite na izbor
+Test drive in openOMSI (Shift: from the camera)	Probna vožnja u openOMSI (Shift: sa kamere)
+Save a picture of the view	Sačuvajte sliku pogleda
+Polygon: fill the selected splines, or click its corners	Poligon: popunite izabrane splajnove ili kliknite na njegove uglove
+Polygon: click its corners	Poligon: kliknite na njegove uglove
+file not found	datoteka nije pronađena
+its paths are in a file of their own (`[paths]`), which this editor does not read	njegove putanje su u sopstvenoj datoteci (`[paths]`), koju ovaj uređivač ne čita
+it has no path	nema putanje
+the object names this file outside its own folder, which a copy would lose	objekat imenuje ovu datoteku izvan sopstvenog foldera, koji bi kopija izgubila
+what was written does not read back the same	ono što je napisano ne čita isto
+a file the object names is missing	fajl čiji nazivi objekata nedostaju
+The map's own (global.cfg)	Vlastita mapa (global.cfg)
+Description	Opis
+Name in this language	Ime na ovom jeziku
+Description in this language	Opis na ovom jeziku
+Remove this language	Uklonite ovaj jezik
+Not written yet: it is saved as soon as you type.	Još nije napisano: čuva se čim ukucate.
+Edit description	Uredi opis
+just now	upravo sada
+min ago	pre min
+h ago	pre h
+Unsaved changes found	Pronađene su nesačuvane promene
+openMapper was closed without saving the map	openMapper je zatvoren bez čuvanja mape
+The changes kept by the autosave can be brought back. The map itself was not changed.	Promene koje čuva autosave mogu se vratiti. Sama mapa nije menjana.
+Restore the changes	Vratite promene
+Drop them	Baci ih
+Nothing comes after it to join	Ništa ne dolazi posle toga da se pridruži
+The next piece runs the other way: reverse it first	Sledeći deo ide u suprotnom smeru: prvo ga obrni
+The next piece lies on another tile	Sledeći komad leži na drugoj pločici
+The two pieces are of different road types	Dva dela su različitih tipova puteva
+The two pieces have different settings (path rules, ground, skew)	Dva dela imaju različita podešavanja (pravila putanje, tlo, iskošenost)
+A row of objects comes onto the next piece from another tile	Red objekata dolazi na sledeći komad sa druge pločice
+The two pieces do not bend, climb or bank alike: joined they would change shape	Ova dva dela se ne savijaju, penju ili naginju podjednako: spojeni bi promenili oblik
+Earlier versions	Ranije verzije
+Before every save, the files it replaces are kept (the last 10 saves). Going back puts the map as it was before that save; later changes go.	Pre svakog čuvanja, čuvaju se fajlovi koje zamenjuje (poslednjih 10 čuvanja). Vraćanjem se mapa stavlja onakva kakva je bila pre tog čuvanja; kasnije promene idu.
+No earlier versions yet: they appear once the map is saved again.	Još nema ranijih verzija: pojavljuju se kada se mapa ponovo sačuva.
+before the save of	pre čuvanja
+Go back to this	Vratite se na ovo
+could not keep a backup, nothing was saved	nije mogao da zadrži rezervnu kopiju, ništa nije sačuvano
+Test drive	Probna vožnja
+Where the camera looks	Gde kamera gleda
+Bus stop	Autobuska stanica
+See this view in openOMSI	Pogledajte ovaj prikaz u openOMSI
+Start from	Počni od
+Search	Traži
+Vehicle	Vozilo
+No vehicle (on foot)	Nema vozila (peške)
+Time of day	Doba dana
+Weather	Vremenske prilike
+The map's own	Podešavanja mape
+Natural weather	Prirodno vreme
+Weather cycle	Vremenski ciklus
+Traffic	Saobraćaj
+Passengers at the stops	Putnici na stajalištima
+Cancel	Otkaži
+Draw some pieces first	Prvo nacrtajte neke delove
+Complex junction	Složena raskrsnica
+Complex junction put on the map: its pieces are ordinary splines	Kompleksna raskrsnica stavljena na mapu: njeni delovi su obični splinovi
+Red	Crvena
+Yellow	Žuta
+Green	Zelena
+this object takes its model from a model file and cannot be edited here	ovaj objekat preuzima svoj model iz datoteke modela i ne može se ovde uređivati
+the object has no mesh to edit	objekat nema mrežu za uređivanje
+cannot read the object	ne može da pročita objekat
+Select	Izaberi
+Terrain	Teren
+Paint	Boja
+Roads	Putevi
+Objects	Objekti
+Game logic	Logika igre
+Tiles	Pločice
+Raise	Podigni
+Lower	Spusti
+Smooth	Zagladi
+Flatten	Poravnaj
+Roughen	Napravi neravnine
+Ramp	Rampa
+Lake / river	Jezero/reka
+Along a spline	Duž splajna
+Start points	Početne tačke
+Bus stops	Autobuska stajališta
+Car parks	Parkirališta
+AI paths	AI putanje
+Other	Drugo
+Where the bus appears when a drive starts. Put it on a road or in the depot, facing the way to drive.	Gde se sabirnica pojavljuje kada se pogon pokrene. Stavite ga na put ili u depo, okrenut prema putu za vožnju.
+Where passengers wait. Put it beside the road at the kerb; name it on the right.	Gde čekaju putnici. Stavite ga pored puta na ivičnjaku; nazovi ga na desnoj strani.
+Where parked cars stand. Click for one; with a row on, click the start and end of a row along the kerb.	Gde stoje parkirani automobili. Kliknite za jedan; sa uključenim redom, kliknite na početak i kraj reda duž ivičnjaka.
+Lanes the AI's cars or people follow. Draw like a road: it snaps to lane ends (green: joined, red: dead end) and along lanes. A car path runs the way you draw it.	Trake AI-ovih automobila ili ljudi prate. Crtajte kao put: hvata se do krajeva traka (zelena: spojena, crvena: ćorsokak) i duž traka. Put automobila ide onako kako je nacrtate.
+Sound sources, help arrows and other helpers the game does not show.	Izvori zvuka, strelice pomoći i drugi pomoćnici koje igra ne prikazuje.
+Move (V): drag an arrow along X, Y or Z, a square in its plane, the circle over the ground	Pomeranje (V): prevucite strelicu duž X, I ili Z, kvadrat u njegovoj ravni, krug preko zemlje
+Rotate (C): drag a ring to turn about X, Y or Z	Rotiranje (C): prevucite prsten da biste se okrenuli oko X, I ili Z
+Scale (X): drag an arrow to scale along that axis, a square for two, the circle for all three	Skala (X): prevucite strelicu za razmeru duž te ose, kvadrat za dva, krug za sva tri
+Click the spline they should stand on. Each follows that road and keeps its IDCode	Kliknite na splajn na kojoj bi trebalo da stoje. Svaki prati taj put i zadržava svoj ID kod
+Click the spline it should stand on. It follows that road and keeps its IDCode	Kliknite na splajn na kojoj treba da stoji. Ona prati taj put i zadržava svoj IDCode
+These roads have no lanes of their own to take apart (rails stay as they are)	Ovi putevi nemaju svoje trake za razdvajanje (šine ostaju takve kakve jesu)
+Make the lanes editable	Omogući uređivanje traka
+Roads whose lanes are now editable:	Putevi čije se trake sada mogu uređivati:
+Flatten the terrain	Izravnajte teren
+Select two things or more to group them	Izaberite dve ili više stvari da biste ih grupisali
+Group	Grupa
+Grouped:	Grupisano:
+Ungrouped	Negrupisani
+Rename group	Preimenuj grupu
+Ground levelled under objects:	Zemlja izravnana ispod objekata:
+Move	Pomeri
+Click an end point of a path	Kliknite na krajnju tačku putanje
+No object clicked: nothing linked	Nije kliknut nijedan objekat: ništa nije povezano
+Too near the road's end to cut it there	Previše blizu kraja puta da bi ga tamo presekao
+No road under the cursor	Nema puta ispod kursora
+Ramp:	Rampa:
+Shape terrain	Oblikujte teren
+Paint ground	Farbajte tlo
+Clear plants	Ukloni biljke
+Plant	Zasadi
+Click a spline in the view	Kliknite na splajn u prikazu
+Click an object in the view	Kliknite na objekat u prikazu
+Click an object or a spline in the view	Kliknite na objekat ili splajn u prikazu
+That is the one	To je ono
+Rotate selection	Rotiraj izbor
+Rotate	Rotiraj
+Delete object	Obriši objekat
+Delete road	Obriši put
+Delete object along a road	Obriši objekat duž puta
+Delete selection	Obriši izbor
+The road is gone	Put je nestao
+This end is already joined to something	Ovaj kraj je već spojen sa nečim
+The junction piece could not be read	Spojni deo nije mogao da se pročita
+This object has no places for roads to join	Ovaj objekat nema mesta za spajanje puteva
+Pick an object in the catalogue first	Prvo izaberite objekat u katalogu
+Point at the ground where the object is to stand	Ukažite na tlo gde objekat treba da stoji
+There is no tile here: add one with the Tiles tool	Ovde nema pločice: dodajte je pomoću alatke Pločice
+Place object	Postavite objekat
+New stop	Novo stajalište
+Linked to	Povezano sa
+choose its light in its properties	izabrati njegovu svetlost u svojim svojstvima
+Trees from OpenStreetMap	Drveće iz OpenStreetMap
+Plant an area	Zasadite površinu
+Buildings from OpenStreetMap	Zgrade iz OpenStreetMap
+Stops from OpenStreetMap	Zaustavlja se od OpenStreetMap
+Stop	Stajalište
+Pick a car park in the list first	Prvo izaberite parking sa liste
+Place car parks	Postavite parkinge
+Car parks placed:	Postavljeni parking:
+Pick a road type in the catalogue first	Prvo izaberite tip puta u katalogu
+That bend is too sharp	Taj zavoj je preoštar
+Switch made	Skretnica je napravljena
+Junctions made:	Napravljene raskrsnice:
+The road leaves the map: add tiles there first	Put napušta mapu: prvo dodajte pločice
+Build road	Izgradi put
+Roads from OpenStreetMap	Putevi iz OpenStreetMap
+No spline under the cursor	Nema splajn ispod kursora
+Align ground to splines	Poravnajte tlo sa splajnovima
+The ground follows the spline	Tlo prati splajn
+Lake	Jezero
+River	Reka
+Water level:	Nivo vode:
+Pick a tree in the catalogue (or add some to the mix) first	Prvo izaberite drvo u katalogu (ili dodajte neko u mešavinu).
+Right-click a tile to remove it	Kliknite desnim tasterom miša na pločicu da biste je uklonili
+New tiles go next to the map	Nove pločice idu pored mape
+Add tile	Dodajte pločicu
+Water	Voda
+Paint detail	Detalji boje
+Ground layer order	Redosled prizemnog sloja
+Detail texture	Tekstura detalja
+Ground texture	Tekstura zemlje
+Lamp light on the ground	Svetlo lampe na zemlji
+Add tiles	Dodajte pločice
+A map needs at least one tile	Mapa treba najmanje jednu pločicu
+Remove tile	Uklonite pločicu
+Pick a point (a dot at an end or where pieces meet) to take it out	Izaberite tačku (tačku na kraju ili gde se delovi spajaju) da biste je izvadili
+Remove a point of the path	Uklonite tačku putanje
+Point taken out	Tačka izvađena
+A path of one piece: Del with nothing picked deletes it	Putanja od jednog dela: Del sa ničim izabranim ga briše
+Path	Putanja
+Grab	Pomeri
+Ctrl: snap onto a path, F9: the next one	Ctrl: zakači na putanju, F9: sledeću
+X / Y / Z: lock the axis, numbers: how far, Enter or a click: done, Esc: cancel	X / I / Z: zaključavanje ose, brojevi: koliko daleko, Enter ili klik: gotovo, Esc: poništi
+Extrude	Izvuci
+Inset	Uvuci
+Bevel	Obori ivice
+Loop cut	Preseci petlju
+click: done, right click / Esc: cancel, wheel: segments	klik: gotovo, desni klik / Esc: poništi, točak: segmenti
+Shift: tenths of a degree	Shift: desetine stepena
+numbers: a turn in degrees, Enter or a click: done, Esc: cancel	brojevi: okret u stepenima, Enter ili klik: gotovo, Esc: otkaži
+Scale	Promeni veličinu
+Roads are not scaled: change their length and width in their properties	Putevi nisu skalirani: promenite njihovu dužinu i širinu u njihovim svojstvima
+Only the objects are scaled, the roads stay	Samo se objekti skaliraju, putevi ostaju
+Could not scale	Nije moguće skalirati
+Too near the end: drag the end's dot instead	Previše blizu kraja: umesto toga prevucite tačku kraja
+Add a point to the path	Dodajte tačku na putanju
+Point added: drag the dot where the pieces meet	Poenta je dodata: prevucite tačku gde se delovi sastaju
+Pick an end point of a path first	Prvo izaberite krajnju tačku putanje
+That point is already joined	Ta tačka je već spojena
+Click the other point	Kliknite na drugu tačku
+There is no tile there	Tamo nema pločice
+Remove the rows of objects along it first (they are measured from its start)	Prvo uklonite redove objekata duž njega (mere se od njegovog početka)
+Connect the path	Povežite putanju
+Path connected	Put povezan
+Reshape road	Preoblikovati put
+Selected:	Izabrano:
+Copied:	Kopirano:
+Nothing copied yet	Još ništa nije kopirano
+Paste	Nalepi
+Level the ground	Poravnajte tlo
+Turn objects	Okrenite predmete
+Copies in a row	Kopije u nizu
+Left out (off the map):	Izostavljeno (van mape):
+Pasted (the rest is off the map):	Nalepljeno (ostatak je van mape):
+Edit object	Uredi objekat
+Lean with the ground	Nagni prema terenu
+Stand upright	Postavi uspravno
+Change height	Promena visine
+Change road type	Promeni tip puta
+The selected roads are not one chain (they branch or leave gaps)	Izabrani putevi nisu jedan lanac (granjaju se ili ostavljaju praznine)
+Even slope	Ravan nagib
+Lay on the ground	Položi na tlo
+Reverse direction	Obrnuti smer
+No road there to cut	Nema puta tamo da se preseče
+Cut the road	Preseci put
+Join the pieces	Spojite delove
+Joined into one piece	Spojeni u jedan komad
+Parallel copy	Paralelna kopija
+Overhead wire	Nadzemna žica
+Back into the map	Nazad na mapu
+Hang an object	Okačite predmet
+Put on a road	Stavite na put
+Only a free object can be put on a road	Samo slobodan objekat se može staviti na put
+An object hanging on another cannot go onto a road	Predmet koji visi na drugom ne može da izađe na put
+There is no road within 30 m	U krugu od 30 m nema puta
+The object is gone	Predmet je nestao
+It stands on no road	Ne stoji na putu
+Take off the spline	Odvoji od splajna
+Link to an object	Veza sa objektom
+Unlink	Prekini vezu
+That object already takes its state from this one	Taj objekat već preuzima svoje stanje od ovog
+Linked	Povezano
+Signal head's light	Svetlo signalne glave
+Path rules	Pravila putanje
+Another crossing file	Još jedan fajl za ukrštanje
+Replace objects	Zamenite objekte
+Edit road	Uredi put
+Roads that could not follow the junction (too sharp a bend):	Putevi koji nisu mogli da prate raskrsnicu (preoštra krivina):
+Edit junction	Uredi raskrsnicu
+Make the junction again	Ponovo napravite raskrsnicu
+Make the junctions again	Ponovo napravite spojeve
+Pick an object in the Objects tool's catalogue first	Prvo izaberite objekat u katalogu alata Objects
+The road is too short for that	Put je prekratak za to
+Objects along the road	Objekti duž puta
+Rows of objects added:	Dodati redovi objekata:
+Edit row of objects	Uredi red objekata
+Remove row of objects	Uklonite red objekata
+Remove rows of objects	Uklonite redove objekata
+Roundabout built; roads joined to it:	Izgrađen kružni tok; putevi koji su joj spojeni:
+This road type carries traffic both ways: pick a one-way road for a proper roundabout	Ovaj tip puta odvija saobraćaj u oba smera: izaberite jednosmerni put za ispravan kružni tok
+Press on a road	Pritisnite na putu
+This stretch is already of the pocket's road type	Ovaj deo je već tipa džepnog puta
+The bus pocket could not be made	Džep za autobus nije mogao da se napravi
+The pocket's road type could not be read	Nije se mogao pročitati džepni tip puta
+The road is too short here for a bay with a taper at both ends	Put je ovde prekratak za zaliv sa konusom na oba kraja
+Too near the end of the road for the taper at both ends of the bay	Suviše blizu kraja puta za konus na oba kraja zaliva
+Bus pocket	Autobusko ugibalište
+The bay needs a taper at both ends and one could not be laid there	Zalivu treba konus na oba kraja i jedan se tu ne može položiti
+Bus pocket laid	Autobusko ugibalište je postavljeno
+Start point: where the bus appears in openOMSI	Početna tačka: gde se magistrala pojavljuje u openOMSI
+Bus stop: name it in the panel on the right	Autobuska stanica: navedite je na tabli sa desne strane
+openOMSI stopped with an error	openOMSI je zaustavljen sa greškom
+Check in openOMSI	Proveri u openOMSI
+The saved map run by the game itself, unseen, with its own checks; the picture is the game's, from your view	Sačuvana mapa koju pokreće sama igra, nevidljiva, sa sopstvenim proverama; slika je iz igre iz vašeg pogleda
+Every tile (slower on a big map)	Svaka pločica (sporije na velikoj mapi)
+Run again	Pokreni ponovo
+openOMSI is loading the map…	openOMSI učitava mapu…
+Nothing wrong found	Ništa pogrešno nije pronađeno
+Problems found:	Pronađeni problemi:
+Go there	Idi tamo
+of the places named lie at the map's edge or a road's dead end (greyed): the game measures a lane's last point on the road's very edge, and a bus at the end stands over it; nothing to mend	od navedenih mesta leže na ivici mape ili ćorsokaku puta (sivo): igra meri poslednju tačku trake na samoj ivici puta, a autobus na kraju stoji iznad nje; ništa da se popravi
+The game said nothing about the map	Igra ništa ne govori o mapi
+The game's whole output	Ceo rezultat igre
+no key entered	nije unet ključ
+the server refused the key	server je odbio ključ
+too many requests, try again later	previše zahteva, pokušajte ponovo kasnije
+No connection to the server: are you online?	Nema veze sa serverom: da li ste onlajn?
+Enter your Google key first	Enter prvo vaš Google ključ
+The area is too large for this zoom	Oblast je prevelika za ovaj zum
+Cancelled	Otkazano
+Stopped by an internal error (see the log)	Zaustavljeno internom greškom (pogledajte dnevnik)
+No source has imagery here	Nijedan izvor ovde nema slike
+drawn from OpenStreetMap data: sharp, with names	preuzeto iz podataka OpenStreetMap: oštro, sa imenima
+terrain heights, no key needed	visine terena, nije potreban ključ
+needs your own free key	treba vaš sopstveni besplatni ključ
+no key needed	nije potreban ključ
+the picture is too small	slika je premala
+Import height map	Uvezite mapu visine
+Height map	Visinska mapa
+The ground as a grey picture, to shape in another program and bring back	Tlo kao siva slika, oblikovati u drugom programu i vratiti
+Export…	Izvezi…
+Import…	Uvezi…
+over	preko
+a pixel	piksel
+Black adds	Crni dodaje
+Black is	Crna je
+White adds	Beli dodaje
+White is	Beli je
+Smoothing	Zaglađivanje
+Replace the ground	Zamenite zemlju
+Add to it	Dodajte tome
+Roads and objects keep their heights: best done before building	Putevi i objekti zadržavaju svoju visinu: najbolje je uraditi pre izgradnje
+An 8-bit picture has only 256 steps of height: smoothing hides them	8-bitna slika ima samo 256 koraka visine: zaglađivanje ih sakriva
+Lay it on the map	Položite na mapu
+Height map laid over	Visinska karta položena
+Export the height map	Izvezite mapu visina
+Height map written	Mapa visine napisana
+The height map could not be written	Mapa visine nije mogla da se napiše
+A height map for the whole map	Mapa visine za celu mapu
+The picture could not be read	Slika se nije mogla pročitati
+IBIS and roller blind	IBIS i roletne
+Front sign, line 1	Prednji znak, red 1
+Front sign, line 2	Prednji znak, red 2
+Side sign	Bočni znak
+Roller blind texture	Tekstura roletne
+IBIS 2 (20 letters)	IBIS 2 (20 slova)
+Extra sign	Ekstra znak
+Krüger picture	Krugerova slika
+Text	Tekst
+IBIS (16 letters)	IBIS (16 slova)
+Display, line 1	Displej, red 1
+Display, line 2	Displej, red 2
+Full name (20 letters)	Puno ime (20 slova)
+Service trip	Servisno putovanje
+Special trip	Specijalno putovanje
+Blank	Prazan
+openMapper cannot import this kind of file (use a folder, .zip, .obj, .gltf, .glb, .fbx, .x, .o3d or a picture)	openMapper ne može da uveze ovu vrstu datoteke (koristite fasciklu, .zip, .obj, .gltf, .glb, .fbk, .x, .o3d ili sliku)
+Mod installed, files:	Mod instaliran, fajlovi:
+Objects added to	Objekti dodati u
+Road types added to	Dodati tipovi puteva
+Models imported:	Uvezeni modeli:
+Nothing to import was found in this folder	Ništa za uvoz nije pronađeno u ovoj fascikli
+The model has no triangles	Model nema trouglove
+Model imported:	Uvezen model:
+The .obj file has no faces	.obj datoteka nema lica
+no base colour picture among them	među njima nema slike osnovne boje
+The picture cannot be read	Slika se ne može pročitati
+Picture made into a standee:	Slika napravljena u stalku:
+Picture made into a sign:	Slika napravljena u znak:
+Trees	Drveće
+Stops and start points	Stajališta i početne tačke
+Junctions	Raskrsnice
+Tracks	Pruge
+Footpaths	Pešačke staze
+Fences, walls, kerbs	Ograde, zidovi, ivičnjaci
+Technical (AI, helpers)	Tehnički (AI, pomoćnici)
+openMapper has stopped:	openMapper je zaustavljen:
+The log with the details:	Dnevnik sa detaljima:
+This map lies on the world's grid ([worldcoordinates]): its tiles cannot be taken yet	Ova mapa leži na mreži sveta ([svetske koordinate]): njene pločice se još ne mogu uzeti
+This map lies on the world's grid ([worldcoordinates]): tiles cannot be added from another yet	Ova mapa leži na mreži sveta ([svetske koordinate]): pločice se još ne mogu dodati iz druge
+Tiles from another map	Pločice sa druge mape
+Union	Unija
+Difference (cut out)	Razlika (izrezana)
+Intersection	Raskrsnica
+Slice (keep both pieces)	Rez (zadržite oba dela)
+One object of all the selected, their insides gone	Jedan objekat od svih odabranih, njihova unutrašnjost je nestala
+The other selected objects cut out of the one shown in the properties	Ostali izabrani objekti su isečeni od onog prikazanog u svojstvima
+Only what all the selected share	Samo ono što svi izabrani dele
+The first object cut by the others into what is outside them and what is inside	Prvi predmet su ostali isečeni na ono što je izvan njih i ono što je unutra
+select an object first	prvo izaberite objekat
+Make editable	Učinite izmenljivim
+Make single	Napravi zasebnu kopiju
+the object has only one part	objekat ima samo jedan deo
+Separate parts	Odvojeni delovi
+select two or more objects to join	izaberite dva ili više objekata za spajanje
+Join objects	Spojite objekte
+select two or more objects: the one shown in the properties and what acts on it	izaberite dva ili više objekata: onaj koji je prikazan u svojstvima i šta deluje na njega
+nothing is left: the objects do not overlap that way	ništa nije ostalo: objekti se ne preklapaju na taj način
+The file has no scene	Fajl nema scenu
+The FBX file has no meshes	FBX datoteka nema mreže
+Main roads	Glavni putevi
+Streets	Ulice
+Service roads	Pristupni putevi
+Tram tracks	Tramvajske pruge
+Railway tracks	Železničke pruge
+motorway, trunk, primary, secondary	autoput, magistral, primarni, sekundarni
+tertiary, residential, unclassified	tercijarno, stambeno, neklasifikovano
+yards, car parks, depots	dvorišta, parkirališta, depoi
+each track on its own; branches are joined with switches by hand	svaka staza za sebe; grane se spajaju prekidačima ručno
+main lines without sidings; branches are joined with switches by hand	glavni vodovi bez sporednih koloseka; grane se spajaju prekidačima ručno
+Procedural fallback	Proceduralna izrada ako nema odgovarajućeg resursa
+Asset catalogue	Katalog resursa
+Buildings	Zgrade
+Water from OpenStreetMap	Voda iz OpenStreetMap
+Give a distance	Dajte rastojanje
+The bend is too tight for that distance on its inner side	Savijanje je previše zategnuto za to rastojanje na njegovoj unutrašnjoj strani
+The copy leaves the map: add tiles there first	Kopija napušta mapu: prvo dodajte pločice tamo
+Made with openMapper	Napravljeno sa openMapper
+The road is too short here for a pocket of that length	Put je ovde prekratak za džep te dužine
+The road cannot be cut there	Put se tu ne može preseći
+Low (no shadows, rough edges, 3 km view)	Nisko (bez senki, grube ivice, 3 km pogled)
+Medium (softer shadows, 8 km view)	Srednje (blaže senke, 8 km pogled)
+High	Visoko
+This end belongs to a junction: select the junction and move it, the road follows	Ovaj kraj pripada raskrsnici: izaberite raskrsnicu i pomerite je, put sledi
+Quiet street	Mirna ulica
+Street with a footway on one side	Ulica sa pešačkom stazom na jednoj strani
+Main road	Glavni put
+Avenue with a green strip	Avenija sa zelenom trakom
+One-way street	Jednosmerna ulica
+Street with a bus pocket	Ulica sa džepom za autobus
+Country road	Seoski put
+Service road	Pristupni put
+Paint along the roads	Boja duž puteva
+Market	Pijaca
+Station	Stanica
+Depot	Depo
+this object takes its model from a model file: it cannot be scaled	ovaj objekat preuzima svoj model iz datoteke modela: ne može se skalirati
+Empty script	Prazna skripta
+A greeting when the bus is taken	Pozdrav kada autobus pođe
+Announce every stop	Najavi svako stajalište
+Traffic by the hour	Saobraćaj po satu
+Weather at a time	Vreme po jedno vreme
+Speed limit warning	Upozorenje o ograničenju brzine
+Next stop on the screen	Sledeća stanica na ekranu
+Lit during certain hours	Svetli tokom određenih sati
+Blinks	Treperi
+Lit in certain months	Pali se u određenim mesecima
+Compulsory stop	Obavezno zaustavljanje
+Request stop	Stajalište na zahtev
+Terminus	Krajnja stanica
+Every bus stops here and people are always waiting	Ovde staje svaki autobus i ljudi uvek čekaju
+A bus stops only if somebody waits or presses the stop button	Autobus se zaustavlja samo ako neko čeka ili pritisne dugme za zaustavljanje
+Where a line begins or ends: everybody gets off, a bus waits for its departure	Gde počinje ili se završava linija: svi izlaze, autobus čeka polazak
+when wanted	kada se želi
+always	uvek
+drive through	proći
+when early	kada rano
+right of the road	desno od puta
+left of the road	levo od puta
+both sides	obe strane
+Vehicles	Vozila
+Not a GPX, KML or GeoJSON file	Nije GPX, KML ili GeoJSON datoteka
+No lines in the file	Nema linija u datoteci
+Language	Jezik
+Interface size	Veličina interfejsa
+File	Datoteka
+New map…	Nova mapa…
+Open map…	Otvori mapu…
+Settings…	Podešavanja…
+Import assets…	Uvezi resurse…
+Multiplayer…	Zajedničko uređivanje…
+OMSI 2 folder…	Fascikla OMSI 2…
+Quit	Izađi
+View	Prikaz
+Help	Pomoć
+Updates…	Ažuriranja…
+About openMapper	O openMapper
+OMSI 2 not found	OMSI 2 nije pronađen
+Map editor for openOMSI	Editor mapa za openOMSI
+openMapper builds maps from the content of an installed OMSI 2. Choose its folder (the one with Omsi.exe, maps and Vehicles).	openMapper gradi mape iz sadržaja instaliranog OMSI 2. Izaberite njegov folder (onaj sa Omsi.exe, mapama i vozilima).
+Choose OMSI 2 folder…	Izaberite fasciklu OMSI 2…
+Maps	Mape
+recent · OMSI 2	nedavno · OMSI 2
+recent	nedavno
+content folder	folder sa sadržajem
+OMSI 2 (saved as copy)	OMSI 2 (sačuvan kao kopija)
+Open	Otvori
+Make a copy	Napravite kopiju
+A copy of the map in the content folder under a new name, to try something out	Kopija mape u folderu sa sadržajem pod novim imenom, da isprobate nešto
+Show in the file manager	Prikaži u menadžeru datoteka
+Move to openMapper's bin	Pređite u kantu openMapper
+Its folder goes into openMapper\\bin in the content folder, from where it can be put back by hand	Njegov folder ide u openMapper\\bin u folderu sa sadržajem, odakle se može ručno vratiti
+Browse…	Pregledaj…
+Double-click a map to open it. Maps of OMSI 2 are saved as a copy into openOMSI's content folder; the original stays untouched.	Dvaput kliknite na mapu da biste je otvorili. Mape OMSI 2 se čuvaju kao kopija u fascikli sadržaja openOMSI; original ostaje netaknut.
+A simple map editor for openOMSI.	Jednostavan uređivač mapa za openOMSI.
+Back to the 3D view (0)	Nazad na 3D prikaz (0)
+The plan view from above, north up (0)	Pogled na plan odozgo, sever nagore (0)
+Recent maps	Nedavne mape
+(none)	(nema)
+Export map for sharing…	Izvezi mapu za deljenje…
+Export a plan of the map…	Izvezi plan mape…
+Earlier versions…	Ranije verzije…
+Close map	Zatvori mapu
+Edit	Uredi
+Edit history…	Istorija izmena…
+Groups for other maps…	Grupe za druge mape…
+Find in map…	Pronađi na mapi…
+Search for a command…	Potraži komandu…
+Delete	Obriši
+Deselect	Poništi izbor
+Tile grid	Mreža pločica
+What the game does not show	Šta igra ne pokazuje
+AI lanes	AI trake
+Names of stops and start points	Nazivi stajališta i polaznih tačaka
+Show	Pokaži
+Roads and splines	Putevi i splajnovi
+Overview map (M)	Pregledna mapa (M)
+Assets (B)	Resursi (B)
+Flatten the terrain (roads follow)	Izravnajte teren (putevi prate)
+Saved views…	Sačuvani prikazi…
+Go to selection	Idi na izbor
+Camera	Kamera
+Unity: right button looks round and W A S D fly, middle pans, Alt orbits	Jedinstvo: desno dugme izgleda uokolo i V A S D leti, srednji paneli, Alt orbite
+Map editor: right button looks round and W A S D fly (Q down, E up), middle pans, the wheel zooms to the cursor, drag moves the map	Editor mape: desno dugme se okreće i V A S D leti (K dole, E gore), srednji se pomera, točak zumira do kursora, prevlačenje pomera mapu
+Preset Key Shortcut (from other applications)	Unapred podešena tasterska prečica (iz drugih aplikacija)
+OMSI 2's editor: mouse and keys	OMSI 2 uređivač: miš i tasteri
+Off by default. The middle button turns the view, the right button held and moved up and down zooms, a right click on the ground goes there (Shift + right click: the menu), the arrows move the camera, the wheel zooms	Podrazumevano isključeno. Srednje dugme okreće prikaz, desno dugme koje se drži i pomera gore i dole zumira, desni klik na tlo ide tamo (Shift + desni klik: meni), strelice pomeraju kameru, točkić zumira
+Its keys too: G moves the selection, R turns it, N makes a new object, Enter confirms, Del deletes, the tile grid is on Shift+G	Njegovi tasteri takođe: G pomera izbor, R ga okreće, N pravi novi objekat, Enter potvrđuje, Del briše, mreža pločica je na Shift+G
+Blender's keys	Tasteri programa Blender
+G moves the selection, Shift+S scales it, X deletes, Tab edits the mesh, Shift+A adds an object, Shift+D duplicates, F3 searches, Numpad 7 looks straight down. W A S D and Q E move the camera as they always do; the mouse as openMapper's own	G pomera selekciju, Shift+S ga skalira, X briše, Tab uređuje mrežu, Shift+A dodaje objekat, Shift+D duplira, F3 pretražuje, Numpad 7 gleda pravo nadole. V A S D i K E pomeraju kameru kao i uvek; miša kao openMapper
+Load all tiles at once	Učitajte sve pločice odjednom
+Off: only the tiles round the camera are loaded, as in OMSI 2's editor, and more load as you go there	Isključeno: samo pločice oko kamere se učitavaju, kao u uređivaču OMSI 2, i više se učitavaju dok idete tamo
+Tiles loaded at once	Pločice se učitavaju odjednom
+about 500 m round the camera	oko 500 m oko kamere
+about 850 m	oko 850 m
+about 1.2 km	oko 1,2 km
+about 1.7 km (the usual)	oko 1,7 km (uobičajeno)
+about 2.5 km	oko 2,5 km
+A big or very detailed map is lighter with fewer tiles: the others load as you go there	Velika ili veoma detaljna mapa je lakša sa manje pločica: ostale se učitavaju dok idete tamo
+Plain day (as the game by day)	Običan dan (kao igra po danu)
+At an hour	U sat vremena
+Let time run (starts the clock at 12:00)	Pusti vreme da teče (počinje sat u 12:00)
+Let time run	Neka vreme teče
+The hour moves on while the editor is running, and the lamps of the shops and streets come on at dusk; ticking this in Plain day starts the clock at noon	Sat teče dok urednik radi, a svetiljke prodavnica i ulica pale se u sumrak; otkucavanje ovoga u običnom danu počinje da teče u podne
+Speed, for testing (the sun and the lamps' cycle)	Brzina, za testiranje (ciklus sunca i lampe)
+Normal: a minute of the map a second	Normalno: minut karte u sekundi
+Five times as fast: an 82 s cycle of the lamps in 16 s	Pet puta brže: ciklus lampe od 82 s za 16 s
+An hour of the map a second, the lamps' cycle in a second or two	Sat karte u sekundi, ciklus lampi za sekundu ili dve
+Where the sun stands then, today, at the map's place (Map > Calendar and place); by night the moon	Gde sunce tada stoji, danas, na mestu karte (Mapa > Kalendar i mesto); noću mesec
+Season	Sezona
+Summer	Leto
+Dry summer	Sušno leto
+Spring	Proleće
+Autumn	Jesen
+Winter	Zima
+Snow	Sneg
+Graphics API	Grafički API
+Automatic	Automatski
+DirectX 12 is the usual choice on Windows; if the chosen API cannot start, openMapper falls back to the automatic one. Takes effect after a restart (OPENMAPPER_BACKEND=dx12 for one run).	DirectX 12 je uobičajeni izbor za Windows; ako izabrani API ne može da se pokrene, openMapper se vraća na automatski. Stupa na snagu nakon ponovnog pokretanja (OPENMAPPER_BACKEND=dk12 za jedno pokretanje).
+Graphics quality	Kvalitet grafike
+Tools	Alati
+Road types and junctions…	Vrste puteva i raskrsnice…
+Complex junction editor…	Uređivač kompleksnih raskrsnica…
+Crossing editor…	Editor raskrsnica…
+PBR maps for a picture…	PBR mape za sliku…
+Map	Mapa
+Map settings…	Podešavanja mape…
+Scripts…	Skripte…
+Calendar and place…	Kalendar i mesto…
+Signal routes…	Putevi signala…
+Chrono scenarios…	Hronološki scenariji…
+Ground textures…	Teksture tla…
+Check map…	Proveri mapu…
+Junctions made again:	Ponovo napravljene raskrsnice:
+Lines and timetable…	Linije i red vožnje…
+Traffic and AI…	Saobraćaj i AI…
+Depot files (destinations)…	Depo fajlovi (odredišta)…
+Satellite and terrain…	Satelit i teren…
+From OpenStreetMap…	Iz OpenStreetMap…
+GPS tracks to trace…	GPS tragovi za praćenje…
+Tiles from another map…	Pločice sa druge mape…
+Test drive in openOMSI	Probna vožnja u openOMSI
+Test drive in OMSI 2 (the original)…	Probna vožnja u OMSI 2 (original)…
+Check in openOMSI…	Proveri u openOMSI…
+Getting started	Početak
+New map	Nova mapa
+Open a map	Otvorite mapu
+Save (Ctrl+S): there are unsaved changes	Sačuvaj (Ctrl+S): postoje promene koje nisu sačuvane
+Save (Ctrl+S)	Sačuvaj (Ctrl+S)
+Import assets: a mod folder or .zip, a .obj / .x / .o3d model (or drop files on the window)	Uvezite sredstva: mod folder ili .zip, .obj / .x / .o3d model (ili ispustite datoteke u prozor)
+Redo (Ctrl+Shift+Z)	Ponovi (Ctrl+Shift+Z)
+Tile grid (G)	Mreža pločica (G)
+Assets: every object and road type, with pictures (B)	Sredstva: svaki objekat i tip puta, sa slikama (B)
+Close test drive	Zatvorite probnu vožnju
+Close the openOMSI session started from here (F5)	Zatvorite sesiju openOMSI započetu odavde (F5)
+Choose where to start, the vehicle, the time and the weather, then drive the map in openOMSI (F5)	Izaberite odakle da počnete, vozilo, vreme i vreme, a zatim vozite mapu u openOMSI (F5)
+openOMSI was not found: install it to test maps	openOMSI nije pronađen: instalirajte ga za testiranje mapa
+Test drive from the start point nearest the view	Probna vožnja od početne tačke najbliže pogledu
+day	dan
+Plain day: the sun stands where the game has it by day. Click to start the clock at 12:00	Običan dan: sunce stoji tamo gde ga igra danju. Kliknite da započnete sat u 12:00
+The view's clock, running. Click to stop it (the hour stays where it is)	Sat pogleda, radi. Kliknite da ga zaustavite (sat ostaje tamo gde jeste)
+The view's clock, stopped. Click to let it run	Sat pogleda, stao. Kliknite da pustite da radi
+loading	učitavanje
+Edit mesh	Uredi mrežu
+Shapes and lamps	Oblici i lampe
+Click beside the map to add a 300 × 300 m tile. Right-click a tile to remove it.	Kliknite pored mape da dodate pločicu 300 × 300 m. Kliknite desnim tasterom miša na pločicu da biste je uklonili.
+Area	Područje
+A ring of tiles round the map	Prsten pločica oko karte
+Every free place beside the map, corners too, gets a tile at the height of its neighbours	Svako slobodno mesto pored mape, uglovi takođe, dobijaju pločicu na visini svojih suseda
+Tiles added:	Pločice su dodate:
+Everything on the map, grouped by the folders its files lie in	Sve na mapi, grupisano prema fasciklama u kojima se nalaze njegovi fajlovi
+Click an object or a road in the view to see and change it on the right.	Kliknite na objekat ili put u prikazu da biste ga videli i promenili na desnoj strani.
+Line up with the nearest road (Shift: put it freely)	Poravnajte se sa najbližim putem (Shift: slobodno stavite)
+On both sides of the road	Sa obe strane puta
+A stop of the same name also goes at the kerb across the road, facing the other way	Istoimena stanica takođe ide na ivičnjak preko puta, okrenuta na drugu stranu
+In a row along a line	U nizu duž linije
+Every	Svaki
+Draw new	Nacrtaj novo
+Edit existing	Uredi postojeće
+Click a path to pick it: every point is a dot to drag (the small ones in the middle of a piece bend it). Double-click the path to put a point in. Click a dot, then Del, to take that point out; Del with no dot picked deletes the whole path (Ctrl+Z brings it back). Lanes of roads and junctions belong to their road type: use Edit its AI lanes on the road.	Kliknite na putanju da biste je izabrali: svaka tačka je tačka za prevlačenje (male u sredini komada je savijaju). Kliknite dvaput na putanju da biste stavili tačku. Kliknite na tačku, a zatim na Del, da biste istakli tu tačku; Del bez izabrane tačke briše celu putanju (Ctrl+Z ga vraća nazad). Trake puteva i raskrsnice pripadaju njihovom tipu puta: koristite Uredi svoje AI trake na putu.
+Click the other point (Esc cancels)	Kliknite na drugu tačku (Esc otkazuje)
+Connect to	Povežite se na
+Cars	Automobili
+People	Ljudi
+Trains	Vozovi
+An invisible rail lane for the AI's trains: it joins the rail lanes of tracks and points where they end	Nevidljiva šinska traka za vozove AI: spaja se sa šinskim trakama pruga i tačkama na kojima se završavaju
+Show these in the other tools too	Prikaži ovo iu drugim alatima
+Show the AI's lanes in the other tools too	Prikažite trake AI i u drugim alatima
+Everything	Sve
+Shape the ground under the road	Oblikujte zemlju ispod puta
+Go on drawing from the end of the road just built	Nastavite da crtate sa kraja upravo izgrađenog puta
+Join road ends, roads and junction pieces near the cursor	Spojite krajeve puta, puteve i delove raskrsnice blizu kursora
+Hold Ctrl while drawing to join nothing. Cables, fences and footpaths never join roads or junctions.	Držite Ctrl dok crtate da ništa ne spajate. Kablovi, ograde i pešačke staze se nikada ne spajaju sa putevima ili raskrsnicama.
+Make junctions where roads meet	Napravite raskrsnice na mestima gde se sastaju putevi
+Use my custom junctions where they fit	Koristite moje prilagođene spojeve tamo gde odgovaraju
+Custom junctions saved from the complex junction editor with Use in automatic junctions on	Prilagođene raskrsnice sačuvane iz uređivača složenih spojeva sa uključenim Koristi u automatskim raskrsnicama
+Go on with the type of the road I start from	Nastavite sa vrstom puta sa kojeg krećem
+Building with:	Izgradnja pomoću:
+nothing chosen	ništa nije izabrano
+Front at the roadside, back	Napred kraj puta, nazad
+Plant brush: sow trees by painting	Sadite četkicu: posejte drveće farbanjem
+Sow	Zasadi
+Clear	Očisti
+With the brush	Sa četkom
+In an outline	U skici
+Click round an area (a wood, a park, a garden) and it is filled at once, or cleared	Klikni oko oblasti (šuma, park, bašta) i ona se odjednom popuni ili očisti
+About	O
+plants (Enter: plant)	biljaka (Enter: zasadi)
+Size	Veličina
+Apart	Razmak
+Sows the object chosen below. Right-click entries: "Add to the plant mix" to sow several at random. Clearing takes trees and the mix's objects.	Seje objekat izabran ispod. Desni klik na unose: „Dodaj mešavini biljaka“ da biste nasumično posejali nekoliko. Raščišćavanje uzima drveće i objekte mešavine.
+Mix (picked at random):	Mešavina (izabrana nasumično):
+reading OMSI 2…	čitanje OMSI 2…
+items	stavke
+Nothing found	Ništa nije pronađeno
+mod	mod
+right-click: star it	Desni klik: zvezdicom
+Take out of the plant mix	Izvaditi iz mešavine biljaka
+Add to the plant mix	Dodati u mešavinu biljaka
+Remove from favourites	Ukloni iz favorita
+Add to favourites	Dodaj u favorite
+Favourites	Favoriti
+Recently used	Nedavno korišćen
+(not in a folder)	(nije u fascikli)
+Strength	Snaga
+Mode	Režim
+Levels the ground to the height where you start dragging	Poravnava tlo do visine na kojoj počinjete da prevlačite
+Softens bumps and edges	Umekšava neravnine i ivice
+Raises the ground under the brush	Podiže tlo ispod grmlja
+Lowers the ground under the brush	Spušta tlo ispod grmlja
+Gives flat ground the rolls and dips of a natural field; hold longer for more	Daje ravnu podlogu rolne i umake prirodnog polja; držite duže za više
+Paint a lake or a river: the ground is dug to a bed under the water's level (where you start the stroke, or the tile's water) and the tile gets water at that level. Water in OMSI is one level for a whole tile: another low place on the same tile shows it too	Obojite jezero ili reku: tlo je iskopano do korita ispod nivoa vode (gde počinjete potez, ili voda pločice) i pločica dobija vodu na tom nivou. Voda u OMSI je jedan nivo za celu pločicu: još jedno nisko mesto na istoj pločici to takođe pokazuje
+Click where it starts, then where it ends: the ground between becomes one even slope as wide as the brush (an embankment, a ramp, a level bed)	Kliknite gde počinje, a zatim gde se završava: tlo između postaje jedna padina široka kao četka (nasip, rampa, ravna korita)
+Click a spline: the ground under it, as wide as the brush either side, is brought to the spline's height, and the pieces joined to it come with it	Kliknite na žleb: tlo ispod njega, široko kao četkica sa obe strane, dovedeno je do visine žleba, a delovi spojeni na njega dolaze sa njim
+The brush size is how far either side of the spline the ground is brought to its height.	Veličina četke je koliko je bilo koja strana uloška zemlja dovedena do svoje visine.
+Align the selected splines	Poravnajte izabrane splajn
+Select splines first	Prvo izaberite splajn
+Keep the ground under roads	Držite zemlju ispod puteva
+On: the brush does not raise the ground through a road. Off: it shapes the ground under and beside roads as freely as anywhere else	Uključeno: četka ne podiže tlo kroz put. Off: oblikuje tlo ispod i pored puteva jednako slobodno kao bilo gde drugde
+To a height	Do visine
+Flatten to the height typed instead of the one where the drag starts (a level square, a platform)	Poravnajte na visinu koja je otkucana umesto one na kojoj počinje prevlačenje (kvadrat u nivou, platforma)
+Brush	Četka
+Depth	Dubina
+Width	Širina
+Banks	Obale
+Click the shore round and close it on the first point (Enter closes too, right-click takes a point back). The ground inside is dug to a bed and the banks slope to the shore.	Kliknite na obalni krug i zatvorite ga na prvoj tački (Enter se takođe zatvara, desni klik vraća tačku nazad). Zemlja unutra je iskopana do korita, a obale se spuštaju do obale.
+Click the river's middle line from its source on and finish on the last point (or Enter). Water in OMSI lies at one level for a tile: a river runs level.	Kliknite na srednju liniju reke od njenog izvora i završite na poslednjoj tački (ili Enter). Voda u OMSI leži na jednom nivou za pločicu: reka teče u nivou.
+The water's level is set where a stroke starts: start at the bank.	Nivo vode se postavlja tamo gde počinje udar: počnite na obali.
+Flatten the whole terrain	Poravnajte ceo teren
+Every tile's ground levelled to the map's mean height; the roads, the AI paths and the junctions follow it. One undo step brings the relief back. (The satellite picture: View > Satellite overlay.)	Tlo svake pločice izravnano sa srednjom visinom karte; putevi, AI staze i raskrsnice ga prate. Jedan korak poništavanja vraća olakšanje. (Satelitska slika: Pogled > Satelit preklapanje.)
+Ground layers	Slojevi tla
+base ground	osnovno tlo
+layer	sloj
+Add…	Dodaj…
+Remove	Ukloni
+Up the list: drawn under the layers after it	Gore na listi: nacrtano ispod slojeva iza nje
+Down the list: drawn over the layers before it	Dole na listi: nacrtano preko slojeva pre nje
+Texture	Tekstura
+The layer's picture; its painting stays	Slika sloja; njegova slika ostaje
+A fine grain laid over the texture, seen close up (OMSI's detail texture)	Fino zrno položeno preko teksture, viđeno izbliza (detaljna tekstura OMSI)
+Click to choose another	Kliknite da izaberete drugu
+Repeats per tile	Ponavljanja po pločici
+Detail repeats	Detalji se ponavljaju
+How finely this layer can be painted: texels across a tile (its masks are made again at the new size)	Koliko fino ovaj sloj može da se naslika: tekseli preko pločice (njegove maske se ponovo prave u novoj veličini)
+Edit ground texture	Uredite teksturu tla
+Erase	Obriši
+Remove ground texture	Uklonite teksturu zemlje
+Tile	Pločica
+A water surface over the whole tile: it shows where the ground lies below it (lower the ground with the Terrain tool for a lake or a river)	Vodena površina preko cele pločice: pokazuje gde se tlo nalazi ispod nje (spustite tlo pomoću alatke Teren za jezero ili reku)
+at 	na 
+Lamps light the ground at night	Lampe osvetljavaju zemlju noću
+The game works out the light pools of the street lamps on and round this tile when it loads it ([variable_terrainlightmap]); off, it shows the tile's light map file as it is	Igra razrađuje svetlosne bazene uličnih svetiljki na i oko ove pločice kada je učita ([varijable_terrainlightmap]); isključen, prikazuje datoteku svetlosne mape pločice kakva jeste
+Edit history	Istorija izmena
+Click a step to go back to just after it	Kliknite na korak da biste se vratili odmah nakon njega
+Opened	Otvoreno
+Properties	Svojstva
+Configure PBR	Konfigurišite PBR
+Create PBR	Kreirajte PBR
+Normal, roughness, metal and shadow maps made from the object's textures, tuned and written as openOMSI reads them	Mape normale, hrapavosti, metala i senki napravljene od tekstura objekta, podešene i napisane kako ih openOMSI čita
+Crossing editor	Editor raskrsnica
+The paths of a crossing or junction object, its blocking and its traffic light program, edited as OMSI 2's crossing editor does: the object's own file, the old one kept as a .bak	Putanja objekta raskrsnice ili raskrsnice, njegovo blokiranje i program semafora, uređen kao što to radi OMSI 2 uređivač prelaza: sopstveni fajl objekta, stari čuvan kao .bak
+Type	Tip
+Hangs on	Okačeno na
+point	tačka
+Location	Lokacija
+Along the road	Uz put
+Beside it (right +)	Pored njega (desno +)
+Above the road	Iznad puta
+East	Istok
+North	Sever
+Height above sea level	Visina iznad nivoa mora
+above the ground:	iznad zemlje:
+OMSI keeps this object's height above the ground under it: moved elsewhere it stays as high above the ground there	OMSI zadržava visinu ovog objekta iznad zemlje ispod njega: pomeren na drugo mesto ostaje isto tako visoko iznad zemlje
+Rotation	Rotacija
+Tilt forward (pitch)	Naginjanje napred (nagib)
+Bank to the side (roll)	Nagib u stranu (roll)
+Heading	Smer
+Turn it the way the nearest road runs beside it	Okrenite ga onako kako najbliži put prolazi pored njega
+Stand it upright again	Ponovo uspravno
+Distance between two copies; 0: one object only	Udaljenost između dve kopije; 0: samo jedan objekat
+Count	Broj
+How many copies stand along the road	Koliko primeraka stoji pored puta
+Lean with the road	Nasloni se na put
+Detach from the spline	Odvojiti od splajn
+It becomes a free object where it stands. A row of several copies becomes one object; an object at an absolute height keeps the height above the ground there.	Postaje slobodan objekat tamo gde stoji. Red od nekoliko kopija postaje jedan objekat; objekat na apsolutnoj visini tamo zadržava visinu iznad zemlje.
+Attach to the spline	Pričvrstite za splajn
+Picture	Slika
+Ratio	Odnos
+Stop name	Naziv stajališta
+This tree	Ovo drvo
+Texts	Tekstovi
+Shown on the object (@ starts a new line)	Prikazano na objektu (@ počinje novi red)
+Model	Model
+Triangles	Trouglovi
+Parts	Delovi
+Part	Deo
+triangles	trouglovi
+colour only	samo boja
+opaque	neproziran
+cut out	iseći
+blended	mešano
+How the texture's transparency is used: cut out for leaves and fences, blended for glass	Kako se koristi transparentnost teksture: isečeni za lišće i ograde, pomešani za staklo
+Textures	Teksture
+Normal, roughness, metal and shadow maps made from the road type's textures	Mape normalnih, hrapavosti, metala i senki napravljene od tekstura tipa puta
+Length	Dužina
+Radius	Radijus
+right	desno
+left	levo
+straight	ravno
+start	početak
+end	kraj
+Mirrored	Ogledalo
+Skew	Zakošenje
+The start cut on a slant: 1 is 45° (two fences meeting at a corner: 1 and -1)	Početni rez na kosi: 1 je 45° (dve ograde se sastaju u uglu: 1 i -1)
+The end cut on a slant	Kraj isečen na koso
+Ground	Zemlja
+as it is	kako jeste
+cut away under it	odsečen ispod njega
+cut, held at the end	rez, držan na kraju
+cut, held at the start	rez, održan na početku
+cut, held at both ends	rez, držan na oba kraja
+A hole in the ground under it, as for a tunnel, an underpass or a pit (OMSI's terrain align)	Rupa u zemlji ispod nje, kao za tunel, podvožnjak ili jamu (poravnanje terena OMSI)
+Select the whole road	Izaberite ceo put
+Every piece linked on from this one (or double-click the road)	Svaki deo povezan sa ovog (ili dvaput kliknite na put)
+Join with the next piece	Pridružite se sa sledećim delom
+One piece again with the one after it, where the two make one curve	Ponovo jedan komad sa onim posle njega, gde njih dvoje prave jednu krivinu
+Replace with	Zamenite sa
+The object chosen in the Objects tool's catalogue takes this one's place	Objekat izabran u katalogu alata Objekti zauzima ovo mesto
+Go to	Idi na
+Level ground	Ravno tlo
+The ground under it made level with its foot, blending in 3 m round it (a house on a slope)	Tlo ispod nje ravnalo se sa nogom, stapajući se sa 3 m oko njega (kuća na padini)
+All like it	Svi istog tipa
+Select every one of this type on the map	Izaberite svaki od ove vrste na mapi
+No road within 60 m	Nema puta u krugu od 60 m
+Name	Ime
+Folder	Fascikla
+left-hand	levom stranom
+No start point yet: place one (Game logic > Start points) so the bus has somewhere to appear in openOMSI.	Još nema početne tačke: postavite jednu (logika igre > Početne tačke) tako da se sabirnica negde pojavljuje u openOMSI.
+None yet: openOMSI shows it where maps are chosen.	Još uvek nema: openOMSI pokazuje gde su izabrane karte.
+Import your thumbnail	Uvezite svoju sličicu
+Choose a picture: it is cut to 370 × 280 and becomes the map's picture (picture.jpg).	Izaberite sliku: ona se iseče na 370 × 280 i postaje slika mape (picture.jpg).
+Open the map with this view	Otvorite mapu sa ovim prikazom
+The camera as it is now is where the map opens (here and in OMSI 2's editor).	Kamera kakva je sada je mesto gde se mapa otvara (ovde i u uređivaču OMSI 2).
+Saved to	Sačuvano u
+Edit map	Uredi mapu
+Change the layer's texture	Promenite teksturu sloja
+Change the layer's detail texture	Promenite teksturu detalja sloja
+Settings	Podešavanja
+General	Opšte
+Graphics	Grafika
+Keys	Tasteri
+Mouse	Miš
+Keyboard	Tastatura
+openMapper's own keys	Tasteri programa openMapper
+G moves the selection, R turns it, N makes a new object, Enter confirms, Del deletes, the tile grid is on Shift+G; the mouse as in OMSI 2's editor too	G pomera izbor, R ga okreće, N pravi novi objekat, Enter potvrđuje, Del briše, mreža pločica je na Shift+G; miša kao iu uređivaču OMSI 2
+Click a key, then press the new one (Esc: leave it). A key already in use is taken from its command.	Kliknite na taster, a zatim pritisnite novi (Esc: ostavite ga). Ključ koji se već koristi uzima se iz njegove komande.
+Find	Pronađi
+a command or a key	komandu ili taster
+press a key…	pritisnite taster...
+Also:	Takođe:
+Back to the default key	Povratak na podrazumevani taster
+Reset all keys	Resetujte sve tastere
+Right button held	Desno dugme je zadržano
+look round; W A S D fly, Q / E down / up, Shift faster, wheel: speed	osvrnuti se; V A S D leti, K / E dole / gore, Shift brže, točak: brzina
+Middle drag	Prevlačenje srednjim dugmetom
+pan	pomeri prikaz
+Alt + left / right / middle drag	Alt + levo / desno / srednje povlačenje
+orbit / zoom / pan (as in Unity)	orbita / zumiranje / pomeranje (kao u Uniti)
+Left drag on nothing	Prevlačenje levim dugmetom preko praznog prostora
+select with a box	izaberite poljem
+Alt + left drag	Alt + prevlačenje levo
+orbit round the point under the cursor	kruži oko tačke ispod kursora
+Wheel	Točak
+move towards the cursor	pomerite se prema kursoru
+Trackpad	Dodirna tabla
+Two fingers	Dva prsta
+Pinch / twist	Štipanje / okretanje
+zoom / turn	zumiranje / okretanje
+Option + two fingers or drag	Opcija + dva prsta ili prevlačenje
+Fixed keys	Fiksni tasteri
+Arrow keys	Tasteri sa strelicama
+move over the map (Shift: faster)	kretanje po mapi (Shift: brže)
+go to a saved view (Shift: keep the view there)	idite na sačuvani prikaz (Shift: zadržite prikaz tamo)
+Alt + arrows	Alt + strelice
+move the selection a grid step (Shift: 10 cm)	pomeri izbor za korak mreže (Shift: 10 cm)
+Alt + Page Up / Down	Alt + Stranica gore / dole
+selection up / down 10 cm (Shift: 1 m)	izbor gore/dole 10 cm (Shift: 1 m)
+add to / take from the selection	dodaj u/uzmi iz selekcije
+Shift / Ctrl + drag on empty ground	Shift / Ctrl + povlačenje po praznom terenu
+select with a box (Shift adds)	izaberite poljem (Shift dodaje)
+Double-click a road	Dvaput kliknite na put
+select all of it	izaberite sve
+turn the object	okrenuti predmet
+brush size	veličina četke
+stop / deselect	zaustavi / poništi izbor
+Interface	Interfejs
+Camera and mouse	Kamera i miš
+Map editor: right button looks round, the wheel zooms to the cursor, drag moves the map	Uređivač mapa: desno dugme se okreće, točkić zumira do kursora, prevlačenje pomera mapu
+Big maps	Velike karte
+Load a part of the tiles at a time (like OMSI 2's editor)	Učitavajte deo po deo pločica (kao urednik OMSI 2)
+Auto (the best the system has)	Automatski (najbolje što sistem ima)
+Takes effect after a restart. If the chosen API cannot start, openMapper falls back to Auto. OPENMAPPER_BACKEND=dx12 sets it for one run.	Stupa na snagu nakon ponovnog pokretanja. Ako izabrani API ne može da se pokrene, openMapper se vraća na Automatski. OPENMAPPER_BACKEND=dk12 ga postavlja za jedno pokretanje.
+Quality	Kvalitet
+Camera speed	Brzina kamere
+Right button held and W A S D (m/s); the wheel changes it meanwhile	Desno dugme se drži i V A S D (m/s); točak ga u međuvremenu menja
+Keys over the map	Tasteri nad mapom
+W A S D and the arrows without the right button	V A S D i strelice bez desnog dugmeta
+Shift makes it	Shift uspeva
+How many times faster the camera is with Shift held	Koliko je puta brža kamera sa držanjem Shift
+Turning with Q / E	Okretanje tasterima Q / E
+Degrees a second	Stepeni u sekundi
+Looking round	Gledajući unaokolo
+Sensitivity of the right button	Osetljivost desnog dugmeta
+Orbiting	Orbita
+Sensitivity of Alt + left button and of the trackpad	Osetljivost Alt + levo dugme i dodirne table
+Panning	Pomeranje prikaza
+Sensitivity of the middle button and of dragging the map	Osetljivost srednjeg dugmeta i prevlačenja mape
+Zoom (wheel)	Zum (točak)
+How far one wheel step goes	Koliko daleko ide jedan korak točka
+Invert looking up and down	Okrenite pogled gore-dole
+Invert orbiting up and down	Invert orbita gore-dole
+Invert the wheel	Okrenite točak
+Flying builds up speed the longer the keys are held	Letenje povećava brzinu što se tasteri duže drže
+Reset the camera	Resetujte kameru
+Unsaved changes	Nesačuvane promene
+The map has changes that are not saved. Save them first?	Mapa ima promene koje nisu sačuvane. Prvo ih sačuvati?
+Don't save	Ne čuvaj
+Assets	Resursi
+All	Svi
+Picture size	Veličina slike
+Shapes…	Oblici…
+Close (B)	Zatvori (B)
+Scenery objects	Predmeti pejzaža
+Splines (roads, tracks…)	Splajnovi (putevi, pruge…)
+Add as a ground texture	Dodajte kao teksturu zemlje
+Favourite on / off	Omiljeno uključivanje/isključivanje
+content folder (mod, import, own)	folder sa sadržajem (mod, uvoz, sopstveni)
+OMSI 2	OMSI 2
+width	širina
+Build with it	Gradite sa njim
+Place it	Stavi ga
+PBR material…	PBR materijal…
+Delete…	Obriši…
+Not seen in the game (a helper).	Nije viđen u igri (pomoćnik).
+Delete the asset?	Obrisati resurs?
+Its folder goes into openMapper's bin in the content folder (openMapper\\bin), from where it can be put back by hand. Maps that use it show it missing.	Njegov folder ide u korpu za openMapper u fascikli sa sadržajem (openMapper\\bin), odakle se može ručno vratiti. Mape koje ga koriste pokazuju da nedostaje.
+Calendar and place	Kalendar i mesto
+Place and time	Mesto i vreme
+Holidays	Praznici
+Number plates	Registarske oznake
+Latitude	Geografska širina
+Longitude	Geografska dužina
+Time zone	Vremenska zona
+Where the sun stands and when it rises and sets come from here.	Gde sunce stoji i kad izlazi i zalazi dođite odavde.
+Summer time	Letnje vreme
+years	godine
+none: the clocks are never put forward	nijedan: satovi se nikada ne pomeraju napred
+EU rules for these years	Pravila EU za ove godine
+Last Sunday of March to last Sunday of October, replacing what is set for these years	Poslednje nedelje marta do poslednje nedelje oktobra, zamenjujući ono što je određeno za ove godine
+None	Nijedan
+Year	Godina
+entries	unosa
+Public holidays run Sunday's timetable; school holidays the holiday one.	Državni praznici idu po nedeljnom rasporedu; školski raspust jedan praznik.
+Public holidays	Državni praznici
+Add a holiday	Dodajte praznik
+Holiday	Praznik
+School holidays	Školski raspust
+Ends before it starts	Završava se pre nego što počne
+Add school holidays	Dodajte školske praznike
+The AI's cars carry these, one a line.	Automobili AI nose ove, jedan u nizu.
+X: a letter, 9: a digit	X: slovo, 9: cifra
+Make	Napravi
+Replaces the list with plates of the pattern	Zamenjuje listu pločama šablona
+plates	registarske oznake
+The scenario's AI lists are written, groups changed:	AI liste scenarija su napisane, grupe su promenjene:
+Could not write the scenario	Ne mogu napisati scenario
+The scenario's timetable is written, files:	Raspored scenarija je napisan, datoteke:
+Back in the scenario:	Nazad u scenariju:
+The scenario's things are on the map:	Stvari scenarija su na mapi:
+what you place now is the scenario's too	ono što sada postavljate je i scenario
+Editing the scenario	Uređivanje scenarija
+Done	Gotovo
+Chrono scenarios	Hrono scenariji
+How the map changes over the years: each scenario from its first day lays its own tiles, lines and tickets over the map. The view shows the map as on the day chosen here; what you edit is always the map itself.	Kako se mapa menja tokom godina: svaki scenario od svog prvog dana postavlja svoje pločice, linije i karte preko mape. Prikaz prikazuje mapu kao na dan koji je ovde izabran; ono što uređujete je uvek sama mapa.
+Show the map as on	Prikaži kartu kao na
+Today	Danas
+Active on that day:	Aktivan tog dana:
+New scenario's name	Ime novog scenarija
+New scenario	Novi scenario
+A scenario starting on the day shown, after the others	Scenario koji počinje prikazanog dana, posle ostalih
+From	Od
+To	Do
+for good	zauvek
+Own tickets	Sopstvene karte
+Own money	Sopstveni novac
+the map's	mapa
+Takes off	Uklanja
+What changes (shown where the date is chosen)	Šta se menja (prikazano gde je izabran datum)
+From its first day, the selection in the view:	Od prvog dana, izbor u prikazu:
+appears	pojavljuje se
+Taken out of the map into the scenario: it is there from the scenario's first day on (place it first, then press this)	Izvađeno iz mape u scenario: tu je od prvog dana scenarija (prvo ga postavite, a zatim pritisnite ovo)
+is gone	je otišao
+Stays in the map, gone from the scenario's first day on	Ostaje na mapi, nestalo od prvog dana scenarija
+becomes	postaje
+its texts become	njegovi tekstovi postaju
+Write	Pišite
+Its path rules from that day	Njegov put vlada od tog dana
+Add a rule	Dodajte pravilo
+Written into the scenario at once (undo does not take it out of the scenario).	Upisano u scenario odjednom (poništavanje ga ne uklanja iz scenarija).
+What it changes	Šta menja
+into the map	u kartu
+Out of the scenario into the map itself: there on every day	Izlazak iz scenarija u samu mapu: tamo svaki dan
+Take it out of the scenario	Izbacite to iz scenarija
+new texts	novi tekstovi
+rules	pravila
+Nothing yet.	Još ništa.
+Its own things are on the map: select, move, change and place as usual. The map's own things stay the map's.	Njegove stvari su na mapi: izaberite, pomerite, promenite i postavite kao i obično. Sopstvene stvari na mapi ostaju na mapi.
+Done: back into the scenario	Gotovo: nazad u scenario
+Edit its own things on the map	Uredi svoje stvari na mapi
+What it brings in is put on the map to work with as with anything else; Done writes it back (undo starts afresh)	Ono što donosi stavlja se na mapu da se radi sa svime drugim; Done to vraća (poništavanje počinje iznova)
+The Lines window shows its timetable (the map's with its own laid over): lines, trips and tours edited there are the scenario's; a line of the map taken away is taken off from its day.	Prozor Linije prikazuje njegov raspored vožnje (mapa je prekrivena): linije, putovanja i obilasci uređeni tamo su scenariji; oduzeta linija karte je skinuta sa njenog dana.
+Done with its timetable	Gotovo sa svojim rasporedom
+Edit its timetable	Uredite njegov raspored
+Its own lines, trips and tours in the Lines window; Done writes only what differs from the map's (undo starts afresh)	Njegove sopstvene linije, putovanja i obilasci u prozoru Linije; Gotovo piše samo ono što se razlikuje od mape (poništavanje počinje iznova)
+The Traffic window shows its AI lists (the map's with its own added): vehicles and type groups added there, and a depot's own depot file, are the scenario's from its day.	Prozor Saobraćaj prikazuje njegove AI liste (mapa je dodata): vozila i grupe tipova koje su tamo dodane, i sopstveni fajl depoa, su scenariji iz njegovog dana.
+Done with its AI lists	Gotovo sa svojim AI listama
+Edit its AI lists	Uredite svoje AI liste
+Vehicles it adds to the groups and depots (OMSI's ailists_#upd.cfg); taking one away is the map's own business	Vozila koja dodaje grupama i depoima (OMSI's ailists_#upd.cfg); oduzimanje jednog je stvar mape
+Write the scenario	Napišite scenario
+Close	Zatvori
+The map has no chrono scenarios.	Mapa nema hrono scenarija.
+from	od
+to	do
+takes off	uklanja
+own tickets	sopstvene karte
+Its first day	Njegov prvi dan
+Written into the scenario	Zapisano u scenariju
+Written into the scenario:	Zapisano u scenariju:
+Scenario written	Scenario napisan
+The map as on	Mapa kao na
+scenarios:	scenarija:
+My junction	Moja raskrsnica
+Complex junction editor	Editor složenih raskrsnica
+Too short: the points are too close	Prekratko: tačke su preblizu
+Open a saved one…	Otvorite sačuvani...
+New	Novo
+Draw with	Crtaj pomoću
+Pick a piece or an arm; drag it to move it, drag the dots at the ends of the picked piece to change it; Delete removes it	Izaberite komad ili ruku; prevucite ga da biste ga pomerili, prevucite tačke na krajevima izabranog dela da biste ga promenili; Delete ga uklanja
+Line	Linija
+Click the start, then the end	Kliknite na početak, pa na kraj
+Arc	Luk
+Click the start, a point on the arc, then the end. Started at the end of a piece with Auto-Align on, two clicks make an arc tangent to it	Kliknite na početak, tačku na luku, a zatim na kraj. Započeto na kraju dela sa uključenim automatskim poravnanjem, dva klika čine tangentu luka na njega
+Curve	Kriva
+A smooth path through every point clicked, for complex turns: Enter, a double click or the button below ends it	Glatka putanja kroz svaku tačku na koju se klikne, za složena skretanja: Enter, dvostruki klik ili dugme ispod ga završava
+Object	Objekat
+Stand a scenery object (a lamp, a shelter, a bin): on a piece it is turned along it, with Auto-Align on	Postavite objekat pejzaža (lampa, sklonište, kantu): na komad je okrenut duž njega, sa uključenim automatskim poravnanjem
+Arm	Krak
+Where a road comes in: click the place, then a point out along the road	Gde dolazi put: kliknite na mesto, a zatim pokažite pored puta
+Finish the curve	Završite krivinu
+Snap to the grid and to ends	Kacite na mrežu i na krajeve
+Auto-Align	Automatsko poravnanje
+A piece started at the end of another goes on in line with it: a line along its way or across it, an arc or a curve tangent to it. Elsewhere lines keep to steps of 15°	Komad započet na kraju drugog ide u skladu sa njim: linija duž puta ili preko njega, luk ili kriva koja se dotiče. Na drugim mestima linije se drže koraka od 15°
+Auto-Adapt	Automatsko prilagođavanje
+A road of another width started at the end of a road keeps its edge on the side it bends to, and a taper is laid to get there	Put druge širine koji počinje na kraju puta drži svoju ivicu na strani na koju se savija, a konus je postavljen da bi stigao do toga
+Auto-Junction	Automatske raskrsnice
+The arms are found by themselves: every free end of a road is where a road comes in. Arms put by hand stay as they are	Rubovi se nalaze sami: svaki slobodan kraj puta je mesto gde put ulazi. Ručno stavljeno oružje ostaje kao što je
+Plate with kerbs and footways	Ploča sa ivičnjacima i stazama
+Junctions as the Roads tool makes them: where roads cross, one ends on another or several end at one place, they are cut back and a plate is laid with rounded kerbs, footways and lanes through it	Raskrsnice kao što ih pravi alatka za puteve: tamo gde se putevi ukrštaju, jedan završava na drugom ili nekoliko krajeva na jednom mestu, oni se preseku i postavlja se ploča sa zaobljenim ivičnjacima, stazama i trakama kroz nju
+Turns	Skretanja
+A turn of the arm's road type between each two neighbouring arms, so traffic has lanes through the junction	Skretanje kraka puta između svaka dva susedna kraka, tako da se saobraćaj odvija trakama kroz raskrsnicu
+Rounded corners	Zaobljeni uglovi
+Where the roads' middle lines meet, the turn is an arc of this radius (a turn is still made where it does not fit)	Tamo gde se susreću srednje linije puteva, skretanje je luk ovog poluprečnika (skretanje se i dalje pravi tamo gde se ne uklapa)
+Corner radius	Radijus ugla
+Straight on	Pravo
+A piece straight on between arms that face each other	Komad ravno između ruku koje su okrenute jedna prema drugoj
+Standing:	Stojeći:
+Turn	Okreni se
+Added to the way the piece goes where it stands on one (180° faces it the other way)	Dodato načinu na koji komad ide tamo gde stoji na jednom (180° je okrenuto na drugu stranu)
+Offset	Pomeraj
+Across the piece to the right, for 'Along the piece'	Preko komada na desno, za 'Uz komad'
+Spline type	Tip splajna
+Drawing with:	Crtež sa:
+Faces	Površi
+found from a road's free end	pronađen sa slobodnog kraja puta
+any road type	bilo koji tip puta
+Road: the type chosen	Put: izabrani tip
+Any	Bilo koji
+The whole drawing	Ceo crtež
+Mirror	Preslikaj
+Left and right swapped	Levo i desno su zamenjene
+Turn 90°	Okrenite za 90°
+Find the arms	Pronađi krakove
+The free ends of roads become arms	Slobodni krajevi puteva postaju krakovi
+Painted line	Oslikana linija
+Stop line	Zaustavna linija
+A wide solid line across a lane: draw it across the road	Široka puna linija preko trake: nacrtajte je preko puta
+Crossing	Prelaz
+Zebra bars: draw it across the road, the bars lie along it	Zebra rešetke: nacrtajte je preko puta, rešetke leže duž nje
+Centre line	Centralna linija
+A double yellow line	Dvostruka žuta linija
+Lane line	Linija trake
+A white dashed line	Bela isprekidana linija
+Solid	Puno
+Dashed	Isprekidano
+Double	Dvostruko
+Solid and dashed	Puna i isprekidana linija
+Crossing (bars)	Pešački prelaz (prečke)
+Reaches	Doseže
+A line's width (each line of a double one); a crossing's reach along the road	Širina linije (svaka linija je dvostruka); domet prelaza duž puta
+Colour	Boja
+Bar	Prečka
+Dash	Crta
+Gap	Razmak
+Draw with this line	Crtajte ovom linijom
+It is made as a spline type of the content folder (Splines\\openMapper\\marks) and chosen: draw it with Line, Arc or Curve, over the asphalt	Pravi se kao splajn tip foldera sa sadržajem (splajnovi\\openMapper\\marks) i bira se: nacrtati ga linijom, lukom ili krivom, preko asfalta
+Painted line made: draw with it in the junction editor	Naslikana linija napravljena: nacrtajte njome u uređivaču spojeva
+Layers	Slojevi
+auto	auto
+Built by Auto-Junction from the arms	Izgrađen od strane Auto-Junction-a od krakova
+Shown: a hidden layer is not put on the map or written	Prikazano: skriveni sloj nije stavljen na mapu ili napisan
+Higher	Više
+Piece	Komad
+segments	segmenti
+0: a straight; positive: turns right; negative: turns left	0: ravno; pozitivno: skreće desno; negativan: skreće levo
+Lift	Podigni
+Above the plate: markings lie a little over the asphalt they are painted on	Iznad ploče: oznake leže malo preko asfalta na kome su naslikane
+Type: the one chosen	Tip: izabrani
+Reverse	Obrni
+Runs the other way: the piece's start and end swap	Pokreće se na drugu stranu: zamena početka i kraja komada
+Under the one before it	Pod onim pre njega
+Over the one after it	Preko onog posle njega
+Objects along it	Predmeti duž njega
+The object chosen with the Object tool stood along this piece at the spacing and offset set there	Objekat izabran pomoću alatke Object stajao je duž ovog dela na razmaku i pomeranju postavljenom tamo
+Preview	Pregled
+The junction as it will be: the roads running out of the arms, no grid or handles	Raskrsnica kakva će biti: putevi ponestaju iz ruku, bez mreže ili ručki
+Lanes	Trake
+The lanes of the AI over the drawing, with the way they go	Trake AI preko crteža, sa načinom na koji idu
+Zoom out (-)	Umanji (-)
+Zoom in (+)	Uvećaj (+)
+Fit	Uklopi u prozor
+The whole drawing in view (F)	Ceo crtež u vidu (F)
+origin	koordinatni početak
+Preview: the junction as it will look. Wheel zooms, right or middle drag pans	Pregled: raskrsnica kako će izgledati. Zumiranje točka, desno ili srednje povlačenje
+Click a piece or an arm to pick it, drag it to move it	Kliknite na komad ili ruku da biste ga izabrali, prevucite ga da biste ga pomerili
+Click the start of the piece, then its end	Kliknite na početak dela, a zatim na njegov kraj
+Click the start, a point the arc passes, then the end	Kliknite na početak, tačku koju luk prolazi, a zatim na kraj
+Click the points the curve passes; Enter or a double click ends it	Kliknite na tačke koje kriva prolazi; Enter ili dvostruki klik završava
+Click where a road comes in, then a point out along the road	Kliknite na mesto gde ulazi put, a zatim na tačku pored puta
+Click where the object stands; on a piece it faces along it	Kliknite gde objekat stoji; na komadu koji je okrenut uz njega
+Wheel zooms, right or middle drag pans, F fits, Ctrl+Z undoes, Esc cancels	Zumiranje točka, desno ili srednje povlačenje, F uklapa, Ctrl+Z poništava, Esc poništava
+Pick a spline type on the left first	Prvo izaberite tip splajna sa leve strane
+Pick an object on the left first	Prvo izaberite objekat sa leve strane
+pieces	komada
+arms	krakovi
+Put on the map	Stavite na kartu
+Its pieces become ordinary splines at the middle of the view, to move and change like any other. Nothing about them is automatic	Njegovi delovi postaju obični splinovi na sredini prikaza, da se kreću i menjaju kao i svaki drugi. Ništa kod njih nije automatsko
+Use in automatic junctions	Upotreba u automatskim raskrsnicama
+Where the Roads tool makes a junction by itself and the roads meet as the arms do (same number, facing about the same ways, of the same road types), this one is put there	Tamo gde alatka Putevi sama pravi raskrsnicu i putevi se sastaju kao krakovi (isti broj, okrenuti otprilike na iste pravce, iste vrste puteva), ova se stavlja tamo
+Save as a custom junction	Sačuvaj kao prilagođeni spoj
+Written as a junction piece of the content folder (it shows in the catalogue under Junctions) with lanes for the AI; needs three arms or more	Napisano kao spojni deo fascikle sadržaja (prikazuje se u katalogu pod Junctions) sa trakama za AI; treba tri ruke ili više
+Save as an object	Sačuvaj kao objekat
+The whole drawing as one scenery object of the catalogue (its meshes, and lanes for the AI along its pieces), to place anywhere like any object; arms are not needed	Ceo crtež kao jedan scenografski objekat kataloga (njegove mreže i trake za AI duž njegovih delova), za postavljanje bilo gde kao bilo koji objekat; oružje nije potrebno
+Save the drawing	Sačuvajte crtež
+Saved	Sačuvano
+A junction was not made: its roads are too short or too close together. Lengthen them or move the junctions apart.	Raskrsnica nije napravljena: njeni putevi su prekratki ili preblizu. Izdužite ih ili razdvojite spojeve.
+A custom junction is cut back to its arms where roads meet it; draw the roads' own types at the arms so they join cleanly.	Carinska raskrsnica je presečena do svojih krakova tamo gde se susreću putevi; nacrtajte sopstvene tipove puteva na kracima tako da se spajaju čisto.
+Saved as a custom junction	Sačuvano kao prilagođena raskrsnica
+Multiplayer	Zajedničko uređivanje
+Joining… (a big map takes a while to come)	Pridruživanje... (velikoj mapi treba neko vreme da dođe)
+Recover a conflicting edit…	Oporavi konfliktne izmene…
+Recovered your edit; undo is available	Oporavio sam vašu izmenu; poništavanje je dostupno
+Edit one map together: one of you hosts it, the others join. Roads, objects, ground and paint are shared as they are made; the timetable, the traffic and the descriptions stay the host's, and the host saves the map. Everybody needs the same objects and splines installed.	Uređujte istu mapu zajedno: jedan korisnik je domaćin, a ostali se pridružuju. Putevi, objekti, teren i bojenje dele se tokom rada; red vožnje, saobraćaj i opisi ostaju kod domaćina, koji čuva mapu. Svi moraju imati instalirane iste objekte i splajnove.
+Your name	Tvoje ime
+Password	Lozinka
+Host this map	Postavite ovu mapu
+Others on this network can join	Drugi na ovoj mreži se mogu pridružiti
+Others anywhere can join (a free Cloudflare tunnel, nothing to set up on the router)	Drugi bilo gde mogu da se pridruže (besplatan Cloudflare tunel, ništa za podešavanje na ruteru)
+Port	Port
+Over the internet the password must have at least this many letters:	Preko interneta lozinka mora imati najmanje ovoliko slova:
+No password: anybody who reaches this computer's port can join and change the whole map.	Bez lozinke: svako ko dođe do porta ovog računara može se pridružiti i promeniti celu mapu.
+Ask for a password after all	Zatražite lozinku ipak
+Host without a password? Anybody on this network who finds the port can join and change the whole map.	Host bez lozinke? Svako na ovoj mreži ko pronađe luku može se pridružiti i promeniti celu mapu.
+Yes, without a password	Da, bez lozinke
+No	Ne
+Type a password the others will need.	Unesite lozinku koja će drugima trebati.
+Host without a password…	Host bez lozinke…
+Host	Domaćin
+Open a map, type a name and a password first	Otvorite mapu, prvo unesite ime i lozinku
+Join a map	Pridružite se mapi
+The map open now has unsaved changes: joining closes it. Save it first.	Mapa koja je sada otvorena ima nesačuvane promene: spajanje je zatvara. Sačuvajte prvo.
+You host this map. Give the others one of these:	Vi ste domaćin ove mape. Dajte ostalima jedno od ovih:
+On this network the connection is not encrypted: somebody listening in can see the map, and from what they catch try passwords on their own computer. Use a long password, or the internet tunnel (encrypted).	Na ovoj mreži veza nije šifrovana: neko ko sluša može da vidi mapu, i na osnovu onoga što uhvati proba lozinke na sopstvenom računaru. Koristite dugu lozinku ili internet tunel (šifrovan).
+Everybody who joins can change the whole map.	Svako ko se pridruži može promeniti celu mapu.
+Opening the Cloudflare tunnel… (fetched the first time)	Otvaranje tunela Cloudflare... (preuzeto prvi put)
+internet	internet
+Waiting for Cloudflare's address…	Čeka se adresa Cloudflare-a...
+The Cloudflare tunnel could not be opened (no cloudflared, or no internet). The LAN addresses still work.	Tunel Cloudflare nije mogao da se otvori (nema rasplamsanog oblaka ili nema interneta). LAN adrese i dalje rade.
+You joined this map. The host saves it.	Pridružili ste se ovoj mapi. Domaćin ga čuva.
+Everything of yours is with the others	Sve je tvoje kod ostalih
+Sending your edits…	Slanje vaših izmena…
+In the session	U sesiji
+Say something…	Reci nešto...
+Leave	Napusti
+no end of the crossing is near it	kraj prelaza nije blizu njega
+the gap has no way through	jaz nema prolaza
+a piece added	dodat komad
+the other end would have moved	drugi kraj bi se pomerio
+Footway	Trotoar
+Rail	Šina
+Street	Ulica
+Against	Suprotno
+Both ways	U oba smera
+Along	U smeru
+Left	Levo
+Right	Desno
+Red and yellow	Crvena i žuta
+Green and yellow	Zelena i žuta
+Off	Isključeno
+There are unsaved changes here: Save or Revert first	Ovde postoje promene koje nisu sačuvane: prvo sačuvajte ili vratite
+Select a crossing object, or pick one of these	Izaberite objekat ukrštanja ili izaberite jedan od ovih
+Traffic lights	Semafori
+Back to 2D	Nazad na 2D
+Draw the crossing from above, in the window, and lay paths there	Nacrtajte prelaz odozgo, u prozoru, i tamo postavite staze
+Frame	Okvir
+Put the crossing in the middle of the map's view	Stavite prelaz u sredinu prikaza karte
+Click a path on the map to pick it. Drag an end there to move it: it snaps to another path's end - the crossing's own or a nearby object's - and Ctrl keeps it free. A snapped end takes that path's way and rise, so the two meet smoothly	Kliknite na putanju na mapi da biste je izabrali. Prevucite kraj tamo da biste ga pomerili: on škljocne na kraj druge staze - sopstveni ili obližnji objekat - i Ctrl ga drži slobodnim. Prekinuti kraj ide tom putanjom i uzdiže se, tako da se njih dvoje lako sastaju
+Nearby paths are drawn paler: another object's, and the roads' own lanes. An end can be joined to theirs, but they are not changed from here	Obližnje staze su ucrtane bleđe: tuđi objekti, a putevi sopstvene trake. Kraj se može pridružiti njihovom, ali se oni odavde ne menjaju
+Close the crossing editor	Zatvorite uređivač ukrštanja
+There are changes here that are not saved yet. Save them before closing?	Ovde postoje promene koje još nisu sačuvane. Da ih sačuvate pre zatvaranja?
+Save and close	Sačuvaj i zatvori
+Close without saving	Zatvorite bez čuvanja
+Back to how it was opened	Vratimo se kako je otvoren
+Paths	Putanje
+Save as a copy	Sačuvaj kao kopiju
+Write the paths into the object's own file; the file as it stood is kept as a .bak beside it	Upišite putanje u sopstvenu datoteku objekta; fajl kakav je stajao čuva se kao .bak pored njega
+Write the paths into openMapper's copy of the object	Upišite putanje u openMapper kopiju objekta
+The object's folder is copied into openMapper's, the paths written there, and the map's object pointed at it: the original file is not touched	Fascikla objekta se kopira u openMapper, putanje su tamo upisane, a objekat mape je uperen na njega: originalna datoteka se ne dira
+Back to how the object was when it was opened (the file is not touched)	Nazad na to kakav je objekat bio kada je otvoren (fajl se ne dira)
+In the object's own file (a .bak keeps the old one)	U sopstvenoj datoteci objekta (.bak čuva stari)
+The map's object already names this file: the paths are written into it, and the file as it stood is kept beside it as its .bak	Objekat mape već imenuje ovu datoteku: putanje su upisane u nju, a datoteka kakva je bila čuva se pored nje kao njen .bak
+As a new file	Kao novi fajl
+The whole object is copied into openMapper's content folder under a name of its own, and the map's object points at the copy	Ceo objekat se kopira u fasciklu sadržaja openMapper pod sopstvenim imenom, a objekat mape pokazuje na kopiju
+Remove this file's .bak	Uklonite .bak ove datoteke
+Its .bak is gone	Njegov .bak je nestao
+Remove the .bak files this editor made	Uklonite .bak datoteke koje je napravio ovaj uređivač
+Revert	Vrati
+in its own file (a .bak keeps the old one)	u svom fajlu (.bak čuva stari)
+openMapper's copy	Kopija openMapper
+as a new file (a copy is made on saving)	kao nova datoteka (kopija se pravi pri čuvanju)
+Pick a crossing object of the map	Izaberite objekat ukrštanja na mapi
+The paths, the blocking and the traffic light program of an existing crossing are edited here. A save writes the object's own file, the file as it stood kept as a .bak beside it; a copy of the object can be made instead.	Ovde se uređuju putanje, blokada i program semafora postojećeg prelaza. Sačuvavanje upisuje sopstvenu datoteku objekta, fajl kakav je stajao čuva se kao .bak pored njega; umesto toga može se napraviti kopija objekta.
+Add a path carried on from the picked one (N)	Dodajte putanju koja se nastavlja od izabranog (N)
+Start a new path at the end of a path nearby. Click one of the green circles	Započnite novu stazu na kraju obližnje staze. Kliknite na jedan od zelenih krugova
+Carry the picked path on to a nearby path's end: the picked path keeps its end, way and rise, and one piece or two join them. Click one of the green circles	Odnesite izabranu stazu do kraja obližnje staze: izabrana staza zadržava svoj kraj, put i uspon, a jedan ili dva im se spajaju. Kliknite na jedan od zelenih krugova
+Start from a nearby path	Krenite sa obližnje staze
+Complete to a nearby path	Dovršite do obližnje staze
+Connect the roads	Povežite puteve
+Line the crossing's ends up with the road lanes' own ends. openOMSI joins lanes by their geometry, not by the spline helpers	Poravnajte krajeve prelaza sa krajevima putnih traka. openOMSI spaja trake po njihovoj geometriji, a ne pomoću splajn pomoćnika
+Link check	Provera veze
+Click a green circle: a new path starts at that nearby path's end, in its way	Kliknite na zeleni krug: nova putanja počinje na kraju te obližnje staze, na njenom putu
+Click a green circle: one piece or two are added from the picked path's end to that one, the picked path left as it is	Kliknite na zeleni krug: jedan ili dva dela se dodaju sa kraja izabrane putanje na taj, izabrana putanja ostaje takva kakva jeste
+The way a join turns	Način na koji se spoj okreće
+Move up	Pomeri se gore
+Move down	Pomeri se dole
+Remove this path	Uklonite ovu putanju
+Spline helpers	Pomoćnici za splajnove
+Where a road of the map snaps onto the crossing. x, height, forward in the object's frame	Tamo gde put na mapi škljocne na raskrsnicu. k, visina, napred u okviru objekta
+The road type it takes (a `.sli`)	Tip puta koji se kreće (`.sli`)
+A helper	Pomoćnik
+At the picked end	Na izabranom kraju
+A helper where the picked path ends, facing out of the crossing	Pomagač na mestu gde se ubrana staza završava, okrenut prema raskršću
+Paths picked	Izabrane putanje
+Set what they share. A path's own numbers are edited one at a time	Postavite šta dele. Sopstveni brojevi putanje se uređuju jedan po jedan
+Several	Nekoliko
+Kind	Vrsta
+Direction	Pravac
+Turn signal	Žmigavac
+Light	Svetlost
+Keeps the junction clear	Održava raskrsnicu čistim
+A vehicle waiting on this path holds the crossing empty for the others (`[crossingproblem]`)	Vozilo koje čeka na ovoj stazi drži prelaz prazan za ostale (`[crossingproblem]`)
+How this path leaves, degrees. The point stays; a turn one arc cannot make is split into pieces	Kako ovaj put odlazi, stepeni. Tačka ostaje; zaokret koji jedan luk ne može da napravi se deli na delove
+How this path arrives, degrees. The point stays; a turn one arc cannot make is split into pieces	Kako ovaj put stiže, stepeni. Tačka ostaje; zaokret koji jedan luk ne može da napravi se deli na delove
+End point	Krajnja tačka
+0 is a straight line, above 0 turns right, below 0 left	0 je prava linija, iznad 0 skreće desno, ispod 0 levo
+Even grade	Ravnomeran nagib
+Both ends take the one rise between their heights	Oba kraja zauzimaju jedan uspon između svojih visina
+Surface	Površina
+Split	Razdvoji
+Blocks	Blokiranja putanja
+Zoom out	Umanji
+Zoom in	Uvećaj
+The whole crossing in view	Ceo prelaz na vidiku
+Draw path	Nacrtaj putanju
+Drag from a path's start to its end to add one, as a road is drawn	Prevucite od početka puta do njegovog kraja da biste dodali jedan, dok se put iscrtava
+3D	3D
+Show the path on the map itself: the crossing object in 3D, with its paths	Prikaži putanju na samoj mapi: objekat ukrštanja u 3D, sa svojim putanjama
+2D	2D
+Draw the crossing from above, in the window	Nacrtajte prelaz odozgo, u prozoru
+Drag an end to move it. Snaps to another path's end; hold Ctrl to move it freely. A snapped end takes the other path's way and rise too, so the two meet smoothly. Wheel zooms, right or middle drag pans	Prevucite kraj da biste ga pomerili. Kače na kraj druge staze; držite Ctrl da biste ga slobodno pomerali. Prekinuti kraj kreće na drugu stazu i takođe se uzdiže, tako da se njih dvoje lako sastaju. Zumiranje točka, desno ili srednje povlačenje
+Traffic light	Semafor
+A light	Svetlost
+Remove this light	Uklonite ovo svetlo
+Cycle	Ciklus
+`[traffic_lights_group]`: the seconds of one run. Unset, the longest light's phases add up to it	`[traffic_lights_group]`: sekunde jedne vožnje. Nepodešena, najduže faze svetla se sabiraju
+A crossing with lights needs the signal heads on the map: the game only runs a program that heads are linked to	Prelaz sa svetlima zahteva signalne glave na mapi: igra pokreće samo program sa kojim su glave povezane
+Phase	Faza
+A phase	Faza
+Duration	Trajanje
+Detector	Detektor
+`[approachdist]`: how far before the stop line a vehicle registers a request	`[approachdist]`: koliko daleko pre zaustavne linije vozilo registruje zahtev
+The phases do not add up to the cycle: the last one holds to its end	Faze se ne zbrajaju sa ciklusom: poslednja traje do svog kraja
+(no name)	(bez imena)
+Request loops	Detektorske petlje
+stop	stani
+jump	skok
+Timeline	Vremenska linija
+The whole cycle across the width (as the traffic light window has it)	Ceo ciklus po širini (kako to ima prozor na semaforu)
+Click a block to edit that phase; drag its right edge to change how long it lasts	Kliknite na blok da biste uredili tu fazu; prevucite njegovu desnu ivicu da biste promenili koliko dugo traje
+The map has changed since this was opened: open the object again	Mapa se promenila otkako je otvorena: ponovo otvorite objekat
+A spline helper has no road type: pick one or remove it	splajn pomoćnik nema tip puta: izaberite jedan ili ga uklonite
+Save the crossing as a new file instead	Sačuvajte prelaz kao novu datoteku
+Knife (K): a click on a road cuts it there, as often as you like; the pieces' lengths shown at the cursor, on whole grid steps with grid snapping on · right-click or Esc: off	Nož (K): klik na put seče ga tamo, koliko god želite; dužine delova prikazane na kursoru, na celim koracima mreže sa uključenom mrežom · desni klik ili Esc: isključeno
+Angle	Ugao
+Grid	Mreža
+Auto-Terrain	Auto-Teren
+Auto-Switch	Automatsko prebacivanje
+Snap headings to the angle step	Zakačite naslove na korak ugla
+The angle step: what snapping comes to and what R turns by	Korak ugla: do čega dolazi do pucanja i pored čega se R skreće
+Snap positions to the grid	Pričvrstite pozicije na mrežu
+Click two points to measure the distance and gradient between them (U) · right-click: off	Kliknite na dve tačke da izmerite rastojanje i gradijent između njih (U) · desni klik: isključeno
+What you build follows the ground: roads, paths and tracks take its height (off: they run level from where they start). Only what is built from now on; nothing already there changes	Ono što gradite prati tlo: putevi, staze i staze zauzimaju njegovu visinu (isključene: idu u ravni od mesta na kome počinju). Samo ono što se gradi od sada; ništa se već tamo ne menja
+Branching a track off another makes a switch there	Grananje koloseka sa drugog stvara prekidač tamo
+Where roads of different width meet, a plate tapers one into the other	Tamo gde se sastaju putevi različite širine, ploča se sužava jedna u drugu
+A road drawn or a spline's end dragged onto a road lands on its edge (the ground just beside it counts, so an edge is easy to hold) and at the road's own height; over an object it lands on the object's own face (a kerb, a pavement, a bridge's deck, a platform - a ring marks the place).	Put koji je nacrtan ili kraj klizanja navučen na put sleće na njegovu ivicu (tlo pored njega se računa, tako da je ivicu lako držati) i na sopstvenoj visini puta; preko objekta sleće na sopstveno lice (ivičnjak, trotoar, paluba mosta, platforma - prsten označava mesto).
+Line objects up with the nearest road (Shift: put it freely)	Poravnajte objekte sa najbližim putem (Shift: stavite slobodno)
+More switches: the window is too narrow for all of them	Više prekidača: prozor je preuzak za sve njih
+Selection	Izbor
+A click on one of it selects all of it, Ctrl + click one alone	Klik na jednu od njih bira sve, Ctrl + klik samo na jednu
+Keep these together: a click on one selects all, a drag moves all (Ctrl+G)	Držite ovo zajedno: klik na jedan bira sve, prevlačenje pomera sve (Ctrl+G)
+Apply	Primeni
+Level the ground under them	Poravnajte zemlju ispod njih
+Each one's outline made level with its foot, blending into the ground 3 m round it	Obris svakog je u ravni sa stopalom, stapajući se sa zemljom 3 m oko njega
+Make every object	Napravite svaki predmet
+The object chosen in the Objects tool's catalogue	Objekt izabran u katalogu alata Objekti
+Random headings	Nasumični smerovi
+Every selected object turned its own random way (trees, bushes, rocks)	Svaki odabrani objekat se okrenuo na svoj nasumični način (drveće, žbunje, kamenje)
+Each turned the way the nearest road runs beside it	Svaki je skrenuo u pravcu kojim najbliži put prolazi pored njega
+Turned:	Okrenuo se:
+All like this one	Svi kao ovaj
+Every selected object takes the heading of the one in the properties	Svaki izabrani objekat zauzima naslov onog u svojstvima
+Make every road	Napravite svaki put
+The road type chosen in the Roads tool's catalogue	Tip puta izabran u katalogu alata Putevi
+Lay them on the ground	Položite ih na zemlju
+Reverse their direction	Obrnuti njihov pravac
+Even slope along them	Ravan nagib uz njih
+One chain of roads: from the height at one end to that at the other, evenly (a bridge, a ramp)	Jedan lanac puteva: od visine na jednom kraju do onog na drugom, ravnomerno (most, rampa)
+Edit its AI lanes	Uredite njegove AI trake
+Its lanes become AI paths of their own (the same lines, the same way) that the Logic tool's Edit existing bends, moves and deletes. The road keeps its look.	Njegove trake postaju AI putanje za sebe (iste linije, na isti način) koje alatka Logic Edit postojeće krivine savija, pomera i briše. Put zadržava svoj izgled.
+Ends (joined roads follow)	Završava (slijede spojeni putevi)
+height	visina
+gradient	gradijent
+cant	poprečni nagib
+Banking across the road, %: positive lowers its right side (into a right bend)	Skretanje preko puta, %: pozitivno spušta svoju desnu stranu (u desnu krivinu)
+The direction the road runs at this end, degrees. Dragging it rotates the end; the road joined there turns with it.	Smer kojim put ide na ovom kraju, stepeni. Prevlačenjem se rotira kraj; put spojen tamo skreće sa njim.
+End	Kraj
+Even slope end to end	Ravnomeran nagib s kraja na kraj
+Both gradients to the straight climb between the ends' heights	Oba nagiba do pravog uspona između visina krajeva
+Speed limit, km/h	Ograničenje brzine, km/h
+Traffic density ×	Gustina saobraćaja ×
+Priority	Prioritet
+Trucks (0: none)	Kamioni (0: nema)
+No cars	Nema automobila
+Buses only	Samo autobusi
+For the AI and the player on one path (lane) of it, counted from 0: the view shows their numbers	Za AI i igrača na jednoj putanji (traci) od njega, računajući od 0: prikaz pokazuje njihove brojeve
+Path (lane) number	Broj staze (traka).
+Hanging on it	Viseći na njemu
+Points to hang objects on:	Pokazuje objekte na koje treba okačiti:
+Select it	Izaberite ga
+Hang	Okači
+Choose an object in the Objects catalogue first	Prvo izaberite objekat u katalogu objekata
+A fence, a row of houses, an avenue: the selection copied again and again, a step on each time	Ograda, red kuća, avenija: izbor je prepisivan iznova i iznova, svaki put korak dalje
+Copies	Kopije
+Step	Korak
+Turn each	Okrenite svaki
+Rows	Redovi
+More than one: a grid (an orchard, a car park), each row a row step on	Više od jednog: rešetka (voćnjak, parking), svaki red stupa na red
+Row step	Korak u redu
+Tilted to the ground under it, the way it slopes forward and to the side (a fence, a bench or a shed on a hillside)	Nagnut na zemlju ispod njega, način na koji se naginje napred i u stranu (ograda, klupa ili šupa na padini brda)
+Heights along the ground again, smoothed so it climbs a hill rather than every bump (after shaping the ground or laying a height map over it); where a road not selected joins, its height is kept	Ponovo visine duž tla, zaglađene tako da se penje na brdo, a ne na svaku neravninu (nakon oblikovanja tla ili postavljanja visinske karte preko njega); tamo gde se spaja put koji nije izabran, zadržava se njegova visina
+Each starts where it ended: the traffic on it goes the other way (a one-way street, a track's direction), the road itself stays where it is	Svaki počinje tamo gde je završio: saobraćaj na njemu ide u suprotnom smeru (jednosmerna ulica, pravac koloseka), sam put ostaje tamo gde jeste
+A second track or the other carriageway: the selected splines copied alongside, bends kept exact, linked as they are	Drugi kolosek ili druga kolovozna traka: izabrani splinovi su kopirani uporedo, krivine su tačne, povezane kako jesu
+To the left	Levo
+To the right	Desno
+Left and right of the way the road runs (its arrows with AI lanes shown)	Levo i desno od puta teče (prikazane su njegove strelice sa AI trakama)
+For trams and electric trains: a wire spline laid on the selected track, piece for piece and linked (its height is the wire spline's own); the masts go in with Objects along the road	Za tramvaje i električne vozove: žičana žica položena na izabranom koloseku, komad za komad i povezana (njegova visina je sopstvena žičana žica); jarboli ulaze sa predmetima duž puta
+No wire spline installed (one whose name says Fahrdraht, Oberleitung or wire)	Nije instaliran žičani spoj (onaj čije ime kaže Fahrdraht, Oberleitung ili žica)
+Lay it	Položi
+Wire pieces laid:	Položeni komadi žice:
+Paint the ground along it	Obojite zemlju duž nje
+Add a ground texture in the Paint tool first: the base ground is under everything	Prvo dodajte teksturu zemlje u alatku Paint: osnovno tlo je ispod svega
+Layer	Sloj
+Where	Gde
+beside it	pored njega
+under it too	pod njim takođe
+Out from its edge	Sa njegove ivice
+Soft edge	Meka ivica
+A gravel verge, dirt by a track, grass along a path: the brush of the Paint tool touches it up afterwards	Šljunkovita ivica, zemlja pored staze, trava duž staze: četkica alata za farbanje ga dodiruje posle
+Beside	Pored
+Each object leans with the road's gradient and banking (bays and arrows on the road); off, it stands upright	Svaki objekat se naslanja na nagib i nagib puta (zaljevi i strelice na putu); isključen, stoji uspravno
+A text the row's objects show (@ starts a new line)	Tekst koji objekti reda prikazuju (@ počinje novi red)
+Object:	Objekat:
+Pick an object (a lamp, a tree, a bollard) in the Objects tool's catalogue	Izaberite objekat (lampa, drvo, stub) u katalogu alatke Objects
+Right of the road's direction; negative: left	Desno od pravca puta; negativan: levo
+Free at start / end	Slobodno na početku / kraju
+Both sides	Obe strane
+Place along the road	Mesto pored puta
+Remove all rows	Ukloni sve redove
+Roundabout: click the centre, then the ring	Kružni tok: kliknite na centar, a zatim na prsten
+A one-way ring of the chosen road type (pick a one-way road); roads inside are cut back to it and joined with junctions	Jednosmerni prsten izabranog tipa puta (izaberite jednosmerni put); putevi unutra su usečeni do njega i spojeni raskrsnicama
+Keep the height (bridge, embankment)	Zadrži visinu (most, nasip)
+An even gradient from end to end, the ground left as it is; the rise to the end can be typed while drawing. Pillars: select the road and put them along it as objects.	Ravnomerni nagib od kraja do kraja, zemlja ostavljena kakva jeste; uspon do kraja može da se otkuca tokom crtanja. Stubovi: izaberite put i stavite ih duž njega kao objekte.
+Snap to road edges and surfaces	Kačenje za ivice i površine puta
+What is drawn beside a road starts on its edge; over an object it starts on the object's own face, at that height	Ono što je nacrtano pored puta počinje na njegovoj ivici; preko objekta počinje na sopstvenom licu objekta, na toj visini
+Bus Pocket Tool	Alat za autobuska ugibališta
+Tick it, then press on a road: a bus pocket is laid there, on the kerb the road's own traffic keeps to. It stays on, pocket after pocket, until you untick it	Označite ga, pa pritisnite na put: tu je džep za autobus, na ivičnjaku se nastavlja sopstveni saobraćaj. Ostaje uključen, džep za džepom, dok ga ne otključate
+Full width over	Preko cele širine
+Bay width	Širina ugibališta
+How much wider the road is along the bay, on the kerb its traffic keeps to; the other side stays as it is	Koliko je širi put uz uvalu, na ivičnjaku se nastavlja saobraćaj; druga strana ostaje takva kakva jeste
+Tapers in metres	Sužava u metrima
+Give the length of each taper in metres instead of a ratio	Navedite dužinu svakog konusa u metrima umesto odnosa
+Taper in	Dužina ulaznog suženja
+Metres of road the bay takes to open per metre it widens (more: gentler)	Broj metara puta kojim se zaliv otvara po metru koji se širi (više: nežnije)
+out	van
+Both ends alike	Oba kraja podjednako
+Slide the bay to where it fits	Pomerite ležište gde stane
+Near the end of a road or a junction there is no room for the taper at both ends: the bay is moved along the road to where there is	Blizu kraja puta ili raskrsnice nema mesta za konus na oba kraja: zaliv se pomera duž puta do mesta gde se nalazi
+A bay always gets a taper at both ends; where one cannot be laid nothing is changed.	Zaliv uvek ima konus na oba kraja; gde se ne može položiti ništa se ne menja.
+The stretch is cut out of the road and given the bay along its kerb, its ends tapering to the road's width. The road's own type is widened: nothing to pick.	Deonica je odsečena od puta i data je uvala duž ivičnjaka, čiji se krajevi sužavaju na širinu puta. Sopstveni tip puta je proširen: nema šta da se bira.
+Rise	Uspon
+Shift: straight · Enter: build	Shift: ravno · Enter: građeno
+Junction	Raskrsnica
+Lights need three roads or more	Svetlima su potrebna tri puta ili više
+Main road green	Glavni put zelen
+Side roads green	Bočni putevi zeleni
+The main road is the pair of roads most in line; red-yellow 2 s, yellow 3 s, 2 s all red between	Glavni put je par puteva koji su najviše u liniji; crveno-žuto 2 s, žuto 3 s, 2 s sve crveno između
+Zebra crossings	Zebra prelazi
+Road	Put
+Build it again	Sagradite ga ponovo
+Makes the plate, its kerbs and lanes again for the roads as they are now	Ponovo pravi ploču, njene ivičnjake i trake za puteve kakvi su sada
+Linked objects	Povezani objekti
+An object can take its state from another ([varparent]): a signal head shows a light of its crossing's program, a stop's display its stop.	Objekat može da preuzme svoje stanje od drugog ([varparent]): signalna glava pokazuje svetlo programa svog ukrštanja, a zaustavljanje prikazuje svoj stop.
+Takes its state from	Preuzima svoje stanje od
+Select it: IDCode	Izaberite: IDCode
+Takes its state from an object that is gone: IDCode	Preuzima svoje stanje od objekta koji je nestao: IDCode
+Takes its state from nothing	Uzima svoje stanje ni iz čega
+Its light is not one of the crossing's: it stays dark	Njegovo svetlo nije jedno od prelaza: ostaje tamno
+That object runs no traffic lights: link the head to a crossing with a light program	Taj objekat ne pokreće semafor: povežite glavu sa prelazom pomoću svetlosnog programa
+A signal head: link it to its crossing to have it light	Signalna glava: povežite je sa njenim prelazom da bi svetlila
+Click the object in the view… (Esc)	Kliknite na objekat u prikazu... (Esc)
+Link to another…	Veza sa drugom…
+Link to an object…	Veza sa objektom…
+Then click the object it is to take its state from (a crossing for a signal head)	Zatim kliknite na objekat iz kojeg treba da preuzme svoje stanje (ukrštanje za signalnu glavu)
+Taking their state from it:	Uzimajući njihovo stanje od toga:
+light	svetlost
+Click the object it takes its state from	Kliknite na objekat od koga preuzima svoje stanje
+Junction on an end	Raskrsnica na kraju
+The installation has no junction pieces with places for roads.	Instalacija nema spojne delove sa mestima za puteve.
+None of the pieces is made for this road type: its first place is used.	Nijedan komad nije napravljen za ovaj tip puta: koristi se njegovo prvo mesto.
+At the start	Na početku
+At the end	Na kraju
+Find in map	Pronađi na mapi
+Name, file, IDCode, stop or x, y	Ime, datoteka, IDCode, stop ili k, i
+The point	Tačka
+Spline	Splajn
+Nothing on the map has this IDCode.	Ništa na mapi nema ovaj ID kod.
+kinds	vrste
+on the map	na karti
+Next	Sledeće
+Select the next one and go there	Izaberite sledeću i idite tamo
+Every one of these becomes the road type chosen in the Roads tool	Svaki od njih postaje tip puta izabran u alatki Putevi
+Every one of these becomes the object chosen in the catalogue	Svaki od njih postaje predmet izabran u katalogu
+More: type to narrow the list	Više: otkucajte da biste suzili listu
+Replaced:	Zamenjeno:
+Satellite overlay	Preklapanje satelita
+Satellite and own pictures	Satelitske i sopstvene slike
+Click a tile to see its overlay here.	Kliknite na pločicu da vidite njen prekrivač ovde.
+Show the overlay	Prikaži preklapanje
+opacity	neprozirnost
+Load satellite imagery	Učitavanje satelitskih snimaka
+Place the map on the Earth first (Satellite and terrain…)	Prvo postavite mapu na Zemlju (Satelit i teren…)
+Load image file…	Učitaj datoteku slike…
+Your own picture for this tile (a scan, a screenshot): or drop it on the window	Vaša sopstvena slika za ovu pločicu (skeniranje, snimak ekrana): ili je ispustite na prozor
+Load the OpenStreetMap map	Učitajte mapu OpenStreetMap
+OpenStreetMap map for all tiles	OpenStreetMap mapa za sve pločice
+The map as openstreetmap.org draws it (streets with their names, houses, water, green, stop signs), drawn sharp from OpenStreetMap data and laid on the tile in place of a satellite picture: to build roads and houses over by eye. Nothing is generated from it.	Mapa kao što je crta openstreetmap.org (ulice sa njihovim imenima, kuće, voda, zeleno, znakovi za zaustavljanje), nacrtana oštro iz podataka OpenStreetMap i položena na pločicu umesto satelitske slike: za izgradnju puteva i kuća na oko. Ništa se iz toga ne generiše.
+own picture	sopstvena slika
+for an earlier placement	za ranije postavljanje
+not kept with the map	ne čuva se uz kartu
+, partly coarser	, delimično grublji
+nothing	ništa
+Place the map on the Earth first.	Prvo postavite kartu na Zemlju.
+Load terrain heights	Učitaj visine terena
+Done:	Urađeno:
+with problems	sa problemima
+OMSI's aerial photos	OMSI fotografije iz vazduha
+Copying the photos	Kopiranje fotografija
+Import them	Uvezi ih
+Choose a folder of them…	Odaberite fasciklu od njih…
+A folder of aerial photos	Fascikla fotografija iz vazduha
+Hold only the photos of the tiles near the camera	Držite samo fotografije pločica u blizini kamere
+No aerial photos in that folder	Nema fotografija iz vazduha u tom folderu
+The photos are of tiles this map does not have	Fotografije su pločica koje ova mapa nema
+The photos are on the tiles	Fotografije su na pločicama
+Could not copy the photos	Nije moguće kopirati fotografije
+A picture for the tiles	Slika za pločice
+Could not read the picture	Ne mogu da pročitam sliku
+Could not copy the picture	Nije moguće kopirati sliku
+The picture is on the tiles: line it up in Satellite and terrain, Own pictures.	Slika je na pločicama: poređajte je u Satelit i teren, Sopstvene slike.
+Nothing found by that name.	Ništa nije pronađeno pod tim imenom.
+Some tiles had Google imagery: enter your Google key to see it again (it is not kept with the map).	Neke pločice su imale Google slike: unesite svoj Google ključ da biste ga ponovo videli (ne čuva se sa mapom).
+Satellite and terrain	Satelit i teren
+Find a place: a town, a street, an address… (Enter)	Pronađite mesto: grad, ulicu, adresu... (Enter)
+Searching…	Pretraživanje…
+Search © OpenStreetMap contributors	Pretraga © OpenStreetMap saradnika
+This map has world coordinates ([worldcoordinates]): it lies on the Earth by itself, its tiles are Web Mercator tiles.	Ova mapa ima svetske koordinate ([svetske koordinate]): sama leži na Zemlji, njene pločice su Veb Mercator pločice.
+Click on the map where the orange tile goes…	Kliknite na mapu gde ide narandžasta pločica...
+Place the map here	Postavite mapu ovde
+Then click on the map: the middle of the orange tile goes there	Zatim kliknite na mapu: sredina narandžaste pločice ide tamo
+At the view's middle	Na sredini pogleda
+North turned	Sever se okrenuo
+Orange tile	Narandžasta pločica
+click the map to fly there in the view	kliknite na mapu da odletite tamo u prikazu
+1. Find the place.  2. Press "Place the map here" and click on the map: the orange tile (the map's middle) goes there.	1. Pronađite mesto.  2. Pritisnite „Postavite mapu ovde“ i kliknite na mapu: narandžasta pločica (sredina mape) ide tamo.
+Imagery	Slike
+The sharpest here	Ovde najoštriji
+cm a pixel here	cm po pikselu ovde
+checking…	provera…
+is sharper here	je ovde oštriji
+Sharper imagery may be had here with your own free key for Mapbox, MapTiler or Google (Keys below).	Ovde možete da dobijete oštrije slike sa vašim sopstvenim besplatnim ključem za Mapbox, MapTiler ili Google (tasteri ispod).
+Terms of use	Uslovi korišćenja
+Zoom	Zum
+the finest here	ovde najbolji
+Picture of a tile	Slika pločice
+every pixel of the source (up to 4096)	svaki piksel izvora (do 4096)
+Loaded at	Učitano u
+cm a pixel	cm po pikselu
+Also load terrain heights	Takođe učitajte visine terena
+New tiles get imagery by themselves	Nove pločice dobijaju slike same
+Load for all tiles	Učitaj za sve pločice
+For the selected tile	Za izabranu pločicu
+Click a tile with the Tiles tool (7)	Kliknite na pločicu pomoću alata Pločice (7)
+Terrain heights only	Samo visine terena
+of	od
+tiles beside the loaded heights were not loaded: the ground steps at their edge.	pločice pored opterećenih visina nisu bile opterećene: prizemne stepenice na njihovoj ivici.
+Fit their edges	Postavite njihove ivice
+Their edge takes the loaded heights, fading out 60 m into the tile	Njihova ivica zauzima opterećene visine, nestajući 60 m u pločicu
+Leave them	Ostavi ih
+Terrain heights	Visine terena
+Relative: the orange tile's mean height is 0 m	Relativno: srednja visina narandžaste pločice je 0 m
+Raise everything by	Podigni sve
+Taken off:	Uklonjeno:
+Measure again	Ponovo merite
+Terrain data attribution	Atribucija podataka o terenu
+Overlay on the ground	Preklapanje na tlu
+Put the imagery into maps exported for sharing (check its licence first)	Stavite slike u mape izvezene za deljenje (prvo proverite njegovu licencu)
+Fit tile edges	Postavite ivice pločica
+Keys for more sources (optional)	Tasteri za više izvora (opciono)
+Everything works without a key. With your own free key these may be sharper in some places; the key stays on this computer.	Sve radi bez ključa. Sa vašim sopstvenim besplatnim ključem oni mogu biti oštriji na nekim mestima; ključ ostaje na ovom računaru.
+Google satellite (needs your API key)	Google satelit (potreban je vaš API ključ)
+get a key	uzmi ključ
+In Google Cloud: make a project, enable the Map Tiles API, create an API key, paste it here. Google bills by use above its free amount.	U Google Cloud-u: napravite projekat, omogućite Map Tiles API, napravite API ključ, nalepite ga ovde. Google obračunava korišćenjem iznad svog besplatnog iznosa.
+key	ključ
+Your own tile server	Vaš sopstveni server pločica
+URL	URL
+Attribution	Pripisivanje
+Finest zoom	Najfiniji zum
+XYZ / WMTS tiles	XYZ / WMTS pločice
+Terrarium heights	Visine u formatu Terrarium
+{z} {x} {y} are filled in; a WMS gets {bbox} (EPSG:3857) and {width} {height}; {key} is your key.	{z} {x} {y} se popunjavaju; WMS dobija {bbox} (EPSG:3857) i {width} {height}; {key} je vaš ključ.
+Add	Dodaj
+Own pictures	Sopstvene slike
+A scan, a screenshot, an old plan: laid on tiles and lined up by eye. No place on the Earth needed.	Skeniranje, snimak ekrana, stari plan: položen na pločice i poređan okom. Nije potrebno mesto na Zemlji.
+Tiles from	Pločice iz
+Load image file over these tiles…	Učitaj datoteku slike preko ovih pločica...
+Turn left 90°	Skrenite levo za 90°
+Turn right 90°	Skrenite desno 90°
+mirror left-right	ogledalo levo-desno
+mirror top-bottom	ogledalo gore-dole
+Reset	Resetovanje
+Your own pictures	Vaše slike
+of these tiles have your own pictures. Replace them with satellite imagery?	ovih pločica imaju vaše slike. Da ih zamenite satelitskim snimcima?
+Replace them	Zamenite ih
+Keep my pictures	Zadrži moje slike
+Groups for other maps	Grupe za druge karte
+A selection kept under a name, to put down again in any map (a stop with its shelter and signs, a crossing with its lights)	Izbor koji se čuva pod imenom, da se ponovo upiše na bilo koju kartu (stanica sa zaklonom i znacima, prelaz sa svetlima)
+Keep the selection	Zadrži izbor
+Group kept	Grupa zadržana
+Select what to keep in the view first.	Izaberite šta ćete prvo zadržati u prikazu.
+No groups yet.	Još nema grupa.
+thing	stvar
+things	stvari
+Delete the group (to openMapper's bin)	Obriši grupu (premesti u korpu programa openMapper)
+Use	Koristi
+Into the clipboard: Ctrl+V puts it down at the cursor, as often as wanted	U klipbord: Ctrl+V ga spušta na kursor, onoliko često koliko želite
+is in the clipboard: Ctrl+V puts it at the cursor	je u klipbordu: Ctrl+V ga stavlja na kursor
+The map's tiles: 300 m squares. Add more beside them with the Tiles tool.	Pločice na mapi: 300 m kvadrata. Dodajte još pored njih pomoću alata Pločice.
+A road	Put
+Roads tool: click where it starts, then where it ends. Click on a road's end to go on from it.	Alat Putevi: kliknite gde počinje, a zatim gde se završava. Kliknite na kraj puta da biste nastavili sa njega.
+A bus stop by the road	Autobuska stanica pored puta
+Game logic > Bus stops: put one at the kerb, on the side the doors open. Name it on the right.	Logika igre > Autobuske stanice: stavite jednu na ivičnjak, sa strane kada se vrata otvaraju. Imenujte ga na desnoj strani.
+A start point	Početna tačka
+Game logic > Start points: where your bus appears, on a road, facing the way to drive.	Logika igre > Početne tačke: gde se pojavljuje vaš autobus, na putu, okrenut prema putu za vožnju.
+A line with a trip	Linija sa putovanjem
+Lines window: New line, New trip, then click the stops in order. The way is found along the roads.	Prozor Linije: Nova linija, Novo putovanje, zatim kliknite na stanice po redu. Put se nalazi duž puteva.
+A tour with departures	Obilazak sa polascima
+Lines window > Tours and times: New tour, then Fill from … to … .	Prozor Linije > Obilasci i vremena: Novi obilazak, zatim Popuni od … do … .
+Buses for the tours	Autobusi za obilaske
+A depot the tours take their buses from (Tours: Add a depot, or Traffic and AI).	Depo iz kojeg obilasci voze svojim autobusima (Obilasci: Dodajte depo ili Saobraćaj i AI).
+Checked	Provereno
+Map > Check map: what would go wrong in the game, most of it put right with one click.	Mapa > Proverite mapu: šta bi pošlo po zlu u igri, većina toga se ispravi jednim klikom.
+Ctrl+S. Maps are saved into openOMSI's content folder.	Ctrl+S. Mape se čuvaju u folderu sadržaja openOMSI.
+A test drive	Probna vožnja
+F5 saves and starts openOMSI on the map: pick line 1 and drive.	F5 čuva i pokreće openOMSI na mapi: izaberite liniju 1 i vozite.
+A map you can drive in service:	Mapa koju možete voziti u službi:
+Show me	Pokaži mi
+Your stops stand away from the roads: a bus serves a stop within 15 m of its lane.	Vaša stajališta su udaljena od puteva: autobus služi stajalištu unutar 15 m od svoje trake.
+A real place? Put the map on the Earth (Map > Satellite and terrain), then Map > From OpenStreetMap brings its streets, stops, lines and trees.	Pravo mesto? Stavite mapu na Zemlju (Mapa > Satelit i teren), a zatim Mapa > Od OpenStreetMap donosi svoje ulice, stanice, linije i drveće.
+Show this for new maps	Prikaži ovo za nove mape
+The map has no depot file.	Mapa nema depo fajl.
+Make one from the lines	Napravite jednu od linija
+The map has no trips yet (Map > Lines and timetable)	Mapa još uvek nema putovanja (Mapa > Linije i red vožnje)
+Empty one	Prazan jedan
+A new depot file from the map's lines	Nova depo datoteka iz linija mape
+Delete this depot file	Obriši ovu datoteku depoa
+The lines need	Linije trebaju
+Add them	Dodajte ih
+What is there stays as it is	Ono što je tamo ostaje kao što jeste
+No depot group uses it.	Nijedna depo grupa ga ne koristi.
+Used by the depot	Koristio ga je depo
+Use it for every depot	Koristi ga za svaki depo
+The AI's depot groups (Vehicle groups tab) take their buses' destinations from it	Grupe depoa AI (kartica Grupe vozila) uzimaju odredišta svojih autobusa iz njega
+Rename	Preimenuj
+not a usable name	nije upotrebljivo ime
+The destination a bus shows on its way to and from the depot	Odredište koje autobus pokazuje na putu do i od depoa
+Destinations	Odredišta
+Stops	Stajališta
+Routes	Rute
+nobody gets on	niko ne ulazi
+Code	Kod
+another destination has this code	druga destinacija ima ovaj kod
+As a trip's terminus is named in the timetable: the stop where everybody gets off	Kako je terminus putovanja naveden u redu vožnje: stanica na kojoj svi izlaze
+Nobody gets on (service trip, empty sign)	Niko ne ulazi (služni put, prazan znak)
+Delete destination	Obriši odredište
+Add destination	Dodaj odredište
+New destination	Novo odredište
+As the timetable names the stop	Kako je u redu vožnje navedena stanica
+Delete stop	Obriši stajalište
+Add stop	Dodaj stajalište
+line	linija
+What the driver types: the line's number and two digits (7601: line 76, route 01)	Šta vozač kuca: broj linije i dve cifre (7601: linija 76, ruta 01)
+IBIS text	IBIS tekst
+Destination	Odredište
+Stops in order	Stajališta po redosledu
+Not in the Stops list: the displays have no texts for it	Nije na listi zaustavljanja: ekrani nemaju tekst za to
+Take out	Izvadi
+Add a stop…	Dodaj stajalište…
+Delete route	Obriši rutu
+Add route	Dodaj rutu
+No routes: the IBIS knows the destinations' codes only. Add them from the lines above.	Nema ruta: IBIS zna samo kodove odredišta. Dodajte ih iz redova iznad.
+Winter with snow	Zima sa snegom
+Summer (dry)	Leto (suvo)
+Jan	Jan
+Feb	Feb
+Mar	mar
+Apr	apr
+May	maj
+Jun	Jun
+Jul	jul
+Aug	Avg
+Sep	Sep
+Oct	Okt
+Nov	nov
+Dec	dec
+Map settings	Podešavanja karte
+Money	Novac
+Tickets	Karte
+none: the map has no depot group (Traffic and AI)	nema: mapa nema depo grupu (Saobraćaj i AI)
+Years	Godine
+Year offset	Pomeraj godine
+Added to today's year when the game starts at the real date (Berlin-Spandau: -25 for the 1980s)	Dodato današnjoj godini kada igra počinje na pravi datum (Berlin-Špandau: -25 za 1980-e)
+Repair time	Vreme popravke
+ min	 min
+real rail (trams and trains follow their tracks' switches)	prava železnica (tramvaji i vozovi prate skretnice svojih pruga)
+Helper	Pomoćnik
+dynamic helper active (the original editor's map option, kept as it is)	dinamički pomoćnik aktivan (opcija originalne uređivačke mape, zadržana takva kakva jeste)
+Seasons	Godišnja doba
+Summer where none is set. The days count from 1 January.	Leto gde nijedan nije postavljen. Dani se računaju od 1. januara.
+Add a season	Dodajte sezonu
+A season ends before it starts	Sezona se završava pre nego što počne
+Draw road markings	Nacrtajte oznake na putu
+Pen	Olovka
+Straight line	Prava linija
+Dashed line	Isprekidana linija
+Rectangle	Pravougaonik
+Arrow	Strelica
+Eraser	Gumica
+Dash length	Dužina crtice
+Gap between dashes	Razmak između crtica
+Pointing back	Pokazujući nazad
+Snap to 5 cm	Poravnaj na 5 cm
+Drag to draw. The picture is the roadway as the texture lies on it, up is the way of the road; it repeats along, so what leaves at the top comes in at the bottom.	Prevucite za crtanje. Slika je kolovoz jer tekstura leži na njemu, gore je put puta; ponavlja se, tako da ono što ostavlja na vrhu dolazi na dnu.
+Pick a roadway texture first	Prvo izaberite teksturu kolovoza
+Nothing selected	Ništa nije odabrano
+Paste here	Zalepite ovde
+Cut the road here	Preseci put ovde
+Select all like it	Odaberi sve kao što je
+From the selected splines	Od izabranih splajnova
+Draw a polygon	Nacrtaj poligon
+Keep for other maps…	Zadrži za druge mape…
+Its ground, painting, water, objects and roads, put beside or into this map. Lines, timetable and AI lists stay with the other map.	Njegovo tlo, slika, voda, objekti i putevi, stavljeni pored ili na ovu mapu. Linije, red vožnje i AI liste ostaju sa drugom mapom.
+Choose a map…	Izaberite kartu...
+Other…	Drugi…
+A map to take tiles from (its global.cfg)	Mapa sa koje se uzimaju pločice (njena global.cfg)
+Grey: this map · orange: the tiles to add (click to take one or leave it) · red: on a tile of this map, left out	Siva: ova mapa · narandžasta: pločice za dodavanje (kliknite da uzmete jednu ili je ostavite) · crvena: na pločici ove mape, izostavljeno
+Move:	Pokret:
+west	zapad
+east	istok
+north	sever
+south	jug
+Raise it by	Podigni za
+Its ground, water, roads and objects at a height of their own	Njegovo tlo, voda, putevi i objekti na sopstvenoj visini
+Ease the ground where the maps meet	Olakšajte teren na mestu gde se mape susreću
+Added	Dodato
+tiles from the other map	pločice sa druge mape
+Cube	Kocka
+Plane	Ravan
+Circle	Krug
+Triangle	Trougao
+Triangular prism	Trouglasta prizma
+Wedge	Klin
+Corner wedge	Ugaoni klin
+Pyramid	Piramida
+Sphere	Sfera
+Icosphere	Ikosfera
+Cylinder	Cilindar
+Cone	Konus
+Torus	Torus
+Tube	Cev
+Capsule	Kapsula
+Stairs	Stepenice
+Arch	Luk
+Make one and put it on the map with a click (each one can then be edited, scaled, cut and joined)	Napravite jedan i stavite ga na mapu jednim klikom (svaki se zatim može uređivati, skalirati, iseći i spojiti)
+Array	Niz
+Solidify	Učvrsti
+Subdivision surface	Površina podele
+Decimate	Smanji broj poligona
+Triangulate	Podeli na trouglove
+Displace	Pomeri površinu
+Wireframe	Žičani okvir
+Screw	Zavojna površina
+Simple deform	Jednostavna deformacija
+Cast	Oblikuj prema telu
+Weld	Zavar
+Edge split	Podela ivice
+Boolean	Boolean
+Follow the ground	Pratite zemlju
+Relative	Relativno
+Merge touching ends	Spajanje dodirnih krajeva
+Distance	Udaljenost
+Cut away the other side first	Prvo odrežite drugu stranu
+Weld at the mirror	Zavar na ogledalu
+Thickness	Debljina
+Close the rim	Zatvorite obod
+Segments	Segmenti
+Levels	Nivoi
+Smooth (Catmull-Clark)	Glatko (Catmull-Clark)
+Factor	Faktor
+Repeat	Ponovi
+Seed	Seme
+Along the normals	Duž normala
+Steps	Koraci
+Axis	Os
+Twist	Uvij
+Bend	Savij
+Taper	Suzi
+Stretch	Rastegni
+Amount	Količina
+Box	Kutija
+Difference	Razlika
+With the part	Sa delom
+Tip: hide the cutting part (its eye in the list) so only the cut shows	Savet: sakrijte deo za sečenje (njegovo oko na listi) tako da se vidi samo rez
+Above the ground	Iznad zemlje
+Every vertex follows the terrain under it (in the editor's view and the written files at the place it stands)	Svaki vrh prati teren ispod sebe (u urednikovom pogledu i pisanim fajlovima na mestu gde stoji)
+Mesh (openMapper object)	Mreža (openMapper objekat)
+Shared by	Koriste
+objects on the map: changes apply to all	objekti na mapi: promene se primenjuju na sve
+Make this one single	Neka ovo bude jedno
+Leave the edit mode (Tab)	Napustite režim uređivanja (Tab)
+Edit the mesh (Tab)	Uredite mrežu (Tab)
+Write it as OBJ, glTF / GLB, FBX, Collada, USD, STL, PLY, 3MF, OFF, X or O3D	Napišite ga kao OBJ, glTF / GLB, FBX, Collada, USD, STL, PLY, 3MF, OFF, X ili O3D
+Off: its height is kept above the ground under it	Isključeno: njegova visina se drži iznad zemlje ispod njega
+Solid (collides)	Čvrsta (sudara)
+The part edited and given modifiers	Uređen deo i dati modifikatori
+Shown (and written into the object)	Prikazano (i upisano u objekat)
+faces	površi
+Duplicate the part	Duplirajte deo
+Delete the part	Obriši deo
+Add a shape as a part	Dodajte oblik kao deo
+Separate parts into objects	Odvojite delove u objekte
+Each part becomes an object of its own, standing where it stood	Svaki deo postaje predmet za sebe, stojeći tamo gde je stajao
+Shape	Oblik
+Modifiers	Modifikatori
+Make it part of the mesh	Neka bude deo mreže
+Add a modifier	Dodajte modifikator
+Materials	Materijali
+Colour (multiplies the texture)	Boja (umnožava teksturu)
+Assign to selected faces	Dodeli izabranim licima
+Choose…	Izaberite…
+No texture	Bez teksture
+Save as…	Sačuvaj kao…
+PNG, JPEG, BMP, TGA, TIFF, WebP or DDS	PNG, JPEG, BMP, TGA, TIFF, VebP ili DDS
+Transparency	Transparentnost
+Opaque	Neprozirno
+Cut out	Iseci
+Blended	Mešano
+Glows	Sjaji
+Light of its own: black for none	Svetlost za sebe: crna za nikakva
+Shine	Sjaj
+Normal map	Normalna karta
+ORM map	ORM mapa
+Night texture	Noćna tekstura
+Light map	Svetlosna karta
+Remove the material	Uklonite materijal
+Add a material	Dodajte materijal
+Import materials…	Uvezite materijale…
+From an .mtl, a glTF / GLB / FBX, or the pictures of one PBR material (base colour, normal, roughness, metal, AO...)	Od .mtl, glTF / GLB / FBX ili slika jednog PBR materijala (osnovna boja, normalna, hrapavost, metal, AO...)
+Lamps	Lampe
+Glow	Sjaj
+Light on the ground	Svetlost na zemlji
+Reach	Domet
+On	Uključeno
+Always	Uvek
+At night	Noću
+variable	promenljiva
+Seen from one side	Gledano s jedne strane
+Star	Zvezda
+Facing	Usmerenje
+Remove the lamp	Uklonite lampu
+Add a glow	Dodajte sjaj
+A lamp's bulb, a lit sign: a glow seen at night	Sijalica lampe, upaljen znak: sjaj koji se vidi noću
+Add light on the ground	Dodajte svetlo na zemlju
+The pool of light a street lamp throws at night	Bazen svetlosti ulične lampe baca noću
+Signal head, lamps	Signalna glava, lampe
+Put it within 40 m of a crossing with a light program: it takes its light from it (or link it in its properties)	Stavite ga unutar 40 m od raskrsnice pomoću svetlosnog programa: on uzima svoju svetlost od njega (ili ga povežite u njegovim svojstvima)
+Bake	Izračunaj osvetljenje
+Its textures and colours painted into one picture on a new UV map (one material: fewer draws in the game), with its own shadows and its lamps' night light if chosen	Njegove teksture i boje obojene u jednu sliku na novoj mapi UV (jedan materijal: manje izvlačenja u igri), sa sopstvenim senkama i noćnim svetlom lampe ako se izabere
+Ambient occlusion	Ambijentalna okluzija
+How far its shadows reach	Dokle dosežu njegove senke
+Lamps' light at night (light map)	Svetlost lampi noću (svetlosna mapa)
+The object's last change (Ctrl+Z in the edit mode)	Poslednja promena objekta (Ctrl+Z u režimu za uređivanje)
+Divisions X	Podele po X
+Divisions Y	Podele po Y
+Rings	Prstenovi
+Subdivisions	Pododeljenja
+Bottom radius	Donji radijus
+Top radius	Gornji radijus
+Tube radius	Radijus cevi
+Tube segments	Segmenti cevi
+Outer radius	Spoljni radijus
+Inner radius	Unutrašnji radijus
+Opening	Otvaranje
+Wall	Zid
+Mesh	Mreža
+A copy of this object's type of its own is made for it, with its meshes, materials and lamps to edit; the original stays as it is	Za njega je napravljena kopija sopstvenog tipa ovog objekta, sa svojim mrežama, materijalima i lampama za uređivanje; original ostaje takav kakav jeste
+As a mesh	Kao mreža
+Copy as an object	Kopiraj kao objekat
+An openMapper object of its shape beside it, to edit as a mesh (vertices, edges, faces)	openMapper objekat njegovog oblika pored njega, za uređivanje kao mreža (temene, ivice, lica)
+The same, the spline taken away (its lanes go with it)	Isto, splajn oduzet (njegove trake idu sa njim)
+Polygon from it	Poligon iz njega
+Fill the outline the selected roads and splines make when they join end to end (kerbs round an island, for instance)	Popunite obris izabranih puteva i lamela kada se spoje kraj s krajem (na primer ivičnjaci oko ostrva)
+Splines as a mesh	Splajnovi kao mreža
+Copy as one object	Kopiraj kao jedan objekat
+Replace by one object	Zameni jednim objektom
+Polygon from them	Poligon od njih
+Export the selection…	Izvezi izbor…
+As meshes	Kao mreže
+Join into one object (Ctrl+J)	Spajanje u jedan objekat (Ctrl+J)
+All their parts in the one shown in the properties, the others gone	Svi njihovi delovi u jednom prikazanom u imanjima, ostali su nestali
+Solid modelling (CSG): the object shown in the properties with the others	Modeliranje čvrstog materijala (CSG): objekat prikazan u svojstvima sa ostalima
+Keep the cutting objects	Zadržite predmete za sečenje
+Vertices	Vrhovi
+Edges	Ivice
+vertices	vrhova
+edges	ivice
+Selected	Izabrano
+Display	Prikaz
+X-ray (Alt+Z): see and pick through the mesh	Rendgen (Alt+Z): pogledajte i probijte kroz mrežu
+Show the textures	Prikaži teksture
+The object's own pictures under the editing shading	Sopstvene slike objekta ispod senčenja za uređivanje
+Shading opacity	Prozirnost senčenja
+0 %: the textures as they are; 100 %: the plain shading. The picture is renewed a moment after each change.	0 %: teksture kakve jesu; 100 %: obično senčenje. Slika se obnavlja trenutak nakon svake promene.
+All (A)	Svi (A)
+None (Alt+A)	Nema (Alt+A)
+Invert (Ctrl+I)	Obrni izbor (Ctrl+I)
+Linked (Ctrl+L)	Povezano (Ctrl+L)
+More	Više
+Less	Manje
+Click, Shift + click to add, drag on nothing for a box, a second click or Alt + click for a loop	Klik, Shift + klik za dodavanje, prevlačenje ništa za kutiju, drugi klik ili Alt + klik za petlju
+Change	Promena
+Extrude (E)	Izvuci (E)
+Inset (I)	Uvuci (I)
+Bevel (Ctrl+B)	Obori ivice (Ctrl+B)
+Loop cut (Ctrl+R)	Preseci petlju (Ctrl+R)
+Point at an edge and press Ctrl+R	Pokažite na ivicu i pritisnite Ctrl+R
+Subdivide	Podeli
+Fill (F)	Popuni (F)
+Bridge loops	Spoji petlje
+Connect (J)	Poveži (J)
+Poke	Podeli oko središta
+Duplicate (Shift+D)	Duplikat (Shift+D)
+Split (Y)	Razdvoji (Y)
+Separate into an object (P)	Odvojite u objekat (P)
+Spin 360°	Okretanje 360°
+The selection turned round the object's up axis through its middle, in 12 steps	Izbor je okrenuo oko ose objekta nagore kroz njegovu sredinu, u 12 koraka
+Smooth vertices	Glatki vrhovi
+Merge (M)	Spajanje (M)
+At the middle	U sredini
+At the first	Na prvom
+At the last	Najzad
+Collapse each piece	Skupite svaki komad
+By distance (1 mm)	Po rastojanju (1 mm)
+Delete (X)	Obriši (X)
+Only faces	Samo lica
+Dissolve vertices	Rastvoriti vrhove
+Dissolve edges	Rastvoriti ivice
+Dissolve faces	Rastvoriti lica
+Triangulate (Ctrl+T)	Podeli na trouglove (Ctrl+T)
+Triangles to quads (Alt+J)	Trouglovi u četvorke (Alt+J)
+Shade smooth	Glatko senčenje
+Shade flat	Ravno senčenje
+Flip normals (Alt+N)	Okrenite normale (Alt+N)
+Normals outward (Shift+N)	Normalno napolje (Shift+N)
+Mark seam	Označi šav
+Clear seam	Ukloni oznaku šava
+Mark sharp	Označi oštru ivicu
+Clear sharp	Ukloni oznaku oštre ivice
+Adjust the last operation	Podesite poslednju operaciju
+Slide	Klizni
+Cuts	Rezovi
+UV map	UV mapa
+Unwrap	Odmotaj
+By seams (conformal)	Po šavovima (konformno)
+Smart project	Pametan projekat
+Cube projection (metres)	Kocka projekcija (metri)
+Cylinder projection	Projekcija cilindra
+Sphere projection	Projekcija sfere
+Project from the view	Projektuj iz prikaza
+Lightmap pack	Rasporedi za mapu osvetljenja
+Close the UV editor	Zatvorite UV editor
+UV editor	UV editor
+Faces of the selection (all, with none selected); mark seams on edges first for an unwrap by seams	Lica izbora (sva, bez izabranih); prvo označite šavove na ivicama da biste ih odmotali po šavovima
+Give this material to the selected faces	Dajte ovaj materijal odabranim licima
+Select faces to give them a material.	Izaberite lica da biste im dali materijal.
+With lamps	Sa lampama
+Street lamp	Ulična lampa
+A pole with a lamp that glows and lights the ground at night	Stub sa lampom koja noću svetli i osvetljava zemlju
+Signal head	Signalna glava
+A traffic light of the lamps below that a crossing's light program drives	Semafor lampi ispod kojih pokreće svetlosni program prelaza
+Lamps:	Lampe:
+Picture, light, sound	Slika, svetlo, zvuk
+Picture / pattern…	Slika / šablon…
+Choose a picture or a texture: it becomes an object you place, move, turn and scale like any other. Several repeats make a pattern	Izaberite sliku ili teksturu: ona postaje objekat koji postavljate, pomerate, okrećete i skalirajte kao i svaki drugi. Nekoliko ponavljanja čine obrazac
+Light source	Izvor svetlosti
+A lamp that glows and lights the ground round it	Lampa koja svetli i osvetljava zemlju oko sebe
+Sound source…	Izvor zvuka…
+Choose a sound file (.wav): it plays where you put the marker, as far as the radius carries; the marker shows in the editor only	Izaberite zvučnu datoteku (.vav): reprodukuje se tamo gde ste stavili marker, koliko radijus nosi; marker se prikazuje samo u uređivaču
+Polygon	Poligon
+Click its corners on the map; click the first corner or press Enter to close it, Esc takes the last corner back. The inside is filled as an object you can move and edit like any other	Kliknite na njegove uglove na mapi; kliknite na prvi ugao ili pritisnite Enter da ga zatvorite, Esc vraća poslednji ugao nazad. Unutrašnjost je ispunjena kao objekat koji možete pomerati i uređivati kao i svaki drugi
+No texture: a plain colour	Bez teksture: obična boja
+Texture size, m	Veličina teksture, m
+Thickness, m	Debljina, m
+Above the ground, m	Iznad zemlje, m
+Picture width, m	Širina slike, m
+Repeats	Ponavlja
+on the ground	na zemlji
+standing	stojeći
+Light colour	Boja svetla
+Light reach, m	Domet svetla, m
+at night	noću
+Sound reach, m	Domet zvuka, m
+Sound volume	Jačina zvuka
+Overview: click or drag to move there · double-click: larger / smaller · M: hide	Pregled: kliknite ili prevucite da biste se pomerili tamo · dupli klik: veći / manji · M: sakrij
+Name:	Ime:
+My town	Moj grad
+Description:	Opis:
+What the map is, for the game's map list	Šta je mapa, za listu mapa igre
+Size:	Veličina:
+Ground height:	Visina tla:
+ m above sea level	 m nadmorske visine
+Traffic:	Saobraćaj:
+keeps right	drži desno
+keeps left	drži levo
+Busy:	Zauzeto:
+cars	automobila
+passengers	putnika
+Years:	Godine:
+year offset	pomeraj godine
+Added to today's year when the game starts at the real date	Dodato današnjoj godini kada igra počinje na pravi datum
+Money:	Novac:
+Tickets:	Karte:
+Seasons:	Sezone:
+four, snowy winter	četiri, snežna zima
+mild winter	blaga zima
+summer only	samo leto
+Rail:	Železnica:
+trams and trains follow their tracks' switches	tramvaji i vozovi prate skretnice svojih koloseka
+Ground texture (all tiles):	Tekstura tla (sve pločice):
+template	šablon
+More ground layers are painted later (Paint tool); the map's settings can all be changed in Map > Map settings.	Više prizemnih slojeva se farba kasnije (alatka za farbanje); sva podešavanja mape se mogu promeniti u Mapa > Podešavanja mape.
+Create	Kreiraj
+as the template	kao šablon
+Preview automatic import	Pregled automatskog uvoza
+Estimated remaining time	Procenjeno preostalo vreme
+Unresolved	Nerešeno
+Import diagnostics	Dijagnostika uvoza
+Downloading…	Preuzimanje…
+ways	OSM linija
+bus routes downloaded	autobuske rute preuzete
+not had:	nedostaje:
+The streets of the map's place built as roads with junctions where they meet, its bus stops, lines, trees and woods. Best on tiles with no roads yet: roads lying on ones the map has are left out.	Ulice mesta na mapi izgrađene su kao putevi sa raskrsnicama gde se sastaju, autobuska stajališta, linije, drveće i šume. Najbolje na pločicama na kojima još nema puteva: putevi koji leže na onima na mapi su izostavljeni.
+The map does not lie on the Earth yet: place it in Satellite and terrain (Map menu, I) first.	Mapa još uvek ne leži na Zemlji: prvo je postavite u Satelit i teren (meni Mapa, I).
+Load the terrain heights first (Satellite and terrain): the roads follow the ground as it is when they are built.	Prvo učitajte visine terena (Satelit i teren): putevi prate teren u trenutku izgradnje.
+Bus lines	Autobuske linije
+Trees and woods	Drveće i šume
+Download for the map's tiles	Preuzmi za pločice mape
+Retry missing layers	Ponovo preuzmi slojeve koji nedostaju
+Load OSM JSON	Učitaj OSM JSON
+Automatic roads and buildings	Automatski putevi i zgrade
+no type chosen	nije izabran tip
+Use the chosen	Koristi izabrano
+One-way roads	Jednosmerni putevi
+Each carriageway of a dual road and one-way streets: with a one-way road type they lie side by side as they should; with none chosen they get their kind's	Svaki kolovoz dvostrukog puta i jednosmernih ulica: sa jednosmernim tipom puta oni leže jedan pored drugog kako treba; bez izabranog dobijaju svoje vrste
+as their kind	prema njihovoj vrsti
+no stop object	nije izabran objekat stajališta
+The stop chosen in Game logic > Bus stops	Stanica izabrana u Logika igre > Autobuska stajališta
+Each bus route through two or more of the map's stops a trip of its line, the way found along the roads; a tour from 06:00 to 22:00 for each new line	Za svaku autobusku rutu kroz najmanje dva stajališta na mapi pravi se polazak njene linije, sa putanjom duž puteva; za svaku novu liniju pravi se turnus od 06:00 do 22:00
+Single trees, rows of them and woods, planted with the plant mix (Objects tool > Plant brush) or the tree chosen; none on a road	Pojedinačna stabla, njihovi redovi i šume, zasađene mešavinom biljaka (alatka Predmeti > četkica za biljke) ili izabrano drvo; nijedan na putu
+no plants chosen	nijedna biljka nije izabrana
+kinds of plants	vrste biljaka
+apart in woods	odvojeno u šumi
+Each outline filled with the model of the folder chosen whose ground plan comes nearest, its front to the nearest road; an outline no model fits is left out	Svaki obris ispunjen je modelom izabrane fascikle čiji je tlocrt najbliži, prednjim delom do najbližeg puta; izostavljen je obris koji model ne odgovara
+no folder	nema fascikle
++ its folder	+ njegova fascikla
+Add the folder of the object chosen in the catalogue (Buildings_MC, …)	Dodajte fasciklu objekta izabranog u katalogu (Buildings_MC, …)
+Lakes and rivers: the ground inside them lowered below the banks, and the tiles they lie on given water a little under the banks' height (OMSI's water is one level for a tile: low ground elsewhere on it is flooded too)	Jezera i reke: tlo unutar njih spušteno je ispod obala, a pločice na kojima leže dati vodu malo ispod visine obala (OMSI voda je jedan nivo za pločicu: nisko tlo na drugim mestima je takođe poplavljeno)
+deep	duboko
+a road type (Roads tool), then "Use the chosen"	tip puta (alatka Putevi), zatim „Koristi izabrano“
+a stop (Game logic > Bus stops), then "Use the chosen"	stajalište (Logika igre > Autobuska stajališta), zatim „Koristi izabrano“
+a tree in the Objects catalogue (or a plant mix)	drvo u katalogu objekata (ili mešavina biljaka)
+a building in the catalogue, then "+ its folder"	zgradu u katalogu, zatim „+ njegova fascikla“
+To build, choose (or untick):	Da biste napravili, izaberite (ili uklonite oznaku):
+A one-way street is built the way it runs in OpenStreetMap: give it a one-way road type	Jednosmerna ulica je izgrađena na način na koji ide u OpenStreetMap: dajte joj jednosmerni tip puta
+Build	Izgradi
+Name, file or IDCode	Ime, datoteka ili ID kod
+things on the map	stvari na mapi
+Groups	Grupe
+Select the group and go there	Izaberite grupu i idite tamo
+Select everything in it	Izaberite sve u njemu
+Select it and go there	Izaberite ga i idite tamo
+more: narrow the search	više: suzite pretragu
+Select all of them	Izaberite sve
+Go to the first	Idi na prvu
+Pick a tree in the catalogue, then paint	Izaberite drvo u katalogu, a zatim obojite
+Pick a tree in the catalogue, then click round the area	Izaberite drvo u katalogu, a zatim kliknite oko područja
+Pick a road type, click the centre, then the ring	Izaberite tip puta, kliknite na centar, a zatim na prsten
+Select a road (double-click: all of it): its properties show its height profile	Izaberite put (dvaput kliknite: sve): njegova svojstva pokazuju profil visine
+Select one of openMapper's junctions: its properties have Traffic lights and crossings	Izaberite jednu od raskrsnica openMapper: njena svojstva imaju semafore i prelaze
+Select the signal head (or a display): Linked objects in its properties, then click its crossing	Izaberite signalnu glavu (ili ekran): Povezani objekti u njegovim svojstvima, a zatim kliknite na njeno ukrštanje
+Select a road, pick an object in the Objects catalogue: Objects along the road in its properties	Izaberite put, izaberite objekat u katalogu objekata: Objekti duž puta u njegovim svojstvima
+Select a track (double-click: all of it): Overhead wire under Parallel copy in its properties	Izaberite numeru (dvostruki klik: sve): Nadzemna žica pod Paralelna kopija u njenim svojstvima
+Select a road or a chain: Parallel copy in its properties	Izaberite put ili lanac: Paralelna kopija u njegovim svojstvima
+Select a road (double-click: all of it): Paint the ground along it in its properties	Izaberite put (dvaput kliknite: sve): Obojite tlo duž njega u njegovim svojstvima
+Click a tile: its water is in the panel; lower the ground under it with the Terrain tool	Kliknite na pločicu: njena voda je u panelu; spustite tlo ispod njega pomoću alata Terrain
+Height map: at the end of the Terrain panel	Mapa visina: na kraju panela Teren
+By slope and height: at the end of the Paint panel	Po nagibu i visini: na kraju Paint panela
+View menu: Time of day, Season	Meni za prikaz: Doba dana, Sezona
+What do you want to do?	Šta želite da radite?
+Groups…	Grupe…
+Objects on the map by folder	Objekti na mapi po folderu
+Knife: cut roads	Nož: preseci puteve
+Test drive in OMSI 2 (the original)	Probna vožnja u OMSI 2 (original)
+Overview map	Pregledna karta
+Controls	Kontrole
+Place a bus stop	Postavite autobusku stanicu
+Place a start point	Postavite početnu tačku
+Plant trees with a brush	Sadite drveće četkom
+Plant a wood or a park	Zasadite šumu ili park
+Roundabout	Kružni tok
+Height profile of a road	Visinski profil puta
+Traffic lights and zebra crossings	Semafori i zebrasti prelazi
+Link a signal head to its crossing	Povežite signalnu glavu sa njenim prelazom
+Objects along a road	Objekti duž puta
+Overhead wire along a track	Nadzemna žica duž pruge
+Parallel copy of a road	Paralelna kopija puta
+Paint the ground along a road	Obojite zemlju duž puta
+Water, lake, river	Voda, jezero, reka
+Ramp in the ground	Rampa u zemlji
+Height map import or export	Uvoz ili izvoz mape visine
+Time of day and season	Doba dana i godišnje doba
+PBR material	PBR materijal
+none	nijedan
+Own picture…	Sopstvena slika…
+Choose a texture of the object, or a picture of your own.	Izaberite teksturu objekta ili svoju sliku.
+Normals (_nn)	Normali (_nn)
+Roughness	Hrapavost
+Shadow in hollows	Senka u šupljinama
+Bumps	Neravnine
+Only big shapes	Samo veliki oblici
+Dark parts stand out (not sink in)	Tamni delovi se ističu (ne utapaju se)
+Bright parts smoother	Svetli delovi su glatkiji
+Metal	Metal
+Back to the defaults	Nazad na podrazumevane vrednosti
+This texture has PBR maps of its own already: new ones made here are taken instead of them.	Ova tekstura već ima sopstvene mape PBR: umesto njih uzimaju se nove napravljene ovde.
+Written as:	Napisano kao:
+PBR maps made	Napravljene mape PBR
+Delete the PBR material	Obriši PBR materijal
+PBR maps taken away	PBR mape oduzete
+Height profile	Visinski profil
+over the ground	preko zemlje
+Click: go there in the view · drag a dot (a joint) up or down: its height	Kliknite: idite tamo u prikazu · prevucite tačku (zglob) gore ili dole: njena visina
+Climbs, falls	Penje se, pada
+Steepest	Najstrmiji
+at	na
+Highest over the ground	Najviše iznad zemlje
+Deepest under it	Najdublje ispod njega
+Over 8 % is steep for a bus; over 12 % few streets go	Preko 8% je strmo za autobus; preko 12 % prolazi nekoliko ulica
+Top view	Pogled odozgo
+Side view	Pogled sa strane
+roadway	kolovoz
+My road	Moj put
+Road types	Vrste puteva
+Make a new road type…	Napravite novi tip puta…
+ · own	 · sopstveni
+Create the road type	Kreirajte tip puta
+Road type made: the Roads tool builds with it	Napravljen tip puta: alat Putevi gradi sa njim
+Change it in the road maker	Promenite ga u izradi puta
+Junction pieces for it	Spojni delovi za to
+made by openMapper	napravio openMapper
+Choose it in the catalogue to place on the map	Izaberite ga u katalogu da biste ga postavili na mapu
+Pieces with a place made for this road type. The one picked is offered first when a junction is put on this road's end (select the road: Junction on an end).	Komadi sa mestom napravljenim za ovaj tip puta. Izabrani se nudi prvi kada se na kraju ovog puta postavi raskrsnica (izaberite put: raskrsnica na kraju).
+No piece is made for this road type; the list holds every piece with places for roads.	Nijedan komad nije napravljen za ovaj tip puta; spisak sadrži svaki komad sa mestima za puteve.
+Its junctions	Njegovi spojevi
+Make a junction where it meets another road (else they only cross)	Napravite raskrsnicu tamo gde se susreće sa drugim putem (inače se samo prelaze)
+Corners	Uglovi
+× rounder	× zaokružen
+Traffic lights by themselves	Semafori sami
+Zebra crossings on every arm	Zebra prelazi na svakom kraku
+Used for the junctions made from now on (where several road types meet, the one asking more wins). A junction already made keeps its own settings: select it to change them.	Koristi se za raskrsnice napravljene od sada (gde se susreće nekoliko tipova puteva, pobeđuje onaj koji traži više). Već napravljena raskrsnica zadržava sopstvena podešavanja: izaberite je da biste ih promenili.
+Pick a road type on the left, or make a new one.	Izaberite tip puta sa leve strane ili napravite novi.
+Road maker	Izrada puteva
+a ready-made road…	gotov put...
+Lanes the way the road is drawn	Trake u smeru crtanja puta
+Lanes against it	Trake u suprotnom smeru
+(0 against: one-way)	(0 u suprotnom smeru: jednosmerno)
+Lane width	Širina trake
+Middle strip	Razdelni pojas
+raised	podignuta
+As high as the footways, with a kerb along it	Visok kao pešačka staza, uz ivičnjak
+Footways	Trotoari
+ m left	 m levo
+a different one on the right	drugačija na desnoj strani
+ m right	 m desno
+Kerb	Ivičnjak
+A lane for buses to stop in, right of the roadway, before the footway. Lay a road type made so where a bay is wanted with the Bus pocket tool of the Roads tool	Traka za zaustavljanje autobusa, desno od kolovoza, pre pešačkog puta. Položite tip puta napravljen tako gde se želi uvala pomoću alatke Bus džepne alatke Putevi
+Roadway texture	Tekstura kolovoza
+Footway texture	Tekstura trotoara
+Middle strip texture	Tekstura razdelnog pojasa
+like the roadway	kao kolovoz
+Own…	Vlastiti…
+Road markings	Oznake na putu
+Paint my own markings	Naslikaj svoje oznake
+The maker paints the lines onto the roadway texture: pick a plain asphalt texture, or its own lines show too	Proizvođač slika linije na teksturu kolovoza: izaberite običnu teksturu asfalta, ili će se pokazati i njegove linije
+Standard for these lanes	Standardno za ove trake
+Add a line	Dodajte liniju
+Draw by hand…	Crtajte rukom…
+A drawing board with a pen, lines, arrows and an eraser: what you draw goes onto the roadway	Tabla za crtanje sa olovkom, linijama, strelicama i gumicom: ono što nacrtate ide na kolovoz
+a drawing is on the road	crtež je na putu
+Across the roadway from its middle (right of the road's way is plus)	Preko puta od njegove sredine (desno od puta je plus)
+Double solid	Dvostruka puna linija
+The line's width	Širina linije
+The roadway texture is laid once across all its lanes (as OMSI 2's lane textures are painted: pick one with as many lanes); the footway texture's right end is the kerb.	Tekstura kolovoza se postavlja jednom preko svih njegovih traka (kao što su teksture trake OMSI 2 obojene: izaberite jednu sa isto toliko traka); desni kraj teksture pešačkog puta je ivičnjak.
+No problems found	Nisu pronađeni problemi
+Scripts	Skripte
+openOMSI: the map's script	openOMSI: skripta mape
+Object scripts (OMSI 2 and openOMSI)	Objektne skripte (OMSI 2 i openOMSI)
+A Lua script that runs in openOMSI while this map is played: it reacts to what happens (a stop reached, a new hour, a new trip) and can show messages, change the traffic and the weather, move the bus. `on` and `every` work for this map only. OMSI 2 does not run Lua: its scripts belong to objects (the next tab).	Lua skripta koja se pokreće u openOMSI dok se ova mapa igra: reaguje na ono što se dešava (stignuta stanica, novi sat, novo putovanje) i može da prikaže poruke, promeni saobraćaj i vreme, pomeri autobus. `on` i `every` rade samo za ovu mapu. OMSI 2 ne pokreće Lua: njegove skripte pripadaju objektima (sledeća kartica).
+a ready-made script…	gotova skripta…
+Save the script	Sačuvajte skriptu
+Written into the content folder's plugins, where openOMSI loads it again at once	Zapisano u dodatke fascikle sa sadržajem, gde ga openOMSI ponovo učitava odjednom
+Script saved	Skripta je sačuvana
+Script saved, but it has problems: the game would not run it	Skripta je sačuvana, ali ima problema: igra je ne bi pokrenula
+Delete the script	Obriši skriptu
+Script deleted	Skripta je izbrisana
+What a scenery object runs every frame: lamps that switch, signs that change, doors that open. Select an object to see its scripts; the game's own compiler checks them as you write. Scripts of the installation's objects can be read and learned from; to change one, make an object of your own (Edit the mesh makes a copy) and open it here.	Kakav pejzažni objekat pokreće svaki okvir: lampe koje se prebacuju, znakovi koji se menjaju, vrata koja se otvaraju. Izaberite objekat da biste videli njegove skripte; sopstveni kompajler igre ih proverava dok pišete. Skripte objekata instalacije se mogu čitati i iz njih učiti; da biste ga promenili, napravite sopstveni objekat (Uređivanje mreže pravi kopiju) i otvorite ga ovde.
+Select one object on the map.	Izaberite jedan objekat na mapi.
+this object has no script	ovaj objekat nema skriptu
+From the installation: read only.	Iz instalacije: samo za čitanje.
+Not in the object's variable list	Nije na listi promenljivih objekta
+A light switched by a script	Svetlo zamenjeno skriptom
+A new object: a lamp that glows and lights the ground while its script says so. The script is yours to change after.	Novi objekat: lampa koja svetli i osvetljava zemlju dok njen scenario tako kaže. Scenario je vaš da promenite posle.
+ h	 h
+A round takes	Runda traje
+ s	 s
+From month	Od meseca
+Make the light	Napravite svetlo
+not on the map	nema na mapi
+Signal routes	Putevi signala
+Each railway signal clears when a train wants the track pieces of its route and none stands on them.	Svaki železnički signal se oslobađa kada voz želi trake svoje rute i nijedan ne stoji na njima.
+New route for the selected signal	Nova ruta za izabrani signal
+Select a signal (one object) in the view first	Prvo izaberite signal (jedan objekat) u prikazu
+The selected object does not look like a signal (its name says nothing of one): check it is.	Izabrani objekat ne izgleda kao signal (njegovo ime ne govori ništa o jednom): proverite da li je.
+No routes yet.	Još nema ruta.
+Signal	Signal
+the selected	izabrani
+Aspect	Aspekt
+What the signal shows when this route is clear: 1 proceed, 2 proceed slowly (with a speed limit)…	Šta signal pokazuje kada je ova ruta čista: 1 nastavi, 2 nastavi polako (sa ograničenjem brzine)...
+Distant signal	Daleki signal
+Next signal	Sledeći signal
+Speed limit	Ograničenje brzine
+OMSI's route kind (the stock maps have 0 and 1)	Vrsta rute OMSI (karte imaju 0 i 1)
+Track pieces	Komadi staze
+Take the selected track	Uzmite izabranu numeru
+Every rail path of the selected tracks and switches (double-click a track: all of it); replaces the pieces	Svaka šinska putanja izabranih koloseka i skretnica (dvaput kliknite na kolosek: sve); zamenjuje delove
+Select the signal and its pieces in the view	Izaberite signal i njegove delove u prikazu
+Delete the route	Obriši rutu
+Kind of stop	Vrsta stajališta
+Waiting, at most	Čekajući, najviše
+Waiting, at least	Čekajući, barem
+Getting off	Silazak
+How many of those riding get off here, compared with the other stops: twice the number, twice the riders	Koliko onih koji se voze silaze ovde, u poređenju sa ostalim stajalištima: duplo više, duplo više vozača
+How far along the stop people wait and a bus may stand	Koliko daleko duž stajališta ljudi čekaju i autobus može stajati
+Platform	Peron
+Paired with the stop across the road: one name for both	Upareno sa stajalištem preko puta: jedno ime za oba
+The stop gets a name of its own (the number is changed in the name box), and renaming one no longer renames the other	Stanica dobija svoje ime (broj se menja u polju za ime), a preimenovanje jedne više ne preimenuje drugu
+Another stop far from here has this name	Još jedna stanica daleko odavde nosi ovo ime
+Make it different	Neka bude drugačije
+Lines and timetable	Linije i red vožnje
+Edit timetable	Uredi red vožnje
+No bus stop there: click one of the orange marks	Tamo nema autobuske stanice: kliknite na jednu od narandžastih oznaka
+The roads can't be read without the OMSI 2 folder.	Putevi se ne mogu čitati bez fascikle OMSI 2.
+A line needs at least two bus stops on the map: place them with Game logic > Bus stops, beside a road.	Za liniju su potrebne najmanje dve autobuske stanice na mapi: postavite ih pomoću Logika igre > Autobuska stajališta, pored puta.
+Lines	Linije
+No lines yet.	Još nema linija.
+New line	Nova linija
+Pick a line on the left, or make a new one.\n\nA line has trips (a way from stop to stop) and tours (one bus's day: which trip it drives when).	Izaberite liniju sa leve strane ili napravite novu. \n\nA linija ima putovanja (put od stanice do stanice) i obilaske (jednog autobuskog dana: koje putovanje kada vozi).
+That name is taken or can't be a file name	To ime je preuzeto ili ne može biti ime datoteke
+A copy of the line with its trips and tours (a variant to change)	Kopija linije sa svojim putovanjima i obilascima (varijanta za promenu)
+Delete the line and its trips	Obriši liniju i njene polaske
+Players can drive it	Igrači mogu da ga voze
+Trips	Polasci
+Tours and times	Turnusi i vremena
+Which buses drive this line	Koji autobusi voze ovu liniju
+A tour is one bus's day: the trips it drives, one after the other, and when each leaves.	Obilazak je jedan dan autobusa: putovanja koje on vozi, jedno za drugim, i kada svako krene.
+A trip is one way along the line: its stops in order. Most lines have two, there and back.	Putovanje je jednosmerno duž linije: zaustavlja se po redu. Većina linija ima dva, tamo i nazad.
+New trip	Novi polazak
+Make the way back	Napravi povratnu putanju
+A new trip with the same stops the other way round	Novo putovanje sa istim zaustavlja se obrnuto
+Trip	Polazak
+Delete the trip	Obriši polazak
+Destination sign	Znak odredišta
+This trip runs on a track of its own (a train): its stops are kept as they are.	Ovo putovanje se odvija na sopstvenoj pruzi (voz): njegova stajališta ostaju onakva kakva jesu.
+Drives on	Vozi dalje
+Found from where its stops stand; set it for a tram whose stops stand by a road as well	Pronađen od mesta gde su mu stajališta; postavi za tramvaj čija stajališta stoje i pored puta
+Roads (bus)	Putevi (autobus)
+Tracks (tram, train)	Pruge (tramvaj, voz)
+Show on the map	Prikaži na mapi
+No stops yet.	Još nema stajališta.
+Done picking	Završi izbor
+Pick stops on the map	Izaberite stanice na mapi
+Click the stops in the view one after the other, in the order the bus calls at them	Kliknite na stanice u prikazu jednu za drugom, redosledom kojim ih autobus prilazi
+Add stop…	Dodaj stajalište…
+Click stops on the map (they are marked orange)…	Kliknite na stanice na mapi (označene su narandžasto)…
+Add two stops or more: the way between them is found along the roads.	Dodajte dve stanice ili više: put između njih nalazi se duž puteva.
+Finding the way…	Pronalaženje puta…
+km along the tracks (blue in the view)	km duž staza (plavo u pogledu)
+km along the roads (blue in the view)	km duž puteva (plavo u pogledu)
+Route found:	Pronađena ruta:
+the way drives a one-way lane against its direction; is a path drawn the wrong way round?	put vozi jednosmernu traku u suprotnom smeru; da li je putanja nacrtana pogrešno?
+is not on the map	nije na mapi
+no track within 15 m	nema koloseka u krugu od 15 m
+no road with car lanes within 15 m	nema puta sa trakama za automobile u krugu od 15 m
+No way	Nema putanje
+the tracks are not joined, or run the other way (see View > AI lanes)	staze nisu spojene ili se kreću na drugu stranu (pogledajte Prikaz > AI trake)
+the roads are not joined, or run the other way (see View > AI lanes)	putevi nisu spojeni ili idu u drugom pravcu (pogledajte Prikaz > AI trake)
+The trip is saved, but its way is not until this is mended	Put je sačuvan, ali njegov put nije sve dok se ovo ne popravi
+Trip time	Trajanje vožnje
+Guess:	Procena:
+From the route's length at the pace of a town bus	Od dužine rute brzinom gradskog autobusa
+Times at the stops	Vremena na stajalištima
+Minutes after the trip leaves. They follow the distance between the stops; fix one to keep the bus to it (it waits there when early).	Nekoliko minuta nakon polaska putovanja. Prate rastojanje između stajališta; popravi jednu da zadrži autobus (tamo čeka kada je rano).
+fixed	fiksno
+Spread all by distance	Raširite sve po udaljenosti
+How the stops are served	Kako se serviraju zaustavljanja
+Always: the bus stops whoever waits (a compulsory stop, a terminus). When wanted: only if somebody gets on or off (a request stop). Drive through: it does not stop on this trip. When early: it stops only if it is ahead of its time.	Uvek: autobus zaustavlja onoga ko čeka (obavezna stanica, terminus). Kada se želi: samo ako neko uđe ili siđe (zahtev stop). Vozite se: na ovom putovanju se ne zaustavlja. Kada je rano: prestaje samo ako je ispred svog vremena.
+The AI buses of this line's tours are taken from the depot group; here the vehicles can be limited by date: only some types, mostly some types, or a fleet number for one tour. A line with nothing here takes any vehicle of the group.	AI autobusi ove linije su uzeti iz grupe depoa; ovde vozila mogu biti ograničena datumom: samo neki tipovi, uglavnom neki tipovi, ili broj voznog parka za jednu turneju. Linija bez ičega zauzima bilo koje vozilo grupe.
+Delete this assignment	Obriši ovo zaduženje
+(day, month, year)	(dan, mesec, godina)
+It ends before it starts: the game ignores it	Završava se pre nego što počne: igra ga ignoriše
+Only these types	Samo ove vrste
+Mostly these types	Uglavnom ove vrste
+share of the tours	deo obilazaka
+Add a vehicle…	Dodajte vozilo…
+Fleet numbers of single tours	Broj flote pojedinačnih putovanja
+A fleet number for a tour	Broj flote za obilazak
+A vehicle assignment	Zadatak vozila
+Holidays and school holidays	Praznici i školski raspust
+On a public holiday only the tours with Holidays ticked run; school holidays pick the tours for school holidays or school days.	Na državni praznik kreću samo ture sa označenim praznicima; školski raspusti izaberite izlete za školske praznike ili školske dane.
+Copy to	Kopiraj u
+The same days a year later (feasts that move, like Easter, are to be set by hand)	Isti dani godinu dana kasnije (praznici koji se kreću, poput Uskrsa, treba da se određuju rukom)
+The map has no depot (ailists.cfg): only you drive these tours, no AI buses.	Mapa nema depo (ailists.cfg): samo vi vozite ove ture, nema AI autobusa.
+Add a depot with OMSI 2's MAN buses	Dodajte depo sa MAN autobusima OMSI 2
+Its buses run the tours (Map > Traffic and AI shows it)	Njegovi autobusi voze obilaske (Mapa > Saobraćaj i prikazuje AI)
+Tour	Turnus
+New tour	Novi turnus
+Pick a tour to see its departures.	Izaberite obilazak da biste videli njegove odlaske.
+Make a trip first.	Prvo napravite polazak.
+Number	Broj
+Buses from	Autobusi iz
+Delete the tour	Obriši turnus
+Runs on	Saobraća
+Mo	Pon
+Tu	Uto
+We	Sre
+Th	Čet
+Fr	Pet
+Sa	Sub
+Su	Ned
+Every day	Svaki dan
+Monday to Friday	Od ponedeljka do petka
+Weekends and holidays	Vikendom i praznicima
+In the school holidays	Na školskom raspustu
+On school days	U školskim danima
+Next departure	Sledeći polazak
+The next trip of the line, when the bus is back and has had its break	Sledeće putovanje na liniji, kada se autobus vrati i kada je pao
+Fill from	Popuni od
+break	pauza
+Fill	Popuni
+Replace the tour's departures: the line's trips one after the other, a break after each	Zameni polaske obilaska: putovanja linije jedno za drugim, pauza posle svakog
+No departures yet: add them above.	Još nema polazaka: dodajte ih iznad.
+Delete the departure	Obriši polazak
+GPS tracks to trace	GPS staze za praćenje
+A route recorded on a phone or drawn elsewhere (GPX, KML, GeoJSON), shown in the view in magenta to draw roads along, or built into a road at once	Ruta snimljena na telefonu ili nacrtana na drugom mestu (GPX, KML, GeoJSON), prikazana u prikazu u magenta za crtanje puteva ili odjednom ugrađena u put
+Place the map on the Earth first (Map > Satellite and terrain)	Prvo postavite mapu na Zemlju (Mapa > Satelit i teren)
+Load a file…	Učitaj datoteku…
+None loaded	Nije učitano
+Forget it	Zaboravi
+Build a road along it:	Izgradite put duž njega:
+Choose a road type in the Roads tool to build it	Izaberite tip puta u alatu Putevi da biste ga napravili
+Built as if drawn: corners rounded into arcs, junctions where it meets roads, cut at the map's edge; one undo step	Izgrađen kao da je nacrtan: uglovi zaobljeni u lukove, raskrsnice na mestima gde se susreću sa putevima, usečene na ivici mape; jedan korak za poništavanje
+Traffic and AI	Saobraćaj i AI
+Edit traffic	Uredi saobraćaj
+Over the day	Preko dana
+Vehicle groups	Grupe vozila
+Parked cars and people	Parkirani automobili i ljudi
+Depot files	Datoteke depoa
+The AI's vehicles come in groups. A car group drives about on the roads; a depot sends out the buses of the timetable's tours.	Vozila AI dolaze u grupama. Grupa automobila vozi se po putevima; depo šalje autobuse za obilaske po redu vožnje.
+(This map's ailists.cfg is in OMSI 2's first format: it is written in the second one when changed.)	(ailists.cfg ove mape je u prvom formatu OMSI 2: napisan je u drugom kada se promeni.)
+is to drive about, but there is no such group.	je da se vozi okolo, ali takve grupe nema.
+Make it with OMSI 2's vehicles	Učinite to sa vozilima OMSI 2
+The group of that name from OMSI 2's own maps	Grupa tog imena sa sopstvenih mapa OMSI 2
+New car group	Nova grupa automobila
+New depot	Novi depo
+Pick a group on the left.	Izaberite grupu sa leve strane.
+Delete the group (tours still take their buses from it)	Obriši grupu (turnusi i dalje koriste njene autobuse)
+Delete the group	Obriši grupu
+Tours that take their buses from here:	Obilasci koji svojim autobusima idu odavde:
+Drives about on its own	Vozi se sam
+as many:	isto toliko:
+Times the traffic over the day	Povećava promet tokom dana
+A vehicle with more weight comes along more often.	Vozilo veće težine dolazi češće.
+Depot file (.hof)	Datoteka depoa (.hof)
+None of its buses has this depot file beside it: they run without their destination signs and fleet data.	Nijedan od njegovih autobusa nema ovu datoteku depoa pored sebe: voze bez oznaka odredišta i podataka o voznom parku.
+The buses it has: a type of bus and the fleet number and plate of each.	Autobusi koje ima: tip autobusa i broj voznog parka i tablica svakog.
+Take this type out	Uklonite ovu vrstu
+number	broj
+plate	registarska oznaka
+Another bus	Još jedan autobus
+Add a type of bus…	Dodajte tip autobusa…
+The lists can't be read without the OMSI 2 folder.	Liste se ne mogu čitati bez fascikle OMSI 2.
+Parked cars	Parkirani automobili
+What stands on the car parks (Game logic > Car parks). A car listed more often stands there more often.	Šta stoji na parkiralištima (Logika igre > Parkirališta). Češće naveden automobil stoji tamo češće.
+Who walks about and waits at the stops.	Ko se šeta i čeka na stajalištima.
+Drivers	Vozači
+Who drives the AI's buses.	Ko vozi autobuse AI.
+How often it is listed (0 takes it out)	Koliko često se navodi (0 ga vadi)
+How busy the map is at each hour: the road traffic, and the passengers at the stops. 1 is normal; the game goes along the line between the points.	Koliko je zauzeta mapa svakog sata: drumski saobraćaj i putnici na stajalištima. 1 je normalno; igra ide linijom između poena.
+Road traffic	Drumski saobraćaj
+Passengers	Putnici
+Its own traffic over the day	Njegov sopstveni saobraćaj tokom dana
+Without one the group follows the map's road traffic. A curve can be for some days of the week only.	Bez jednog grupa prati saobraćaj na mapi. Kriva može biti samo za neke dane u nedelji.
+Days:	Dana:
+Mo–Fr	Pon–Pet
+Take this curve out	Izvadite ovu krivinu
+A curve	Kriva
+Typical day…	Tipičan dan…
+Quiet village	Mirno selo
+Town with rush hours	Grad sa špicovima
+The same all day	Ceo dan isto
+No curve: 1 all day.	Bez krive: 1 ceo dan.
+Take the point out	Ukloni tačku
+Point	Tačka
+Smart unwrap	Pametno odmotavanje
+Every flat side apart in the picture, no faces on top of one another (all faces if none is selected)	Svaka ravna strana na slici, bez lica jedno na drugom (sva lica ako nije izabrano nijedno)
+Box unwrap	Odmotavanje kutije
+The six sides of a box apart in the picture	Šest strana kutije odvojeno na slici
+Flip ↔	Preslikaj ↔
+Flip ↕	Preslikaj ↕
+Scale ×2	Uvećaj ×2
+Scale ÷2	Umanji ÷2
+Stretched to fill the picture	Istegnuto da ispuni sliku
+Pack islands	Rasporedi UV ostrva
+Average island scale	Ujednači razmeru UV ostrva
+Seams from islands	Šavovi sa ostrva
+Click: a face (Shift adds) · drag: move the selected · wheel: zoom · right button: pan	Kliknite: lice (Shift dodaje) · prevucite: pomerite izabrano · točkić: zumirajte · desno dugme: pomerajte
+Could not keep the views	Ne mogu zadržati poglede
+Saved views	Sačuvani prikazi
+Places of the map to come back to: Ctrl+1…9 goes to the first nine, Ctrl+Shift+1…9 keeps the view there	Mesta mape na koja se treba vratiti: Ctrl+1…9 ide do prvih devet, Ctrl+Shift+1…9 zadržava pogled tamo
+Keep this view	Zadrži ovaj pogled
+None yet	Još nema
+Go	Idi
+Earlier in the list	Ranije na listi
+Later in the list	Kasnije u spisku
+Take the view now instead	Umesto toga, pogledajte sada
+Keep proportions	Držite proporcije
+Back to its own size	Nazad na svoju veličinu
+Updates	Ažuriranja
+This version:	Ova verzija:
+New version:	Nova verzija:
+Install and restart	Instalirajte i ponovo pokrenite
+Not now	Ne sada
+What changed	Šta se promenilo
+Downloading and installing	Preuzimanje i instaliranje
+Installed version	Instalirana verzija
+openMapper restarts when you save the map.	openMapper se ponovo pokreće kada sačuvate mapu.
+Looking for a new version…	Traži se nova verzija…
+This is the newest version.	Ovo je najnovija verzija.
+Download it from GitHub by hand	Ručno preuzmite sa GitHub
+When there is a new version:	Kada postoji nova verzija:
+Offer it to me	Ponudi mi to
+Install it and restart by itself	Instalirajte ga i ponovo pokrenite sam
+Never look for updates	Nikada ne tražite ažuriranja
+Check now	Proverite sada
+Never offer updates again	Nikada više ne nudi ažuriranja
+The release has no package	Izdanje nema paket
+No automatic updates for this system.	Nema automatskih ažuriranja za ovaj sistem.
+No connection to GitHub: are you online?	Nema veze sa GitHub: da li ste onlajn?
+The release has no SHA256SUMS: not installed.	Izdanje nema SHA256SUMS: nije instalirano.
+The package is not in SHA256SUMS: not installed.	Paket nije u SHA256SUMS: nije instaliran.
+The download does not match its checksum: not installed.	Preuzimanje se ne poklapa sa kontrolnom sumom: nije instalirano.
+Could not replace the program	Nije moguće zameniti program
+The package has no program in it.	Paket nema program u sebi.

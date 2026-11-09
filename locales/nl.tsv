@@ -2785,3 +2785,12 @@ no track within 15 m	geen spoor binnen 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	de sporen zijn niet verbonden, of lopen de andere kant op (zie Beeld > AI-rijstroken)
 no track beside	geen spoor naast
 Drives on	Rijdt over
+Import diagnostics	Importdiagnose
+Retry missing layers	Ontbrekende lagen opnieuw laden
+Automatic roads and buildings	Automatische wegen en gebouwen
+Procedural fallback	Procedureel alternatief
+Preview automatic import	Automatische import voorvertonen
+Unresolved	Onopgelost
+Load OSM JSON	OSM JSON laden
+Asset catalogue	Assetcatalogus
+Estimated remaining time	Geschatte resterende tijd

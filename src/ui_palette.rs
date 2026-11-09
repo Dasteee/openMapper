@@ -121,6 +121,7 @@ fn commands() -> Vec<Command> {
         lang_cmd!(Kk, "Қазақша", "kazakh қазақша"),
         lang_cmd!(Pl, "Polski", "polish"),
         lang_cmd!(Cs, "Čeština", "czech cestina"),
+        lang_cmd!(Sr, "Srpski (latinica)", "serbian srpski srpski latinica српски jezik"),
         lang_cmd!(Hu, "Magyar", "hungarian"),
         lang_cmd!(Es, "Español", "spanish espanol"),
         lang_cmd!(Ca, "Català", "catalan catala"),

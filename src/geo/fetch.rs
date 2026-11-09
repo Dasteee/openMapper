@@ -322,54 +322,11 @@ pub fn parse_places(body: &str) -> Result<Vec<Place>, Error> {
 /// Ask OpenStreetMap's Overpass API (one request at a time; an answer is kept a week in
 /// the cache, so the same place is not asked for again).
 pub fn overpass(q: &str) -> Result<String, Error> {
-    static ONE: Mutex<()> = Mutex::new(());
-    let _one = ONE.lock().unwrap_or_else(|e| e.into_inner());
-    let dir = cache_root().parent().map(|p| p.join("osm")).unwrap_or_else(|| PathBuf::from("osm"));
-    let path = dir.join(format!("{:016x}.json", fnv(q.as_bytes())));
-    let fresh = std::fs::metadata(&path).and_then(|m| m.modified()).ok().and_then(|t| t.elapsed().ok()).map(|a| a.as_secs() < 7 * 86_400).unwrap_or(false);
-    if fresh {
-        if let Ok(t) = std::fs::read_to_string(&path) {
-            return Ok(t);
-        }
-    }
-    // (the main server first, then a mirror when it is busy or does not answer; a big
-    // place takes them a while)
-    static SLOW: OnceLock<ureq::Agent> = OnceLock::new();
-    let slow = SLOW.get_or_init(|| ureq::Agent::config_builder().user_agent(USER_AGENT).timeout_global(Some(Duration::from_secs(150))).http_status_as_error(false).build().into());
-    let servers = ["https://overpass-api.de/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter"];
-    let mut body = Vec::new();
-    let mut last = String::new();
-    for server in servers {
-        let got = slow.get(&format!("{server}?data={}", encode(q))).call().map_err(net_error).and_then(|mut r| {
-            let status = r.status().as_u16();
-            r.body_mut().with_config().limit(64 << 20).read_to_vec().map(|b| (status, b)).map_err(net_error)
-        });
-        match got {
-            Ok((200, b)) => {
-                body = b;
-                last.clear();
-                break;
-            }
-            Ok((429 | 502 | 503 | 504, _)) => last = tr("OpenStreetMap's servers are busy: try again in a minute", "Серверы OpenStreetMap заняты: попробуйте через минуту").into(),
-            Ok((status, _)) => return Err(format!("Overpass: HTTP {status}")),
-            Err(e) => last = e,
-        }
-    }
-    if !last.is_empty() {
-        return Err(last);
-    }
-    let text = String::from_utf8_lossy(&body).to_string();
-    // (an answer cut short by the server says so in a remark; it and an empty one are not
-    // kept: the next ask may bring what this one did not)
-    let whole = serde_json::from_str::<serde_json::Value>(&text).map(|v| v.get("remark").is_none() && v.get("elements").and_then(|e| e.as_array()).map(|e| !e.is_empty()).unwrap_or(false)).unwrap_or(false);
-    if whole && std::fs::create_dir_all(&dir).is_ok() {
-        let _ = std::fs::write(&path, &text);
-    }
-    Ok(text)
+    super::osm_source::fetch(q, "background/compatibility", &std::sync::atomic::AtomicBool::new(false), Instant::now() + Duration::from_secs(240), &|_| {})
 }
 
 /// Percent-encoding for a query parameter.
-fn encode(s: &str) -> String {
+pub(super) fn encode(s: &str) -> String {
     s.bytes()
         .map(|b| match b {
             b'A'..=b'Z' | b'a'..=b'z' | b'0'..=b'9' | b'-' | b'_' | b'.' | b'~' => (b as char).to_string(),

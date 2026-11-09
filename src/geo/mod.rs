@@ -9,6 +9,8 @@ pub mod fetch;
 pub mod imagery;
 pub mod job;
 pub mod own;
+pub mod osm_source;
+pub mod osm_job;
 pub mod sources;
 #[cfg(test)]
 mod tests;

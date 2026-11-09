@@ -29,6 +29,7 @@ egui-wgpu = { git = "https://github.com/openOMSI-org/egui-openomsi", rev = "0119
 egui-winit = { git = "https://github.com/openOMSI-org/egui-openomsi", rev = "0119a7a0a8de46a931640912685605223f28da04", default-features = false, features = ["clipboard", "links", "wayland", "x11"] }
 
 glam = "0.30"
+earcutr = "0.5"
 # openMapper's own polygon meshes: primitives, booleans, modifiers, UVs, baking, export
 openmapper-mesh = { path = "crates/mesh" }
 # editing one map together (src/collab): the connection, and openOMSI's own Cloudflare tunnel
@@ -53,6 +54,9 @@ ufbx = "0.11"
 tiny-skia = { version = "0.12", default-features = false, features = ["std", "simd"] }
 ab_glyph = "0.2"
 ureq = { version = "3.4", default-features = false, features = ["rustls"] }
+# OSM requests must be cancellable while waiting for headers and reading bodies.
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "stream"] }
+tokio = { version = "1", features = ["rt-multi-thread", "net", "time", "sync", "macros"] }
 # the Lua syntax check of the map scripts (src/scripting.rs), Lua 5.4 as openOMSI runs
 full_moon = { version = "3.0.0", default-features = false, features = ["lua54"] }
 

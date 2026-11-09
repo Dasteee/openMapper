@@ -2785,3 +2785,12 @@ no track within 15 m	không có đường ray trong 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	các đường ray chưa nối, hoặc chạy ngược chiều (xem Xem > Làn AI)
 no track beside	không có đường ray bên cạnh
 Drives on	Chạy trên
+Import diagnostics	Chẩn đoán nhập dữ liệu
+Retry missing layers	Thử tải lại các lớp còn thiếu
+Automatic roads and buildings	Đường và tòa nhà tự động
+Procedural fallback	Phương án tạo theo quy trình
+Preview automatic import	Xem trước nhập tự động
+Unresolved	Chưa giải quyết
+Load OSM JSON	Tải OSM JSON
+Asset catalogue	Danh mục tài nguyên
+Estimated remaining time	Thời gian còn lại ước tính

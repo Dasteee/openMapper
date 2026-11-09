@@ -2785,3 +2785,12 @@ no track within 15 m	15 m-en belül nincs sín
 the tracks are not joined, or run the other way (see View > AI lanes)	a sínek nincsenek összekötve, vagy másfelé futnak (lásd Nézet > MI-sávok)
 no track beside	nincs sín mellette:
 Drives on	Közlekedik
+Import diagnostics	Importálási diagnosztika
+Retry missing layers	Hiányzó rétegek újrapróbálása
+Automatic roads and buildings	Automatikus utak és épületek
+Procedural fallback	Eljárásos helyettesítés
+Preview automatic import	Automatikus import előnézete
+Unresolved	Megoldatlan
+Load OSM JSON	OSM JSON betöltése
+Asset catalogue	Erőforrás-katalógus
+Estimated remaining time	Becsült hátralévő idő

@@ -2785,3 +2785,12 @@ no track within 15 m	15 m以内に線路がありません
 the tracks are not joined, or run the other way (see View > AI lanes)	線路が接続されていないか、逆向きです（表示 > AI車線を参照）
 no track beside	線路なし：
 Drives on	走行
+Import diagnostics	インポート診断
+Retry missing layers	未取得のレイヤーを再試行
+Automatic roads and buildings	道路と建物の自動選択
+Procedural fallback	手続き型生成で補完
+Preview automatic import	自動インポートのプレビュー
+Unresolved	未解決
+Load OSM JSON	OSM JSONを読み込む
+Asset catalogue	アセットカタログ
+Estimated remaining time	推定残り時間

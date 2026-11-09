@@ -2785,3 +2785,12 @@ no track within 15 m	cap via a menys de 15 m
 the tracks are not joined, or run the other way (see View > AI lanes)	les vies no estan unides o van en sentit contrari (vegeu Vista > Carrils d'IA)
 no track beside	cap via al costat de
 Drives on	Circula per
+Import diagnostics	Diagnòstic de la importació
+Retry missing layers	Torna a provar les capes que falten
+Automatic roads and buildings	Carreteres i edificis automàtics
+Procedural fallback	Alternativa procedural
+Preview automatic import	Previsualitza la importació automàtica
+Unresolved	Sense resoldre
+Load OSM JSON	Carrega OSM JSON
+Asset catalogue	Catàleg de recursos
+Estimated remaining time	Temps restant estimat
